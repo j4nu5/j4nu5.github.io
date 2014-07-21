@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Kushagra Sinha'
 SITENAME = u'The Janus List'
-SITEURL = 'http://www.j4nu5.com'
+SITEURL = ''
 
 PATH = 'content'
 
@@ -27,7 +27,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
-STATIC_PATHS = ['images', 'extra/*']
+STATIC_PATHS = ['images', 'extra']
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/README.md': {'path': 'README.md'},
