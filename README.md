@@ -1,4 +1,4 @@
-j4nu5.github.io
-===============
+The Janus List
+==============
 
-My personal blog
+My personal blog on http://www.j4nu5.com
