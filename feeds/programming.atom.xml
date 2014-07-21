@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>The Janus List</title><link href="http://www.j4nu5.com/" rel="alternate"></link><link href="http://www.j4nu5.com/feeds/kushagra-sinha.atom.xml" rel="self"></link><id>http://www.j4nu5.com/</id><updated>2013-12-19T00:00:00+01:00</updated><entry><title>Abstract Classes and Factory Design Pattern in Python</title><link href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html" rel="alternate"></link><updated>2013-12-19T00:00:00+01:00</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2013-12-19:abstract-classes-and-factory-design-pattern-in-python.html</id><summary type="html">&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete"&gt;Abstract Classes&lt;/a&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The Janus List</title><link href="http://www.j4nu5.com/" rel="alternate"></link><link href="http://www.j4nu5.com/feeds/programming.atom.xml" rel="self"></link><id>http://www.j4nu5.com/</id><updated>2013-12-19T00:00:00+01:00</updated><entry><title>Abstract Classes and Factory Design Pattern in Python</title><link href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html" rel="alternate"></link><updated>2013-12-19T00:00:00+01:00</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2013-12-19:abstract-classes-and-factory-design-pattern-in-python.html</id><summary type="html">&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete"&gt;Abstract Classes&lt;/a&gt;
 are one of the most useful and important concepts in Object Oriented
 Programming. I'll attempt to illustrate their usefulness, and their usage in
 Python 2.7 with the following (seemingly contrived) example:&lt;/p&gt;
@@ -167,13 +167,4 @@ the abc module, but has not changed the core syntax of the language.&lt;/p&gt;
 
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Python is an interpreted language which supports and encourages duck typing. Abstract classes may seem superficial in such a language but as I have attempted to illustrate above, they vastly improve code maintainability and reuse.&lt;/p&gt;
-&lt;p&gt;Comments are welcome!&lt;/p&gt;</summary><category term="python"></category><category term="programming"></category></entry><entry><title>New Year Resolutions and Nostalgia</title><link href="http://www.j4nu5.com/new-year-resolutions-and-nostalgia.html" rel="alternate"></link><updated>2013-01-01T00:00:00+01:00</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2013-01-01:new-year-resolutions-and-nostalgia.html</id><summary type="html">&lt;p&gt;I was going through this &lt;a href="http://mitadmissions.org/blogs/entry/50_things"&gt;link&lt;/a&gt; today when I could not help but feel an
-overwhelming sense of sadness and incompleteness.&lt;/p&gt;
-&lt;p&gt;I will be graduating in May, 2013 from the Indian Institute of Technology,
-Varanasi. The best 4 years of my life already behind me. As I was going
-through this list, I found a lot of things I wish I could have done, many
-others I wish I had done in a better fashion and many still that I have to do.&lt;/p&gt;
-&lt;p&gt;One of things, though not on the above list has been this blog, which I had
-been procrastinating about for nearly a couple of years. So, here goes nothing ...&lt;/p&gt;
-&lt;p&gt;Hope to start this New Year with resolutions and promises fulfilled.&lt;/p&gt;
-&lt;p&gt;Thanks for reading!&lt;/p&gt;</summary><category term="new year resolutions"></category><category term="nostalgia"></category></entry></feed>
+&lt;p&gt;Comments are welcome!&lt;/p&gt;</summary><category term="python"></category><category term="programming"></category></entry></feed>
