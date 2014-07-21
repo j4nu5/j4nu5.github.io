@@ -1,0 +1,9 @@
+Title: About
+
+
+I am currently working as a Core Platform Engineer for a startup in Banglore
+called [MobStac](http://www.mobstac.com).
+
+I enjoy programming, reading and sleeping.
+
+Feel free to drop a mail for hugs or bugs.
