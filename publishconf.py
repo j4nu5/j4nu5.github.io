@@ -13,6 +13,7 @@ from pelicanconf import *
 SITEURL = 'http://www.j4nu5.com'
 RELATIVE_URLS = False
 
+FEED_DOMAIN = SITEURL
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
@@ -20,5 +21,5 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 
-#DISQUS_SITENAME = ""
+DISQUS_SITENAME = "j4nu5"
 GOOGLE_ANALYTICS = "UA-24193913-1"

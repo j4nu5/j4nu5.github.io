@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Asia/Kolkata'
 
 DEFAULT_LANG = u'en'
 
@@ -18,14 +18,18 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (
+    ('MobStac', 'http://www.mobstac.com/'),
+    ("MobStac's blog", 'http://blog.mobstac.com/'),
+)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+    ('Twitter', 'https://twitter.com/j4nu5'),
+    ('LinkedIn', 'https://www.linkedin.com/in/sinhakushagra'),
+    ('GitHub', 'https://github.com/j4nu5/'),
+    ('Google+', 'https://plus.google.com/+KushagraSinha/'),
+)
 
 STATIC_PATHS = ['images', 'extra']
 EXTRA_PATH_METADATA = {
@@ -33,7 +37,12 @@ EXTRA_PATH_METADATA = {
     'extra/README.md': {'path': 'README.md'},
 }
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+PELICAN_SOBER_ABOUT = "Kushagra Sinha. Software Engineer at MobStac. Love python, distributed systems, reading and sleeping."
+PELICAN_SOBER_STICKY_SIDEBAR = True
+
+TYPOGRIFY = True

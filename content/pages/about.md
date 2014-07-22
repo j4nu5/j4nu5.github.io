@@ -1,6 +1,8 @@
 Title: About
 
 
+Hi! I am Kushagra Sinha.
+
 I am currently working as a Core Platform Engineer for a startup in Banglore
 called [MobStac](http://www.mobstac.com).
 
