@@ -1,260 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="">	
 <head>
-        <meta charset="utf-8" />
-        <title>The Janus List - Programming</title>
-        <link rel="stylesheet" href="http://www.j4nu5.com/theme/css/main.css" />
-        <link href="http://www.j4nu5.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="The Janus List Atom Feed" />
+	<meta charset="utf-8"/>
+	<title>Programming - The Janus List</title>	
+	<meta name="author" content="Kushagra Sinha">
+	
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+	<link rel="stylesheet" href="http://www.j4nu5.com/theme/css/main.css" type="text/css" />
+		
+	  <script type="text/javascript" src="http://www.j4nu5.com/theme/js/custom_scripts.js"></script>
+
+
+    <link href="http://www.j4nu5.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="The Janus List Atom Feed" />
 </head>
+	
+<body>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://www.j4nu5.com/">The Janus List </a></h1>
-                <nav><ul>
-                    <li><a href="http://www.j4nu5.com/pages/about.html">About</a></li>
-                    <li><a href="http://www.j4nu5.com/pages/contact.html">Contact</a></li>
-                    <li class="active"><a href="http://www.j4nu5.com/category/programming.html">Programming</a></li>
-                    <li><a href="http://www.j4nu5.com/category/random.html">Random</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+    <div class="container">
+	  
+	  <header role="banner">
+	    <div class="feeds">
+	        <a href="http://www.j4nu5.com/feeds/all.atom.xml" rel="alternate"><img src="/theme/images/icons/feed-32px.png" alt="atom feed"/></a>
+	    </div>
+	      <nav class="pages">
+			  <a href="http://www.j4nu5.com/pages/about.html">About</a>
+-			  <a href="http://www.j4nu5.com/pages/contact.html">Contact</a>
+	      </nav>
+		<a href="http://www.j4nu5.com" class="title">The Janus List</a>
+      </header>
+	
+	  <div class="wrapper">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html">Abstract Classes and Factory Design Pattern in&nbsp;Python</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2013-12-19T00:00:00">
-                Published: Thu 19 December 2013
-        </abbr>
+		  <div role="main" class="content">
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://www.j4nu5.com/author/kushagra-sinha.html">Kushagra Sinha</a>
-        </address>
-<p>In <a href="http://www.j4nu5.com/category/programming.html">Programming</a>. </p>
-<p>tags: <a href="http://www.j4nu5.com/tag/python.html">python</a> <a href="http://www.j4nu5.com/tag/programming.html">programming</a> </p>
-</footer><!-- /.post-info --><p><a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete">Abstract Classes</a>
+<h1>Posts categorized under: Programming</h1>
+
+<article class="summary">
+<div class="metadata">
+  <time datetime="2013-12-19T00:00:00" pubdate>Thu 19 December 2013</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://www.j4nu5.com/author/kushagra-sinha.html">Kushagra Sinha</a>
+    </address>
+  in <a href="http://www.j4nu5.com/category/programming.html">Programming</a>
+<p class="tags">tagged <a href="http://www.j4nu5.com/tag/python.html">python</a>, <a href="http://www.j4nu5.com/tag/programming.html">programming</a></p></div>  <div>
+    <h2>
+      <a href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html" rel="bookmark" title="Permalink to Abstract Classes and Factory Design Pattern in&nbsp;Python">Abstract Classes and Factory Design Pattern in&nbsp;Python</a>
+    </h2>
+    <p><p><a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete">Abstract Classes</a>
 are one of the most useful and important concepts in Object Oriented
 Programming. I&#8217;ll attempt to illustrate their usefulness, and their usage in
 Python 2.7 with the following (seemingly contrived)&nbsp;example:</p>
 <p>Let us say, you want/have to implement posting updates on Facebook using
-Python. Your code might look something like&nbsp;this:</p>
-<div class="highlight"><pre><span class="c"># Attempt 0: Bad code.</span>
-
-<span class="k">def</span> <span class="nf">facebook_share_init</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="c"># Initialize OAuth with facebook</span>
-    <span class="c"># ...</span>
-
-<span class="k">def</span> <span class="nf">share_on_facebook</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="c"># Post to Facebook</span>
-    <span class="c"># ...</span>
-</pre></div>
-
-
-<p>It works and everyone is happy. Then one day, you decide to support posting
-tweets in your application. You add the&nbsp;following:</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">twitter_share_init</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="c"># Initialize OAuth with twitter</span>
-    <span class="c"># ...</span>
-
-<span class="k">def</span> <span class="nf">share_on_twitter</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="c"># Post to Twitter</span>
-    <span class="c"># ...</span>
-</pre></div>
-
-
-<p>and the part of your code which has to figure out the appropriate sharing
-function to call might look something&nbsp;like:</p>
-<div class="highlight"><pre><span class="k">if</span> <span class="n">requested_sharing_platform</span> <span class="o">==</span> <span class="s">&quot;facebook&quot;</span><span class="p">:</span>
-    <span class="n">facebook_share_init</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="n">share_on_facebook</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">requested_sharing_platform</span> <span class="o">==</span> <span class="s">&quot;twitter&quot;</span><span class="p">:</span>
-    <span class="n">twitter_share_init</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="n">share_on_twitter</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Things quickly become complicated when you have to implement Google+ sharing
-for example and you add two more functions and another couple of lines to the
-if-elif&nbsp;chain.</p>
-<p>The real fun starts however when someone else in your team decides to
-copy-paste your if-elif chain and 10 days later, when you implement LinkedIn
-sharing, you expand your if-elif chain, but not your colleague&#8217;s, leading to
-all kinds of&nbsp;problems.</p>
-<p>The above problem can be neatly solved using Abstract Classes
-(and the Factory&nbsp;Pattern).</p>
-<p>A good rule of thumb in <span class="caps">OOP</span> is to &#8220;program to an interface, not an
-implementation&#8221;. What this means is to create an abstraction over related
-objects, that enforces a contract between the caller and the callee. For
-example, consider set of classes called Cat, Lion and Dog. A cat meows, dog
-barks and lion roars. But we may see these as special cases of an abstraction
-called speak, which translates to roaring for lions and barking for dogs. Our
-class definitions may look&nbsp;like:</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">Animal</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">speak</span><span class="p">():</span>
-        <span class="k">pass</span>
-
-<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">speak</span><span class="p">():</span>
-        <span class="c"># Meow</span>
-
-<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">speak</span><span class="p">():</span>
-        <span class="c"># Bark</span>
-
-<span class="k">class</span> <span class="nc">Lion</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">speak</span><span class="p">():</span>
-        <span class="c"># Roar</span>
-</pre></div>
-
-
-<p>The problem with the above approach is that it is not enforcing. We can easily
-create a class&nbsp;like:</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">Fish</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">swim</span><span class="p">():</span>
-        <span class="o">...</span>
-</pre></div>
-
-
-<p>Callers of Cat, Dog or Lion can call the speak method without any problem but
-calls to speak method of Fish instances will be delegated to the superclass,
-which might be a problem in real life examples. Ideally we would want users of
-our abstraction to have an iron clad contractual obligation with respect to
-the methods that we have exposed. This is where abstract classes come&nbsp;in.</p>
-<p>Python originally did not have support for abstract classes and some people
-still consider them to be unpythonic. Python has decided to take the middle
-path on this (see <span class="caps">PEP</span> 3119) and has added support for abstract classes using
-the abc module, but has not changed the core syntax of the&nbsp;language.</p>
-<p>Here is how our original problem of social sharing can be solved using abstract&nbsp;classes:</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">abc</span>
-
-<span class="k">class</span> <span class="nc">AbstractSocialShare</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span>
-
-    <span class="nd">@abc.abstractmethod</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">pass</span>
-
-    <span class="nd">@abc.abstractmethod</span>
-    <span class="k">def</span> <span class="nf">share</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">pass</span>
-
-
-<span class="k">class</span> <span class="nc">FacebookShare</span><span class="p">(</span><span class="n">AbstractSocialShare</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="c"># Initialize Facebook OAuth</span>
-        <span class="o">...</span>
-
-    <span class="k">def</span> <span class="nf">share</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="c"># Share on Facebook</span>
-        <span class="o">...</span>
-
-
-<span class="k">class</span> <span class="nc">TwitterShare</span><span class="p">(</span><span class="n">AbstractSocialShare</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="c"># Initialize Twitter OAuth</span>
-        <span class="o">...</span>
-
-    <span class="k">def</span> <span class="nf">share</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="c"># Share on Twitter</span>
-        <span class="o">...</span>
-</pre></div>
-
-
-<p>Try creating an object of the abstract class&nbsp;with:</p>
-<div class="highlight"><pre><span class="n">obj</span> <span class="o">=</span> <span class="n">AbstractSocialShare</span><span class="p">()</span>
-</pre></div>
-
-
-<p>You will receive a&nbsp;TypeError.</p>
-<p>Now try creating and instantiating this&nbsp;class:</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">IncorrectShare</span><span class="p">(</span><span class="n">AbstractSocialShare</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="o">...</span>
-</pre></div>
-
-
-<p>Since IncorrectShare has not implemented the share method, we will not be able to instantiate&nbsp;it.</p>
-<p>How do we take care of the ugly if-elif chain? Thats where the Factory pattern comes&nbsp;in.</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">SocialShareFactory</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="n">__share_classes</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s">&quot;facebook&quot;</span><span class="p">:</span> <span class="n">FacebookShare</span><span class="p">,</span>
-        <span class="s">&quot;twitter&quot;</span><span class="p">:</span> <span class="n">TwitterShare</span>
-    <span class="p">}</span>
-
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">get_share_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-       <span class="n">share_class</span> <span class="o">=</span> <span class="n">SocialShareFactory</span><span class="o">.</span><span class="n">__share_classes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="bp">None</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">share_class</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">share_class</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&quot;The requested sharing has not been implemented&quot;</span><span class="p">)</span>
-</pre></div>
-
-
-<p>The usage will be something&nbsp;like:</p>
-<div class="highlight"><pre><span class="n">obj</span> <span class="o">=</span> <span class="n">SocialShareFactory</span><span class="o">.</span><span class="n">get_share_obj</span><span class="p">(</span><span class="s">&quot;facebook&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="n">obj</span><span class="o">.</span><span class="n">share</span><span class="p">(</span><span class="s">&quot;Something&quot;</span><span class="p">)</span>
-</pre></div>
-
-
-<h2>Conclusion</h2>
-<p>Python is an interpreted language which supports and encourages duck typing. Abstract classes may seem superficial in such a language but as I have attempted to illustrate above, they vastly improve code maintainability and&nbsp;reuse.</p>
-<p>Comments are&nbsp;welcome!</p><p>There are <a href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html#disqus_thread">comments</a>.</p>                </article>
-<p class="paginator">
+Python. Your ...</p></p>
+  </div>
+</article>
+<div class="pagination">
     Page 1 / 1
-</p>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://www.mobstac.com/">MobStac</a></li>
-                            <li><a href="http://blog.mobstac.com/">MobStac's blog</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://www.j4nu5.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+</div>
 
-                            <li><a href="https://twitter.com/j4nu5">Twitter</a></li>
-                            <li><a href="https://www.linkedin.com/in/sinhakushagra">LinkedIn</a></li>
-                            <li><a href="https://github.com/j4nu5/">GitHub</a></li>
-                            <li><a href="https://plus.google.com/+KushagraSinha/">Google+</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+		  </div>	
+		  
+		  <div class="sidebar">
+		    <div class="sidebar-container" id="sidebar-container-fixed">
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+	            <aside>
+	              <h2>About</h2>
+			      <p>
+                    Kushagra Sinha. Software Engineer at MobStac. Love python, distributed systems, reading and sleeping.
+			      </p>
+			    </aside>
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+  	          <nav>
+	            <h2>Categories</h2>
+	            <ul>
+	                <li class="active"><a href="http://www.j4nu5.com/category/programming.html">Programming</a></li>
+	                <li ><a href="http://www.j4nu5.com/category/random.html">Random</a></li>
+	            </ul>
+	          </nav>
 
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-24193913-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-<script type="text/javascript">
-    var disqus_shortname = 'j4nu5';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
+	            <aside>
+	            <h2>Social</h2>
+			      <ul class="social">
+				    <li><a href="https://twitter.com/j4nu5">Twitter</a><i></i></li>
+				    <li><a href="https://www.linkedin.com/in/sinhakushagra">LinkedIn</a><i></i></li>
+				    <li><a href="https://github.com/j4nu5/">GitHub</a><i></i></li>
+				    <li><a href="https://plus.google.com/+KushagraSinha/">Google+</a><i></i></li>
+			      </ul>
+			    </aside>
+
+	            <aside>
+	              <h2>Blogroll</h2>
+	              <ul>
+	                  <li><a href="http://www.mobstac.com/">MobStac</a></li>
+	                  <li><a href="http://blog.mobstac.com/">MobStac's blog</a></li>
+	              </ul>
+	            </aside>
+	        </div>
+		  </div>
+
+	  </div>
+
+      <footer>
+		<p role="contentinfo">
+		  Kushagra Sinha - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
+    	</p>
+
+	  </footer>	
+
+	</div>
+	
+	  <script>
+		var _gaq=[['_setAccount','UA-24193913-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	  </script>
+
 </body>
 </html>
