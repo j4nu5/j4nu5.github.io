@@ -50,3 +50,20 @@ PELICAN_SOBER_ABOUT = "Kushagra Sinha. Software Engineer at MobStac. Love python
 PELICAN_SOBER_STICKY_SIDEBAR = True
 
 TYPOGRIFY = True
+
+PLUGIN_PATHS = ["/Users/j4nu5/pelican-plugins"]
+PLUGINS = ["sitemap"]
+
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'weekly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
+}
