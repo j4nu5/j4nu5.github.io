@@ -42,6 +42,8 @@ DEFAULT_PAGINATION = 5
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
+THEME = "pelican-sober"
+
 PELICAN_SOBER_ABOUT = "Kushagra Sinha. Software Engineer at MobStac. Love python, distributed systems, reading and sleeping."
 PELICAN_SOBER_STICKY_SIDEBAR = True
 
