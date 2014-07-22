@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Abstract Classes and Factory Design Pattern in Python</title>
+        <title>Abstract Classes and Factory Design Pattern in Python</title>
         <link rel="stylesheet" href="http://www.j4nu5.com/theme/css/main.css" />
         <link href="http://www.j4nu5.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="The Janus List Atom Feed" />
 
@@ -16,6 +16,7 @@
                 <h1><a href="http://www.j4nu5.com/">The Janus List </a></h1>
                 <nav><ul>
                     <li><a href="http://www.j4nu5.com/pages/about.html">About</a></li>
+                    <li><a href="http://www.j4nu5.com/pages/contact.html">Contact</a></li>
                     <li class="active"><a href="http://www.j4nu5.com/category/programming.html">Programming</a></li>
                     <li><a href="http://www.j4nu5.com/category/random.html">Random</a></li>
                 </ul></nav>
@@ -25,7 +26,7 @@
     <header>
       <h1 class="entry-title">
         <a href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html" rel="bookmark"
-           title="Permalink to Abstract Classes and Factory Design Pattern in Python">Abstract Classes and Factory Design Pattern in Python</a></h1>
+           title="Permalink to Abstract Classes and Factory Design Pattern in Python">Abstract Classes and Factory Design Pattern in&nbsp;Python</a></h1>
     </header>
 
     <div class="entry-content">
@@ -41,10 +42,10 @@
 <p>tags: <a href="http://www.j4nu5.com/tag/python.html">python</a> <a href="http://www.j4nu5.com/tag/programming.html">programming</a> </p>
 </footer><!-- /.post-info -->      <p><a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete">Abstract Classes</a>
 are one of the most useful and important concepts in Object Oriented
-Programming. I'll attempt to illustrate their usefulness, and their usage in
-Python 2.7 with the following (seemingly contrived) example:</p>
+Programming. I&#8217;ll attempt to illustrate their usefulness, and their usage in
+Python 2.7 with the following (seemingly contrived)&nbsp;example:</p>
 <p>Let us say, you want/have to implement posting updates on Facebook using
-Python. Your code might look something like this:</p>
+Python. Your code might look something like&nbsp;this:</p>
 <div class="highlight"><pre><span class="c"># Attempt 0: Bad code.</span>
 
 <span class="k">def</span> <span class="nf">facebook_share_init</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -58,7 +59,7 @@ Python. Your code might look something like this:</p>
 
 
 <p>It works and everyone is happy. Then one day, you decide to support posting
-tweets in your application. You add the following:</p>
+tweets in your application. You add the&nbsp;following:</p>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">twitter_share_init</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="c"># Initialize OAuth with twitter</span>
     <span class="c"># ...</span>
@@ -70,7 +71,7 @@ tweets in your application. You add the following:</p>
 
 
 <p>and the part of your code which has to figure out the appropriate sharing
-function to call might look something like:</p>
+function to call might look something&nbsp;like:</p>
 <div class="highlight"><pre><span class="k">if</span> <span class="n">requested_sharing_platform</span> <span class="o">==</span> <span class="s">&quot;facebook&quot;</span><span class="p">:</span>
     <span class="n">facebook_share_init</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="n">share_on_facebook</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -82,20 +83,20 @@ function to call might look something like:</p>
 
 <p>Things quickly become complicated when you have to implement Google+ sharing
 for example and you add two more functions and another couple of lines to the
-if-elif chain.</p>
+if-elif&nbsp;chain.</p>
 <p>The real fun starts however when someone else in your team decides to
 copy-paste your if-elif chain and 10 days later, when you implement LinkedIn
-sharing, you expand your if-elif chain, but not your colleague's, leading to
-all kinds of problems.</p>
+sharing, you expand your if-elif chain, but not your colleague&#8217;s, leading to
+all kinds of&nbsp;problems.</p>
 <p>The above problem can be neatly solved using Abstract Classes
-(and the Factory Pattern).</p>
-<p>A good rule of thumb in OOP is to "program to an interface, not an
-implementation". What this means is to create an abstraction over related
+(and the Factory&nbsp;Pattern).</p>
+<p>A good rule of thumb in <span class="caps">OOP</span> is to &#8220;program to an interface, not an
+implementation&#8221;. What this means is to create an abstraction over related
 objects, that enforces a contract between the caller and the callee. For
 example, consider set of classes called Cat, Lion and Dog. A cat meows, dog
 barks and lion roars. But we may see these as special cases of an abstraction
 called speak, which translates to roaring for lions and barking for dogs. Our
-class definitions may look like:</p>
+class definitions may look&nbsp;like:</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">Animal</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">speak</span><span class="p">():</span>
         <span class="k">pass</span>
@@ -115,7 +116,7 @@ class definitions may look like:</p>
 
 
 <p>The problem with the above approach is that it is not enforcing. We can easily
-create a class like:</p>
+create a class&nbsp;like:</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">Fish</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">swim</span><span class="p">():</span>
         <span class="o">...</span>
@@ -126,12 +127,12 @@ create a class like:</p>
 calls to speak method of Fish instances will be delegated to the superclass,
 which might be a problem in real life examples. Ideally we would want users of
 our abstraction to have an iron clad contractual obligation with respect to
-the methods that we have exposed. This is where abstract classes come in.</p>
+the methods that we have exposed. This is where abstract classes come&nbsp;in.</p>
 <p>Python originally did not have support for abstract classes and some people
 still consider them to be unpythonic. Python has decided to take the middle
-path on this (see PEP 3119) and has added support for abstract classes using
-the abc module, but has not changed the core syntax of the language.</p>
-<p>Here is how our original problem of social sharing can be solved using abstract classes:</p>
+path on this (see <span class="caps">PEP</span> 3119) and has added support for abstract classes using
+the abc module, but has not changed the core syntax of the&nbsp;language.</p>
+<p>Here is how our original problem of social sharing can be solved using abstract&nbsp;classes:</p>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">abc</span>
 
 <span class="k">class</span> <span class="nc">AbstractSocialShare</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -167,21 +168,21 @@ the abc module, but has not changed the core syntax of the language.</p>
 </pre></div>
 
 
-<p>Try creating an object of the abstract class with:</p>
+<p>Try creating an object of the abstract class&nbsp;with:</p>
 <div class="highlight"><pre><span class="n">obj</span> <span class="o">=</span> <span class="n">AbstractSocialShare</span><span class="p">()</span>
 </pre></div>
 
 
-<p>You will receive a TypeError.</p>
-<p>Now try creating and instantiating this class:</p>
+<p>You will receive a&nbsp;TypeError.</p>
+<p>Now try creating and instantiating this&nbsp;class:</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">IncorrectShare</span><span class="p">(</span><span class="n">AbstractSocialShare</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="o">...</span>
 </pre></div>
 
 
-<p>Since IncorrectShare has not implemented the share method, we will not be able to instantiate it.</p>
-<p>How do we take care of the ugly if-elif chain? Thats where the Factory pattern comes in.</p>
+<p>Since IncorrectShare has not implemented the share method, we will not be able to instantiate&nbsp;it.</p>
+<p>How do we take care of the ugly if-elif chain? Thats where the Factory pattern comes&nbsp;in.</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">SocialShareFactory</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="n">__share_classes</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s">&quot;facebook&quot;</span><span class="p">:</span> <span class="n">FacebookShare</span><span class="p">,</span>
@@ -198,7 +199,7 @@ the abc module, but has not changed the core syntax of the language.</p>
 </pre></div>
 
 
-<p>The usage will be something like:</p>
+<p>The usage will be something&nbsp;like:</p>
 <div class="highlight"><pre><span class="n">obj</span> <span class="o">=</span> <span class="n">SocialShareFactory</span><span class="o">.</span><span class="n">get_share_obj</span><span class="p">(</span><span class="s">&quot;facebook&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 <span class="n">obj</span><span class="o">.</span><span class="n">share</span><span class="p">(</span><span class="s">&quot;Something&quot;</span><span class="p">)</span>
@@ -206,9 +207,24 @@ the abc module, but has not changed the core syntax of the language.</p>
 
 
 <h2>Conclusion</h2>
-<p>Python is an interpreted language which supports and encourages duck typing. Abstract classes may seem superficial in such a language but as I have attempted to illustrate above, they vastly improve code maintainability and reuse.</p>
-<p>Comments are welcome!</p>
+<p>Python is an interpreted language which supports and encourages duck typing. Abstract classes may seem superficial in such a language but as I have attempted to illustrate above, they vastly improve code maintainability and&nbsp;reuse.</p>
+<p>Comments are&nbsp;welcome!</p>
     </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'j4nu5';
+        var disqus_identifier = 'abstract-classes-and-factory-design-pattern-in-python.html';
+        var disqus_url = 'http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//j4nu5.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
 
   </article>
 </section>
@@ -216,10 +232,8 @@ the abc module, but has not changed the core syntax of the language.</p>
                 <div class="blogroll">
                         <h2>blogroll</h2>
                         <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
+                            <li><a href="http://www.mobstac.com/">MobStac</a></li>
+                            <li><a href="http://blog.mobstac.com/">MobStac's blog</a></li>
                         </ul>
                 </div><!-- /.blogroll -->
                 <div class="social">
@@ -227,8 +241,10 @@ the abc module, but has not changed the core syntax of the language.</p>
                         <ul>
                             <li><a href="http://www.j4nu5.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
+                            <li><a href="https://twitter.com/j4nu5">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/in/sinhakushagra">LinkedIn</a></li>
+                            <li><a href="https://github.com/j4nu5/">GitHub</a></li>
+                            <li><a href="https://plus.google.com/+KushagraSinha/">Google+</a></li>
                         </ul>
                 </div><!-- /.social -->
         </section><!-- /#extras -->
@@ -251,5 +267,14 @@ the abc module, but has not changed the core syntax of the language.</p>
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
     </script>
+<script type="text/javascript">
+    var disqus_shortname = 'j4nu5';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 </body>
 </html>

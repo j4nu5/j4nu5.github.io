@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>The Janus List</title><link href="http://www.j4nu5.com/" rel="alternate"></link><link href="http://www.j4nu5.com/feeds/programming.atom.xml" rel="self"></link><id>http://www.j4nu5.com/</id><updated>2013-12-19T00:00:00+01:00</updated><entry><title>Abstract Classes and Factory Design Pattern in Python</title><link href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html" rel="alternate"></link><updated>2013-12-19T00:00:00+01:00</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2013-12-19:abstract-classes-and-factory-design-pattern-in-python.html</id><summary type="html">&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete"&gt;Abstract Classes&lt;/a&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The Janus List</title><link href="http://www.j4nu5.com/" rel="alternate"></link><link href="http://www.j4nu5.com/feeds/programming.atom.xml" rel="self"></link><id>http://www.j4nu5.com/</id><updated>2013-12-19T00:00:00+05:30</updated><entry><title>Abstract Classes and Factory Design Pattern in Python</title><link href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html" rel="alternate"></link><updated>2013-12-19T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2013-12-19:abstract-classes-and-factory-design-pattern-in-python.html</id><summary type="html">&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete"&gt;Abstract Classes&lt;/a&gt;
 are one of the most useful and important concepts in Object Oriented
-Programming. I'll attempt to illustrate their usefulness, and their usage in
-Python 2.7 with the following (seemingly contrived) example:&lt;/p&gt;
+Programming. I&amp;#8217;ll attempt to illustrate their usefulness, and their usage in
+Python 2.7 with the following (seemingly contrived)&amp;nbsp;example:&lt;/p&gt;
 &lt;p&gt;Let us say, you want/have to implement posting updates on Facebook using
-Python. Your code might look something like this:&lt;/p&gt;
+Python. Your code might look something like&amp;nbsp;this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Attempt 0: Bad code.&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;facebook_share_init&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -18,7 +18,7 @@ Python. Your code might look something like this:&lt;/p&gt;
 
 
 &lt;p&gt;It works and everyone is happy. Then one day, you decide to support posting
-tweets in your application. You add the following:&lt;/p&gt;
+tweets in your application. You add the&amp;nbsp;following:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;twitter_share_init&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="c"&gt;# Initialize OAuth with twitter&lt;/span&gt;
     &lt;span class="c"&gt;# ...&lt;/span&gt;
@@ -30,7 +30,7 @@ tweets in your application. You add the following:&lt;/p&gt;
 
 
 &lt;p&gt;and the part of your code which has to figure out the appropriate sharing
-function to call might look something like:&lt;/p&gt;
+function to call might look something&amp;nbsp;like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;requested_sharing_platform&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;facebook&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;facebook_share_init&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;share_on_facebook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -42,20 +42,20 @@ function to call might look something like:&lt;/p&gt;
 
 &lt;p&gt;Things quickly become complicated when you have to implement Google+ sharing
 for example and you add two more functions and another couple of lines to the
-if-elif chain.&lt;/p&gt;
+if-elif&amp;nbsp;chain.&lt;/p&gt;
 &lt;p&gt;The real fun starts however when someone else in your team decides to
 copy-paste your if-elif chain and 10 days later, when you implement LinkedIn
-sharing, you expand your if-elif chain, but not your colleague's, leading to
-all kinds of problems.&lt;/p&gt;
+sharing, you expand your if-elif chain, but not your colleague&amp;#8217;s, leading to
+all kinds of&amp;nbsp;problems.&lt;/p&gt;
 &lt;p&gt;The above problem can be neatly solved using Abstract Classes
-(and the Factory Pattern).&lt;/p&gt;
-&lt;p&gt;A good rule of thumb in OOP is to "program to an interface, not an
-implementation". What this means is to create an abstraction over related
+(and the Factory&amp;nbsp;Pattern).&lt;/p&gt;
+&lt;p&gt;A good rule of thumb in &lt;span class="caps"&gt;OOP&lt;/span&gt; is to &amp;#8220;program to an interface, not an
+implementation&amp;#8221;. What this means is to create an abstraction over related
 objects, that enforces a contract between the caller and the callee. For
 example, consider set of classes called Cat, Lion and Dog. A cat meows, dog
 barks and lion roars. But we may see these as special cases of an abstraction
 called speak, which translates to roaring for lions and barking for dogs. Our
-class definitions may look like:&lt;/p&gt;
+class definitions may look&amp;nbsp;like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Animal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;speak&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
         &lt;span class="k"&gt;pass&lt;/span&gt;
@@ -75,7 +75,7 @@ class definitions may look like:&lt;/p&gt;
 
 
 &lt;p&gt;The problem with the above approach is that it is not enforcing. We can easily
-create a class like:&lt;/p&gt;
+create a class&amp;nbsp;like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Fish&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Animal&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;swim&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
         &lt;span class="o"&gt;...&lt;/span&gt;
@@ -86,12 +86,12 @@ create a class like:&lt;/p&gt;
 calls to speak method of Fish instances will be delegated to the superclass,
 which might be a problem in real life examples. Ideally we would want users of
 our abstraction to have an iron clad contractual obligation with respect to
-the methods that we have exposed. This is where abstract classes come in.&lt;/p&gt;
+the methods that we have exposed. This is where abstract classes come&amp;nbsp;in.&lt;/p&gt;
 &lt;p&gt;Python originally did not have support for abstract classes and some people
 still consider them to be unpythonic. Python has decided to take the middle
-path on this (see PEP 3119) and has added support for abstract classes using
-the abc module, but has not changed the core syntax of the language.&lt;/p&gt;
-&lt;p&gt;Here is how our original problem of social sharing can be solved using abstract classes:&lt;/p&gt;
+path on this (see &lt;span class="caps"&gt;PEP&lt;/span&gt; 3119) and has added support for abstract classes using
+the abc module, but has not changed the core syntax of the&amp;nbsp;language.&lt;/p&gt;
+&lt;p&gt;Here is how our original problem of social sharing can be solved using abstract&amp;nbsp;classes:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;abc&lt;/span&gt;
 
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;AbstractSocialShare&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -127,21 +127,21 @@ the abc module, but has not changed the core syntax of the language.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Try creating an object of the abstract class with:&lt;/p&gt;
+&lt;p&gt;Try creating an object of the abstract class&amp;nbsp;with:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;obj&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;AbstractSocialShare&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;You will receive a TypeError.&lt;/p&gt;
-&lt;p&gt;Now try creating and instantiating this class:&lt;/p&gt;
+&lt;p&gt;You will receive a&amp;nbsp;TypeError.&lt;/p&gt;
+&lt;p&gt;Now try creating and instantiating this&amp;nbsp;class:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;IncorrectShare&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;AbstractSocialShare&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="o"&gt;...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Since IncorrectShare has not implemented the share method, we will not be able to instantiate it.&lt;/p&gt;
-&lt;p&gt;How do we take care of the ugly if-elif chain? Thats where the Factory pattern comes in.&lt;/p&gt;
+&lt;p&gt;Since IncorrectShare has not implemented the share method, we will not be able to instantiate&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;How do we take care of the ugly if-elif chain? Thats where the Factory pattern comes&amp;nbsp;in.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;SocialShareFactory&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;__share_classes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
         &lt;span class="s"&gt;&amp;quot;facebook&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;FacebookShare&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -158,7 +158,7 @@ the abc module, but has not changed the core syntax of the language.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;The usage will be something like:&lt;/p&gt;
+&lt;p&gt;The usage will be something&amp;nbsp;like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;obj&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SocialShareFactory&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_share_obj&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;facebook&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;obj&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Something&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -166,5 +166,5 @@ the abc module, but has not changed the core syntax of the language.&lt;/p&gt;
 
 
 &lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Python is an interpreted language which supports and encourages duck typing. Abstract classes may seem superficial in such a language but as I have attempted to illustrate above, they vastly improve code maintainability and reuse.&lt;/p&gt;
-&lt;p&gt;Comments are welcome!&lt;/p&gt;</summary><category term="python"></category><category term="programming"></category></entry></feed>
+&lt;p&gt;Python is an interpreted language which supports and encourages duck typing. Abstract classes may seem superficial in such a language but as I have attempted to illustrate above, they vastly improve code maintainability and&amp;nbsp;reuse.&lt;/p&gt;
+&lt;p&gt;Comments are&amp;nbsp;welcome!&lt;/p&gt;</summary><category term="python"></category><category term="programming"></category></entry></feed>
