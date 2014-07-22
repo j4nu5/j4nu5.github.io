@@ -12,7 +12,7 @@ Varanasi. The best 4 years of my life already behind me. As I was going
 through this list, I found a lot of things I wish I could have done, many
 others I wish I had done in a better fashion and many still that I have to do.
 
-One of things, though not on the above list has been this blog, which I had
+One of the things, though not on the above list has been this blog, which I had
 been procrastinating about for nearly a couple of years. So, here goes nothing ...
 
 Hope to start this New Year with resolutions and promises fulfilled.
