@@ -8,4 +8,4 @@ called [MobStac](http://www.mobstac.com).
 
 I enjoy programming, reading and sleeping.
 
-Feel free to drop a mail for hugs or bugs.
+Feel free to drop a [mail]({filename}contact.md) for hugs or bugs.
