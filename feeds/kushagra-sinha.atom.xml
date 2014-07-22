@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>The Janus List</title><link href="http://www.j4nu5.com/" rel="alternate"></link><link href="http://www.j4nu5.com/feeds/kushagra-sinha.atom.xml" rel="self"></link><id>http://www.j4nu5.com/</id><updated>2013-12-19T00:00:00+05:30</updated><entry><title>Abstract Classes and Factory Design Pattern in Python</title><link href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html" rel="alternate"></link><updated>2013-12-19T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2013-12-19:abstract-classes-and-factory-design-pattern-in-python.html</id><summary type="html">&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete"&gt;Abstract Classes&lt;/a&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The Janus List</title><link href="http://www.j4nu5.com/" rel="alternate"></link><link href="http://www.j4nu5.com/feeds/kushagra-sinha.atom.xml" rel="self"></link><id>http://www.j4nu5.com/</id><updated>2014-07-23T00:00:00+05:30</updated><entry><title>In search of the perfect blogging platform</title><link href="http://www.j4nu5.com/in-search-of-the-perfect-blogging-platform.html" rel="alternate"></link><updated>2014-07-23T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2014-07-23:in-search-of-the-perfect-blogging-platform.html</id><summary type="html">&lt;p&gt;What makes a good blogging&amp;nbsp;platform?&lt;/p&gt;
+&lt;p&gt;Leaving the tech details, feature lists and other bells and whistles
+aside, a good blogging platform&amp;#8217;s primary aim is&amp;nbsp;twofold:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Make blogging enjoyable. Entice the blogger into writing more&amp;nbsp;articles.&lt;/li&gt;
+&lt;li&gt;Make reading enjoyable. The output of the blogging platform should be easy
+to consume. A good support for themes and customizations is a&amp;nbsp;must.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I had been using &lt;a class="reference external" href="https://github.com/rigoneri/syte"&gt;Syte&lt;/a&gt; as my hompage.
+&lt;a class="reference external" href="https://www.tumblr.com/"&gt;Tumblr&lt;/a&gt; was the underlying blogging platform and
+the whole thing was hosted on &lt;a class="reference external" href="https://www.heroku.com/"&gt;Heroku&lt;/a&gt;. As it turns
+out, all three of my aforementioned choices were suboptimal as far as my
+blogging requirements were&amp;nbsp;considered.&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Syte was difficult to configure. I am neither a designer nor a front-end
+developer. Therefore it just lay stagnant, with the default&amp;nbsp;theme.&lt;/li&gt;
+&lt;li&gt;Tumblr was not a good choice for a tech blog. Writing and highlighting code
+snippets is painful. Especially with a language like python, which uses
+indentation for denoting scope and one incorrect word-wrap in your theme
+can ruin the snippet. As it turns out, I churned out exactly two articles
+during my time on Tumblr. It is a great platform for other things, not for a
+tech blog in my humble&amp;nbsp;opinion.&lt;/li&gt;
+&lt;li&gt;Though Heroku takes a lot of pain out of hosting your blog, it is far from
+ideal. I had to shift my site because I received a dreaded &lt;em&gt;Application Error&lt;/em&gt;
+from Heroku. I had not looked into my site for a &lt;em&gt;very&lt;/em&gt; long time and did
+not want to&amp;nbsp;investigate.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A culmination of these problems forced me to look for alternatives. Thankfully,
+I stumbled on &lt;a class="reference external" href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;. I cannot recommend
+them more. The setup is absolutely simple and your blog/site can be up and
+running in no&amp;nbsp;time.&lt;/p&gt;
+&lt;p&gt;However, I faced a few problems with &lt;a class="reference external" href="http://jekyllrb.com/"&gt;Jekyll&lt;/a&gt;. Since,
+it is based on Ruby, its installation was a nightmare for me due to the myriad
+dependency management issues in Ruby. I naively tried
+&lt;a class="reference external" href="http://octopress.org/"&gt;Octopress&lt;/a&gt; but later came to know that it was based
+on Jekyll. (As a side, the dependency hell was primarily due to
+&lt;a class="reference external" href="http://bundler.io/blog/2014/07/16/bundler-api-outages.html"&gt;Bundler &lt;span class="caps"&gt;API&lt;/span&gt; outages&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;By this time, I had become really interested in the idea of static site
+generators. Being a python fan, I searched for a python based solution and
+found &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;. It is fast, has good support
+for themes and integrates with GitHub Pages with minimal effort from one&amp;#8217;s&amp;nbsp;side.&lt;/p&gt;
+&lt;p&gt;The results of half a day of hacking is this&amp;nbsp;blog.&lt;/p&gt;
+&lt;p&gt;Thanks for reading. Comments are&amp;nbsp;welcome.&lt;/p&gt;
+</summary><category term="musings"></category><category term="misc"></category></entry><entry><title>Abstract Classes and Factory Design Pattern in Python</title><link href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html" rel="alternate"></link><updated>2013-12-19T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2013-12-19:abstract-classes-and-factory-design-pattern-in-python.html</id><summary type="html">&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete"&gt;Abstract Classes&lt;/a&gt;
 are one of the most useful and important concepts in Object Oriented
 Programming. I&amp;#8217;ll attempt to illustrate their usefulness, and their usage in
 Python 2.7 with the following (seemingly contrived)&amp;nbsp;example:&lt;/p&gt;
