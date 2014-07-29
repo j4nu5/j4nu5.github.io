@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>The Janus List</title><link href="http://www.j4nu5.com/" rel="alternate"></link><link href="http://www.j4nu5.com/feeds/kushagra-sinha.atom.xml" rel="self"></link><id>http://www.j4nu5.com/</id><updated>2014-07-23T00:00:00+05:30</updated><entry><title>In search of the perfect blogging platform</title><link href="http://www.j4nu5.com/in-search-of-the-perfect-blogging-platform.html" rel="alternate"></link><updated>2014-07-23T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2014-07-23:in-search-of-the-perfect-blogging-platform.html</id><summary type="html">&lt;p&gt;What makes a good blogging&amp;nbsp;platform?&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The Janus List</title><link href="http://www.j4nu5.com/" rel="alternate"></link><link href="http://www.j4nu5.com/feeds/kushagra-sinha.atom.xml" rel="self"></link><id>http://www.j4nu5.com/</id><updated>2014-07-29T00:00:00+05:30</updated><entry><title>The toughest interview question</title><link href="http://www.j4nu5.com/the-toughest-interview-question.html" rel="alternate"></link><updated>2014-07-29T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2014-07-29:the-toughest-interview-question.html</id><summary type="html">&lt;p&gt;What is the output of the following C code&amp;nbsp;snippet?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;%d %d %d&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is a tricky question. Any attempt to answer this question requires either
+a deep understanding of your compiler&amp;#8217;s parser or a complete ignorance of C.
+Even if you fall under the first category and know the ins and outs of your
+favorite compiler, how do you know which is your &lt;em&gt;interviewer&amp;#8217;s&lt;/em&gt; favorite&amp;nbsp;compiler?&lt;/p&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;ANSI&lt;/span&gt; C language specification, you see, specifies neither the evaluation
+order of function arguments nor the exact &lt;em&gt;side effect&lt;/em&gt; evaluation time of
+prefix and postfix operators. The answer to the above problem depends on the
+compiler being&amp;nbsp;used.&lt;/p&gt;
+&lt;p&gt;Unfortunately, these kinds of puzzles form the bulk of programming interview
+questions for &lt;span class="caps"&gt;IT&lt;/span&gt; companies in India. They are even common in term papers in&amp;nbsp;colleges.&lt;/p&gt;
+&lt;p&gt;I could never fathom the utility of such questions. The correct answer,
+&lt;em&gt;Depends on the compiler&lt;/em&gt; is &lt;em&gt;never&lt;/em&gt; an option for this question. What am I
+supposed to do with this? Should I just evaluate from left to right and
+calculate the side effects &lt;span class="caps"&gt;ASAP&lt;/span&gt; or should I try to second guess my interviewer
+and assume that he/she is terribly confused by the C function call stack
+convention and thinks that the compiler always evaluates from right to&amp;nbsp;left?&lt;/p&gt;
+&lt;p&gt;One day I chanced upon a book that actually taught that C compilers evaluate
+function arguments from right to left. This gem of a book is quite famous in
+India. Its called &lt;em&gt;Let Us C&lt;/em&gt;, written by the renowned
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Yashavant_Kanetkar"&gt;Yashwant Kanetkar&lt;/a&gt;, who
+according to his Wikipedia&amp;nbsp;page,&lt;/p&gt;
+&lt;blockquote&gt;
+&amp;quot; &amp;#8230; has created, moulded and groomed many &lt;span class="caps"&gt;IT&lt;/span&gt; professionals in the last decade and half.&amp;quot;&lt;/blockquote&gt;
+&lt;p&gt;How poetic&amp;nbsp;&amp;#8230;&lt;/p&gt;
+&lt;p&gt;If there is a single most important factor behind the stagnation of the Indian
+&lt;span class="caps"&gt;IT&lt;/span&gt; industry, I think it is this book. Forget about complying to &lt;span class="caps"&gt;ANSI&lt;/span&gt; C
+standards, it professes and quizzes on the areas of C that have deliberately
+been left to the compiler. Professors and interviewers who unfortunately never
+got a chance to study &lt;em&gt;K&amp;amp;R C&lt;/em&gt; think of &lt;em&gt;Let Us C&lt;/em&gt; as &lt;em&gt;the&lt;/em&gt; authority on the C
+programming language. Most of their questions are a straight copy-paste from
+this&amp;nbsp;book.&lt;/p&gt;
+&lt;p&gt;This is a sad state of affairs. Mainly because the people who &lt;em&gt;actually&lt;/em&gt; know
+C are &lt;em&gt;never&lt;/em&gt; able to answer this question correctly. If you are one of them,
+Congrats! You are on the right path towards mastering&amp;nbsp;C.&lt;/p&gt;
+</summary><category term="programming"></category><category term="interviews"></category></entry><entry><title>In search of the perfect blogging platform</title><link href="http://www.j4nu5.com/in-search-of-the-perfect-blogging-platform.html" rel="alternate"></link><updated>2014-07-23T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2014-07-23:in-search-of-the-perfect-blogging-platform.html</id><summary type="html">&lt;p&gt;What makes a good blogging&amp;nbsp;platform?&lt;/p&gt;
 &lt;p&gt;Leaving the tech details, feature lists and other bells and whistles
 aside, a good blogging platform&amp;#8217;s primary aim is&amp;nbsp;twofold:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
