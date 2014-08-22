@@ -36,6 +36,7 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/README.md': {'path': 'README.md'},
     'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/googlea6407f1c0fbf99ee.html': {'path': 'googlea6407f1c0fbf99ee.html'},
 }
 
 DEFAULT_PAGINATION = 5
