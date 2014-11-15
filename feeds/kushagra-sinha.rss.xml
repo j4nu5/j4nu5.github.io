@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Janus List</title><link>http://www.j4nu5.com/</link><description></description><atom:link href="http://www.j4nu5.com/feeds/kushagra-sinha.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 29 Jul 2014 00:00:00 +0530</lastBuildDate><item><title>The toughest interview question</title><link>http://www.j4nu5.com/the-toughest-interview-question.html</link><description>&lt;p&gt;What is the output of the following C code&amp;nbsp;snippet?&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Janus List</title><link>http://www.j4nu5.com/</link><description></description><atom:link href="http://www.j4nu5.com/feeds/kushagra-sinha.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 16 Nov 2014 00:00:00 +0530</lastBuildDate><item><title>Implementing Service Oriented Architecture (SOA) using HTTP is a horrible idea</title><link>http://www.j4nu5.com/implementing-service-oriented-architecture-soa-using-http-is-a-horrible-idea.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Service-oriented_architecture"&gt;Service Oriented Architecture&lt;/a&gt;
+is a commonly used design pattern in distributed and enterprise applications.
+It involves the creation and use of independent &lt;em&gt;services&lt;/em&gt; that work together
+to produce the desired result. The most important benefits, of course, are
+separation of concerns and the ability to scale each service independent of
+others, leading to a clean, modular&amp;nbsp;design.&lt;/p&gt;
+&lt;p&gt;A common problem faced during the design of a &lt;span class="caps"&gt;SOA&lt;/span&gt; system is the choice of
+communication protocol. Ideally we want our services to communicate with each
+other with minimum communication overhead. This&amp;nbsp;involves:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Low&amp;nbsp;latency&lt;/li&gt;
+&lt;li&gt;High&amp;nbsp;throughput&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Many open source protocols are available for use in &lt;span class="caps"&gt;SOA&lt;/span&gt;. Some of them also
+provide client/server de-serialization/serialization libraries to make your job
+easier. Examples&amp;nbsp;are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://developers.google.com/protocol-buffers/"&gt;Protocol&amp;nbsp;Buffers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://thrift.apache.org/"&gt;Apache&amp;nbsp;Thrift&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://avro.apache.org/"&gt;Apache&amp;nbsp;Avro&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some people also like to use &lt;span class="caps"&gt;SOAP&lt;/span&gt;, &lt;span class="caps"&gt;XML&lt;/span&gt;-&lt;span class="caps"&gt;RPC&lt;/span&gt;, &lt;span class="caps"&gt;JSON&lt;/span&gt;-&lt;span class="caps"&gt;RPC&lt;/span&gt; etc. I have attempted to
+cover the (mis)use of &lt;span class="caps"&gt;HTTP&lt;/span&gt;/&lt;span class="caps"&gt;REST&lt;/span&gt; as a &lt;span class="caps"&gt;SOA&lt;/span&gt; protocol in this&amp;nbsp;article.&lt;/p&gt;
+&lt;p&gt;Consider 2 clients accessing a web front-end for some data. The web frontend
+server is responsible for some preprocessing (authentication etc.) and
+post-processing (aggregation etc.) tasks. The heavy lifting is done by our
+backend&amp;nbsp;service.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SOA-Image" src="http://www.j4nu5.com/images/soa.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Let us say Client1 came first and requested for Data1. The web frontend
+performs some preprocessing on the request and forwards it to our backend
+service over &lt;span class="caps"&gt;HTTP&lt;/span&gt;. Meanwhile Client2 came along and requested for Data2. Now,
+if our backend service has not yet returned with Client1&amp;#8217;s request, the web
+frontend cannot re-use(multiplex) the &lt;span class="caps"&gt;TCP&lt;/span&gt; connection between itself and our
+backend service. It will need to create a new &lt;span class="caps"&gt;TCP&lt;/span&gt; connection for each
+concurrent request which is extremely wasteful.
+&lt;a class="reference external" href="http://www.chromium.org/spdy/spdy-protocol/spdy-protocol-draft2"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; has
+tried to address the multiplexing issue but it may be a bit away from
+production grade quality&amp;nbsp;yet.&lt;/p&gt;
+&lt;p&gt;Another problem is &lt;span class="caps"&gt;HTTP&lt;/span&gt;/1.1&amp;#8217;s use of &lt;span class="caps"&gt;ASCII&lt;/span&gt;. Sure it makes things easier to
+debug but again is wasteful in &lt;span class="caps"&gt;SOA&lt;/span&gt;. Ideally we want a tightly packed binary&amp;nbsp;protocol.&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;HTTP&lt;/span&gt;/1.1&amp;#8217;s statelessness is another cause of worries. It is simply wasteful
+to send the same set of headers for similar requests. Again, &lt;span class="caps"&gt;SPDY&lt;/span&gt; and &lt;span class="caps"&gt;HTTP&lt;/span&gt;/2.0
+are trying header compression and may be worth
+&lt;a class="reference external" href="http://chimera.labs.oreilly.com/books/1230000000545/ch12.html#HTTP2_HEADER_COMPRESSION"&gt;looking into&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;&lt;span class="caps"&gt;HTTP&lt;/span&gt;/1.1 is an excellent protocol for a traditional client/server model. It is
+an &lt;span class="caps"&gt;ASCII&lt;/span&gt; protocol, hence it is easy to debug. It is fairly well known, has a
+number of supporting libraries in almost all major languages and provides a
+useful set of primitives and verbs for almost all of your data transfer needs.
+However, please do not use it if you are creating a production grade &lt;span class="caps"&gt;SOA&lt;/span&gt;&amp;nbsp;application.&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Kushagra Sinha</dc:creator><pubDate>Sun, 16 Nov 2014 00:00:00 +0530</pubDate><guid>tag:www.j4nu5.com,2014-11-16:implementing-service-oriented-architecture-soa-using-http-is-a-horrible-idea.html</guid><category>programming</category><category>infrastructure</category></item><item><title>The toughest interview question</title><link>http://www.j4nu5.com/the-toughest-interview-question.html</link><description>&lt;p&gt;What is the output of the following C code&amp;nbsp;snippet?&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;%d %d %d&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
