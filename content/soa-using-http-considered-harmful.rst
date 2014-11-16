@@ -45,11 +45,12 @@ Let us say Client1 came first and requested for Data1. The web frontend
 performs some preprocessing on the request and forwards it to our backend
 service over HTTP. Meanwhile Client2 came along and requested for Data2. Now,
 if our backend service has not yet returned with Client1's request, the web
-frontend cannot re-use(multiplex) the TCP connection between itself and our
-backend service. It will need to create a new TCP connection for each
-concurrent request which is extremely wasteful.
-`SPDY <http://www.chromium.org/spdy/spdy-protocol/spdy-protocol-draft2>`_ has
-tried to address the multiplexing issue but it may be a bit away from
+frontend cannot effectively re-use (multiplex) the TCP connection between
+itself and our backend service since the HTTP protocol requires servers to
+return responses in the same order as requests. Our web frontend will need to
+create a new TCP connection for each concurrent request which is extremely
+wasteful. `SPDY <http://www.chromium.org/spdy/spdy-protocol/spdy-protocol-draft2>`_
+has tried to address the multiplexing issue but it may be a bit away from
 production grade quality yet.
 
 Another problem is HTTP/1.1's use of ASCII. Sure it makes things easier to
