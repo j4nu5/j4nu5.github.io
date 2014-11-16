@@ -31,11 +31,12 @@ backend&amp;nbsp;service.&lt;/p&gt;
 performs some preprocessing on the request and forwards it to our backend
 service over &lt;span class="caps"&gt;HTTP&lt;/span&gt;. Meanwhile Client2 came along and requested for Data2. Now,
 if our backend service has not yet returned with Client1&amp;#8217;s request, the web
-frontend cannot re-use(multiplex) the &lt;span class="caps"&gt;TCP&lt;/span&gt; connection between itself and our
-backend service. It will need to create a new &lt;span class="caps"&gt;TCP&lt;/span&gt; connection for each
-concurrent request which is extremely wasteful.
-&lt;a class="reference external" href="http://www.chromium.org/spdy/spdy-protocol/spdy-protocol-draft2"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt; has
-tried to address the multiplexing issue but it may be a bit away from
+frontend cannot effectively re-use (multiplex) the &lt;span class="caps"&gt;TCP&lt;/span&gt; connection between
+itself and our backend service since the &lt;span class="caps"&gt;HTTP&lt;/span&gt; protocol requires servers to
+return responses in the same order as requests. Our web frontend will need to
+create a new &lt;span class="caps"&gt;TCP&lt;/span&gt; connection for each concurrent request which is extremely
+wasteful. &lt;a class="reference external" href="http://www.chromium.org/spdy/spdy-protocol/spdy-protocol-draft2"&gt;&lt;span class="caps"&gt;SPDY&lt;/span&gt;&lt;/a&gt;
+has tried to address the multiplexing issue but it may be a bit away from
 production grade quality&amp;nbsp;yet.&lt;/p&gt;
 &lt;p&gt;Another problem is &lt;span class="caps"&gt;HTTP&lt;/span&gt;/1.1&amp;#8217;s use of &lt;span class="caps"&gt;ASCII&lt;/span&gt;. Sure it makes things easier to
 debug but again is wasteful in &lt;span class="caps"&gt;SOA&lt;/span&gt;. Ideally we want a tightly packed binary&amp;nbsp;protocol.&lt;/p&gt;

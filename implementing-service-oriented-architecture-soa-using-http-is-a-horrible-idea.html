@@ -79,11 +79,12 @@ backend&nbsp;service.</p>
 performs some preprocessing on the request and forwards it to our backend
 service over <span class="caps">HTTP</span>. Meanwhile Client2 came along and requested for Data2. Now,
 if our backend service has not yet returned with Client1&#8217;s request, the web
-frontend cannot re-use(multiplex) the <span class="caps">TCP</span> connection between itself and our
-backend service. It will need to create a new <span class="caps">TCP</span> connection for each
-concurrent request which is extremely wasteful.
-<a class="reference external" href="http://www.chromium.org/spdy/spdy-protocol/spdy-protocol-draft2"><span class="caps">SPDY</span></a> has
-tried to address the multiplexing issue but it may be a bit away from
+frontend cannot effectively re-use (multiplex) the <span class="caps">TCP</span> connection between
+itself and our backend service since the <span class="caps">HTTP</span> protocol requires servers to
+return responses in the same order as requests. Our web frontend will need to
+create a new <span class="caps">TCP</span> connection for each concurrent request which is extremely
+wasteful. <a class="reference external" href="http://www.chromium.org/spdy/spdy-protocol/spdy-protocol-draft2"><span class="caps">SPDY</span></a>
+has tried to address the multiplexing issue but it may be a bit away from
 production grade quality&nbsp;yet.</p>
 <p>Another problem is <span class="caps">HTTP</span>/1.1&#8217;s use of <span class="caps">ASCII</span>. Sure it makes things easier to
 debug but again is wasteful in <span class="caps">SOA</span>. Ideally we want a tightly packed binary&nbsp;protocol.</p>
