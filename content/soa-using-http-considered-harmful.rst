@@ -1,5 +1,5 @@
-Implementing Service Oriented Architecture (SOA) using HTTP is a horrible idea
-##############################################################################
+Implementing Service Oriented Architecture using Http is a horrible idea
+########################################################################
 
 :date: 2014-11-16
 :tags: programming, infrastructure
