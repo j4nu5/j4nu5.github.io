@@ -1,5 +1,6 @@
 Title: Abstract Classes and Factory Design Pattern in Python
 Date: 2013-12-19
+Modified: 2016-03-27
 Category: Programming
 Tags: python, programming
 
@@ -181,7 +182,7 @@ How do we take care of the ugly if-elif chain? Thats where the Factory pattern c
         }
 
         @staticmethod
-        def get_share_obj(self, name, *args, **kwargs):
+        def get_share_obj(name, *args, **kwargs):
            share_class = SocialShareFactory.__share_classes.get(name.lower(), None)
 
             if share_class:
