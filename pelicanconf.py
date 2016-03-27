@@ -19,8 +19,6 @@ TRANSLATION_FEED_ATOM = None
 
 # Blogroll
 LINKS = (
-    ('MobStac', 'http://www.mobstac.com/'),
-    ("MobStac's blog", 'http://blog.mobstac.com/'),
 )
 
 # Social widget
@@ -44,16 +42,15 @@ DEFAULT_PAGINATION = 5
 PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
-THEME = "pelican-sober"
+THEME = "svbhack"
 
-PELICAN_SOBER_ABOUT = "Kushagra Sinha. Software Engineer at MobStac. Love python, distributed systems, reading and sleeping."
-PELICAN_SOBER_STICKY_SIDEBAR = True
+USER_LOGO_URL = SITEURL + '/images/pic.jpeg'
 
 TYPOGRIFY = True
 
-PLUGIN_PATHS = ["/Users/j4nu5/pelican-plugins"]
+PLUGIN_PATHS = ["/home/kushagra/workspace/pelican-plugins"]
 PLUGINS = ["sitemap"]
 
 SITEMAP = {
