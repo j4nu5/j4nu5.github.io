@@ -35,15 +35,20 @@ SOCIAL = (
 )
 
 STATIC_PATHS = ['images', 'extra']
+ARTICLE_EXCLUDES = ['extra']
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/README.md': {'path': 'README.md'},
     'extra/favicon.ico': {'path': 'favicon.ico'},
     'extra/googlea6407f1c0fbf99ee.html': {'path': 'googlea6407f1c0fbf99ee.html'},
 }
+READERS = {
+    'html': None,
+}
 
 DEFAULT_PAGINATION = 5
 MAIN_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = True
 
 PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 
