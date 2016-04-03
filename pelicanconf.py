@@ -4,7 +4,10 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Kushagra Sinha'
 SITENAME = u'The Janus List'
+SITETITLE = u'The Janus List'
+SITEDESCRIPTION = 'Personal blog of Kushagra Sinha'
 SITEURL = ''
+SITELOGO = SITEURL + '/images/pic.jpeg'
 
 PATH = 'content'
 
@@ -23,10 +26,12 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-    ('Twitter', 'https://twitter.com/j4nu5'),
-    ('LinkedIn', 'https://www.linkedin.com/in/sinhakushagra'),
-    ('GitHub', 'https://github.com/j4nu5/'),
-    ('Google+', 'https://plus.google.com/+KushagraSinha/'),
+    ('twitter', 'https://twitter.com/j4nu5'),
+    ('linkedin', 'https://www.linkedin.com/in/sinhakushagra'),
+    ('github', 'https://github.com/j4nu5/'),
+    ('google', 'https://plus.google.com/+KushagraSinha/'),
+    ('envelope-o', 'mailto:kush@j4nu5.com'),
+    ('rss', FEED_ALL_ATOM),
 )
 
 STATIC_PATHS = ['images', 'extra']
@@ -38,13 +43,14 @@ EXTRA_PATH_METADATA = {
 }
 
 DEFAULT_PAGINATION = 5
+MAIN_MENU = True
 
 PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-THEME = "svbhack"
+THEME = "Flex"
 
 USER_LOGO_URL = SITEURL + '/images/pic.jpeg'
 
