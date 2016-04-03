@@ -37,7 +37,7 @@ SOCIAL = (
     ('github', 'https://github.com/j4nu5/'),
     ('google', 'https://plus.google.com/+KushagraSinha/'),
     ('envelope-o', 'mailto:kush@j4nu5.com'),
-    ('rss', FEED_ALL_ATOM),
+    ('rss', '/feeds/all.atom.xml'),
 )
 
 STATIC_PATHS = ['images', 'extra']
