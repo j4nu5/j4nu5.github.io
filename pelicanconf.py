@@ -24,6 +24,12 @@ TRANSLATION_FEED_ATOM = None
 LINKS = (
 )
 
+MENUITEMS = (
+    ('Archives', '/archives.html'),
+    ('Categories', '/categories.html'),
+    ('Tags', '/tags.html'),
+)
+
 # Social widget
 SOCIAL = (
     ('twitter', 'https://twitter.com/j4nu5'),
