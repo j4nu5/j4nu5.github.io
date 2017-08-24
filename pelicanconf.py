@@ -67,7 +67,7 @@ USER_LOGO_URL = SITEURL + '/images/pic.jpeg'
 
 TYPOGRIFY = True
 
-PLUGIN_PATHS = ["/home/kushagra/workspace/pelican-plugins"]
+PLUGIN_PATHS = ["/home/sinhak/code/pelican-plugins"]
 PLUGINS = ["sitemap", "gist_directive"]
 
 SITEMAP = {

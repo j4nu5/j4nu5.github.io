@@ -3,8 +3,7 @@ Title: About
 
 Hi! I am Kushagra Sinha.
 
-I am currently working as a Core Platform Engineer for a startup in Banglore
-called [MobStac](http://www.mobstac.com).
+I am currently a Software Engineer at Google.
 
 I enjoy programming, reading and sleeping.
 
