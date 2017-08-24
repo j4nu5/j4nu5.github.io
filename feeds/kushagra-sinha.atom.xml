@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>The Janus List</title><link href="http://www.j4nu5.com/" rel="alternate"></link><link href="http://www.j4nu5.com/feeds/kushagra-sinha.atom.xml" rel="self"></link><id>http://www.j4nu5.com/</id><updated>2016-03-28T00:00:00+05:30</updated><entry><title>USACO setup</title><link href="http://www.j4nu5.com/usaco-setup.html" rel="alternate"></link><updated>2016-03-28T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2016-03-28:usaco-setup.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://www.usaco.org/"&gt;&lt;span class="caps"&gt;USACO&lt;/span&gt;&lt;/a&gt; is fun. Though it is fairly easy to get up
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The Janus List - Kushagra Sinha</title><link href="http://www.j4nu5.com/" rel="alternate"></link><link href="http://www.j4nu5.com/feeds/kushagra-sinha.atom.xml" rel="self"></link><id>http://www.j4nu5.com/</id><updated>2017-08-24T00:00:00+05:30</updated><entry><title>Pelican Setup</title><link href="http://www.j4nu5.com/pelican-setup.html" rel="alternate"></link><published>2017-08-24T00:00:00+05:30</published><updated>2017-08-24T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2017-08-24:/pelican-setup.html</id><summary type="html">&lt;p&gt;Install&amp;nbsp;Pelican:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip install pelican Markdown typogrify
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Install Pelican&amp;nbsp;themes&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://github.com/getpelican/pelican-themes
+sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex
+sudo chmod &lt;span class="m"&gt;755&lt;/span&gt; /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Install Pelican&amp;nbsp;plugins&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone …&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><content type="html">&lt;p&gt;Install&amp;nbsp;Pelican:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip install pelican Markdown typogrify
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Install Pelican&amp;nbsp;themes&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://github.com/getpelican/pelican-themes
+sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex
+sudo chmod &lt;span class="m"&gt;755&lt;/span&gt; /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Install Pelican&amp;nbsp;plugins&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://github.com/getpelican/pelican-plugins
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Fetch blog&amp;nbsp;sources&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone git@github.com:j4nu5/j4nu5.github.io.git
+&lt;span class="nb"&gt;cd&lt;/span&gt; j4nu5.github.io.git
+git fetch
+git checkout &lt;span class="nb"&gt;source&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Setup for&amp;nbsp;development&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir cache output
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Verify plugins&amp;nbsp;root&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;grep PLUGIN_PATHS pelicanconf.py
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Install Github&amp;nbsp;pages&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip install ghp-import
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Check out the scripts and the&amp;nbsp;Makefile&lt;/p&gt;
+</content><category term="setup"></category></entry><entry><title>USACO setup</title><link href="http://www.j4nu5.com/usaco-setup.html" rel="alternate"></link><published>2016-03-28T00:00:00+05:30</published><updated>2016-03-28T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2016-03-28:/usaco-setup.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://www.usaco.org/"&gt;&lt;span class="caps"&gt;USACO&lt;/span&gt;&lt;/a&gt; is fun. Though it is fairly easy to get up
+and running on the platform, there remain a few repetitive steps during
+problem solving that can be automated. Here is a brief summary of my
+automation&amp;nbsp;steps:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Use a template. &lt;a class="reference external" href="https://gist.github.com/j4nu5/d2b23dcdc20c9de48715"&gt;Here&lt;/a&gt;
+is mine. Save it as &lt;cite&gt;template.cpp&lt;/cite&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1 …&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="http://www.usaco.org/"&gt;&lt;span class="caps"&gt;USACO&lt;/span&gt;&lt;/a&gt; is fun. Though it is fairly easy to get up
 and running on the platform, there remain a few repetitive steps during
 problem solving that can be automated. Here is a brief summary of my
 automation&amp;nbsp;steps:&lt;/p&gt;
@@ -146,13 +197,21 @@ Whenever you&amp;#8217;re ready to begin coding a solution, simply execute
 &lt;cite&gt;./solve.sh PROBLEM_NAME&lt;/cite&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;All the&amp;nbsp;best!&lt;/p&gt;
-</summary><category term="programming"></category><category term="usaco"></category></entry><entry><title>Hello USACO</title><link href="http://www.j4nu5.com/hello-usaco.html" rel="alternate"></link><updated>2016-03-27T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2016-03-27:hello-usaco.html</id><summary type="html">&lt;p&gt;I love competitive programming. I love the anticipation while I wait with my
+</content><category term="programming"></category><category term="usaco"></category></entry><entry><title>Hello USACO</title><link href="http://www.j4nu5.com/hello-usaco.html" rel="alternate"></link><published>2016-03-27T00:00:00+05:30</published><updated>2016-03-27T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2016-03-27:/hello-usaco.html</id><summary type="html">&lt;p&gt;I love competitive programming. I love the anticipation while I wait with my
+fingers crossed after submitting a solution. And the rush that follows after
+getting an &amp;#8216;&lt;span class="caps"&gt;AC&lt;/span&gt;&amp;#8217;.&lt;/p&gt;
+&lt;p&gt;After stagnating near the 60-70th percentile for eons, I have decided to
+dedicate focused practice time for competitive programming. The next series …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I love competitive programming. I love the anticipation while I wait with my
 fingers crossed after submitting a solution. And the rush that follows after
 getting an &amp;#8216;&lt;span class="caps"&gt;AC&lt;/span&gt;&amp;#8217;.&lt;/p&gt;
 &lt;p&gt;After stagnating near the 60-70th percentile for eons, I have decided to
 dedicate focused practice time for competitive programming. The next series
 of blog posts will track my journey through &lt;a href="http://www.usaco.org/"&gt;&lt;span class="caps"&gt;USACO&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;All the best to&amp;nbsp;me!&lt;/p&gt;</summary><category term="programming"></category><category term="usaco"></category></entry><entry><title>Facebook Hacker Cup 2015 Qualification Round Solutions</title><link href="http://www.j4nu5.com/facebook-hacker-cup-2015-qualification-round-solutions.html" rel="alternate"></link><updated>2015-01-12T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2015-01-12:facebook-hacker-cup-2015-qualification-round-solutions.html</id><summary type="html">&lt;p&gt;Facebook recently organized the qualification round of Hacker Cup 2015. They
+&lt;p&gt;All the best to&amp;nbsp;me!&lt;/p&gt;</content><category term="programming"></category><category term="usaco"></category></entry><entry><title>Facebook Hacker Cup 2015 Qualification Round Solutions</title><link href="http://www.j4nu5.com/facebook-hacker-cup-2015-qualification-round-solutions.html" rel="alternate"></link><published>2015-01-12T00:00:00+05:30</published><updated>2015-01-12T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2015-01-12:/facebook-hacker-cup-2015-qualification-round-solutions.html</id><summary type="html">&lt;p&gt;Facebook recently organized the qualification round of Hacker Cup 2015. They
+posed some interesting problems and anyone who could get at least one problem
+right can move to the next&amp;nbsp;round.&lt;/p&gt;
+&lt;p&gt;I managed to get a rank of 217, with a perfect score of 100. I have posted my
+solutions …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Facebook recently organized the qualification round of Hacker Cup 2015. They
 posed some interesting problems and anyone who could get at least one problem
 right can move to the next&amp;nbsp;round.&lt;/p&gt;
 &lt;p&gt;I managed to get a rank of 217, with a perfect score of 100. I have posted my
@@ -752,7 +811,10 @@ all lasers turn simultaneously and can have only 4 possible&amp;nbsp;states.&lt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;As always, comments are&amp;nbsp;welcome.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="programming"></category><category term="facebook hackercup 2015"></category></entry><entry><title>Generating Power Set</title><link href="http://www.j4nu5.com/generating-power-set.html" rel="alternate"></link><updated>2015-01-05T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2015-01-05:generating-power-set.html</id><summary type="html">&lt;p&gt;Iterating over all possible subsets of a set is a problem that can arise not
+</content><category term="programming"></category><category term="facebook hackercup 2015"></category></entry><entry><title>Generating Power Set</title><link href="http://www.j4nu5.com/generating-power-set.html" rel="alternate"></link><published>2015-01-05T00:00:00+05:30</published><updated>2015-01-05T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2015-01-05:/generating-power-set.html</id><summary type="html">&lt;p&gt;Iterating over all possible subsets of a set is a problem that can arise not
+only in competitive programming but also in day-to-day programming. While the
+total number of possible subsets is quite huge (&lt;cite&gt;2^n&lt;/cite&gt; where &lt;cite&gt;n&lt;/cite&gt; is the
+cardinality of the input set), often we want an algorithm …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iterating over all possible subsets of a set is a problem that can arise not
 only in competitive programming but also in day-to-day programming. While the
 total number of possible subsets is quite huge (&lt;cite&gt;2^n&lt;/cite&gt; where &lt;cite&gt;n&lt;/cite&gt; is the
 cardinality of the input set), often we want an algorithm that systematically
@@ -954,7 +1016,11 @@ algorithms for power set generation. I hope I have provided a decent coverage
 of the most popular&amp;nbsp;ones.&lt;/p&gt;
 &lt;p&gt;As always, comments are&amp;nbsp;welcome.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="programming"></category></entry><entry><title>Implementing Service Oriented Architecture using Http is a horrible idea</title><link href="http://www.j4nu5.com/implementing-service-oriented-architecture-using-http-is-a-horrible-idea.html" rel="alternate"></link><updated>2014-11-16T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2014-11-16:implementing-service-oriented-architecture-using-http-is-a-horrible-idea.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Service-oriented_architecture"&gt;Service Oriented Architecture&lt;/a&gt;
+</content><category term="programming"></category></entry><entry><title>Implementing Service Oriented Architecture using Http is a horrible idea</title><link href="http://www.j4nu5.com/implementing-service-oriented-architecture-using-http-is-a-horrible-idea.html" rel="alternate"></link><published>2014-11-16T00:00:00+05:30</published><updated>2014-11-16T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2014-11-16:/implementing-service-oriented-architecture-using-http-is-a-horrible-idea.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Service-oriented_architecture"&gt;Service Oriented Architecture&lt;/a&gt;
+is a commonly used design pattern in distributed and enterprise applications.
+It involves the creation and use of independent &lt;em&gt;services&lt;/em&gt; that work together
+to produce the desired result. The most important benefits, of course, are
+separation of concerns and the ability to scale each service independent of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Service-oriented_architecture"&gt;Service Oriented Architecture&lt;/a&gt;
 is a commonly used design pattern in distributed and enterprise applications.
 It involves the creation and use of independent &lt;em&gt;services&lt;/em&gt; that work together
 to produce the desired result. The most important benefits, of course, are
@@ -1007,7 +1073,13 @@ number of supporting libraries in almost all major languages and provides a
 useful set of primitives and verbs for almost all of your data transfer needs.
 However, please do not use it if you are creating a production grade &lt;span class="caps"&gt;SOA&lt;/span&gt;&amp;nbsp;application.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="programming"></category><category term="infrastructure"></category></entry><entry><title>The toughest interview question</title><link href="http://www.j4nu5.com/the-toughest-interview-question.html" rel="alternate"></link><updated>2014-07-29T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2014-07-29:the-toughest-interview-question.html</id><summary type="html">&lt;p&gt;What is the output of the following C code&amp;nbsp;snippet?&lt;/p&gt;
+</content><category term="programming"></category><category term="infrastructure"></category></entry><entry><title>The toughest interview question</title><link href="http://www.j4nu5.com/the-toughest-interview-question.html" rel="alternate"></link><published>2014-07-29T00:00:00+05:30</published><updated>2014-07-29T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2014-07-29:/the-toughest-interview-question.html</id><summary type="html">&lt;p&gt;What is the output of the following C code&amp;nbsp;snippet?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;%d %d %d&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is a tricky question. Any attempt to answer this question requires either
+a deep understanding of your compiler&amp;#8217;s parser or a complete ignorance of C.
+Even …&lt;/p&gt;</summary><content type="html">&lt;p&gt;What is the output of the following C code&amp;nbsp;snippet?&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;%d %d %d&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1045,7 +1117,13 @@ this&amp;nbsp;book.&lt;/p&gt;
 &lt;p&gt;This is a sad state of affairs. Mainly because the people who &lt;em&gt;actually&lt;/em&gt; know
 C are &lt;em&gt;never&lt;/em&gt; able to answer this question correctly. If you are one of them,
 Congrats! You are on the right path towards mastering&amp;nbsp;C.&lt;/p&gt;
-</summary><category term="programming"></category><category term="interviews"></category></entry><entry><title>In search of the perfect blogging platform</title><link href="http://www.j4nu5.com/in-search-of-the-perfect-blogging-platform.html" rel="alternate"></link><updated>2014-07-23T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2014-07-23:in-search-of-the-perfect-blogging-platform.html</id><summary type="html">&lt;p&gt;What makes a good blogging&amp;nbsp;platform?&lt;/p&gt;
+</content><category term="programming"></category><category term="interviews"></category></entry><entry><title>In search of the perfect blogging platform</title><link href="http://www.j4nu5.com/in-search-of-the-perfect-blogging-platform.html" rel="alternate"></link><published>2014-07-23T00:00:00+05:30</published><updated>2014-07-23T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2014-07-23:/in-search-of-the-perfect-blogging-platform.html</id><summary type="html">&lt;p&gt;What makes a good blogging&amp;nbsp;platform?&lt;/p&gt;
+&lt;p&gt;Leaving the tech details, feature lists and other bells and whistles
+aside, a good blogging platform&amp;#8217;s primary aim is&amp;nbsp;twofold:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Make blogging enjoyable. Entice the blogger into writing more&amp;nbsp;articles.&lt;/li&gt;
+&lt;li&gt;Make reading enjoyable. The output of the blogging platform should be easy
+to …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;What makes a good blogging&amp;nbsp;platform?&lt;/p&gt;
 &lt;p&gt;Leaving the tech details, feature lists and other bells and whistles
 aside, a good blogging platform&amp;#8217;s primary aim is&amp;nbsp;twofold:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
@@ -1088,7 +1166,12 @@ found &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pel
 for themes and integrates with GitHub Pages with minimal effort from one&amp;#8217;s&amp;nbsp;side.&lt;/p&gt;
 &lt;p&gt;The results of half a day of hacking is this&amp;nbsp;blog.&lt;/p&gt;
 &lt;p&gt;Thanks for reading. Comments are&amp;nbsp;welcome.&lt;/p&gt;
-</summary><category term="musings"></category><category term="misc"></category></entry><entry><title>Abstract Classes and Factory Design Pattern in Python</title><link href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html" rel="alternate"></link><updated>2016-03-27T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2013-12-19:abstract-classes-and-factory-design-pattern-in-python.html</id><summary type="html">&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete"&gt;Abstract Classes&lt;/a&gt;
+</content><category term="musings"></category><category term="misc"></category></entry><entry><title>Abstract Classes and Factory Design Pattern in Python</title><link href="http://www.j4nu5.com/abstract-classes-and-factory-design-pattern-in-python.html" rel="alternate"></link><published>2013-12-19T00:00:00+05:30</published><updated>2016-03-27T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2013-12-19:/abstract-classes-and-factory-design-pattern-in-python.html</id><summary type="html">&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete"&gt;Abstract Classes&lt;/a&gt;
+are one of the most useful and important concepts in Object Oriented
+Programming. I&amp;#8217;ll attempt to illustrate their usefulness, and their usage in
+Python 2.7 with the following (seemingly contrived)&amp;nbsp;example:&lt;/p&gt;
+&lt;p&gt;Let us say, you want/have to implement posting updates on Facebook using
+Python. Your …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete"&gt;Abstract Classes&lt;/a&gt;
 are one of the most useful and important concepts in Object Oriented
 Programming. I&amp;#8217;ll attempt to illustrate their usefulness, and their usage in
 Python 2.7 with the following (seemingly contrived)&amp;nbsp;example:&lt;/p&gt;
@@ -1184,10 +1267,10 @@ the abc module, but has not changed the core syntax of the&amp;nbsp;language.&lt
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;abc&lt;/span&gt;
 
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;AbstractSocialShare&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;__metaclass__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ABCMeta&lt;/span&gt;
+    &lt;span class="vm"&gt;__metaclass__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ABCMeta&lt;/span&gt;
 
     &lt;span class="nd"&gt;@abc.abstractmethod&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;pass&lt;/span&gt;
 
     &lt;span class="nd"&gt;@abc.abstractmethod&lt;/span&gt;
@@ -1196,7 +1279,7 @@ the abc module, but has not changed the core syntax of the&amp;nbsp;language.&lt
 
 
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;FacebookShare&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;AbstractSocialShare&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="c1"&gt;# Initialize Facebook OAuth&lt;/span&gt;
         &lt;span class="o"&gt;...&lt;/span&gt;
 
@@ -1206,7 +1289,7 @@ the abc module, but has not changed the core syntax of the&amp;nbsp;language.&lt
 
 
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TwitterShare&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;AbstractSocialShare&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="c1"&gt;# Initialize Twitter OAuth&lt;/span&gt;
         &lt;span class="o"&gt;...&lt;/span&gt;
 
@@ -1224,7 +1307,7 @@ the abc module, but has not changed the core syntax of the&amp;nbsp;language.&lt
 &lt;p&gt;You will receive a&amp;nbsp;TypeError.&lt;/p&gt;
 &lt;p&gt;Now try creating and instantiating this&amp;nbsp;class:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;IncorrectShare&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;AbstractSocialShare&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="o"&gt;...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1256,7 +1339,11 @@ the abc module, but has not changed the core syntax of the&amp;nbsp;language.&lt
 
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Python is an interpreted language which supports and encourages duck typing. Abstract classes may seem superficial in such a language but as I have attempted to illustrate above, they vastly improve code maintainability and&amp;nbsp;reuse.&lt;/p&gt;
-&lt;p&gt;Comments are&amp;nbsp;welcome!&lt;/p&gt;</summary><category term="python"></category><category term="programming"></category></entry><entry><title>New Year Resolutions and Nostalgia</title><link href="http://www.j4nu5.com/new-year-resolutions-and-nostalgia.html" rel="alternate"></link><updated>2013-01-01T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2013-01-01:new-year-resolutions-and-nostalgia.html</id><summary type="html">&lt;p&gt;I was going through this &lt;a href="http://mitadmissions.org/blogs/entry/50_things"&gt;link&lt;/a&gt; today when I could not help but feel an
+&lt;p&gt;Comments are&amp;nbsp;welcome!&lt;/p&gt;</content><category term="python"></category><category term="programming"></category></entry><entry><title>New Year Resolutions and Nostalgia</title><link href="http://www.j4nu5.com/new-year-resolutions-and-nostalgia.html" rel="alternate"></link><published>2013-01-01T00:00:00+05:30</published><updated>2013-01-01T00:00:00+05:30</updated><author><name>Kushagra Sinha</name></author><id>tag:www.j4nu5.com,2013-01-01:/new-year-resolutions-and-nostalgia.html</id><summary type="html">&lt;p&gt;I was going through this &lt;a href="http://mitadmissions.org/blogs/entry/50_things"&gt;link&lt;/a&gt; today when I could not help but feel an
+overwhelming sense of sadness and&amp;nbsp;incompleteness.&lt;/p&gt;
+&lt;p&gt;I will be graduating in May, 2013 from the Indian Institute of Technology,
+Varanasi. The best 4 years of my life already behind me. As I was going
+through …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I was going through this &lt;a href="http://mitadmissions.org/blogs/entry/50_things"&gt;link&lt;/a&gt; today when I could not help but feel an
 overwhelming sense of sadness and&amp;nbsp;incompleteness.&lt;/p&gt;
 &lt;p&gt;I will be graduating in May, 2013 from the Indian Institute of Technology,
 Varanasi. The best 4 years of my life already behind me. As I was going
@@ -1265,4 +1352,4 @@ others I wish I had done in a better fashion and many still that I have to&amp;n
 &lt;p&gt;One of the things, though not on the above list has been this blog, which I had
 been procrastinating about for nearly a couple of years. So, here goes nothing&amp;nbsp;&amp;#8230;&lt;/p&gt;
 &lt;p&gt;Hope to start this New Year with resolutions and promises&amp;nbsp;fulfilled.&lt;/p&gt;
-&lt;p&gt;Thanks for&amp;nbsp;reading!&lt;/p&gt;</summary><category term="new year resolutions"></category><category term="nostalgia"></category></entry></feed>
+&lt;p&gt;Thanks for&amp;nbsp;reading!&lt;/p&gt;</content><category term="new year resolutions"></category><category term="nostalgia"></category></entry></feed>
