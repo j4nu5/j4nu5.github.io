@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Janus List</title>
+    <link>https://www.j4nu5.com/</link>
+    <description>Recent content on The Janus List</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Jan 2015 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.j4nu5.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Facebook Hacker Cup 2015 Qualification Round Solutions</title>
+      <link>https://www.j4nu5.com/post/facebook-hackercup-2015-qualifications/</link>
+      <pubDate>Mon, 12 Jan 2015 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.j4nu5.com/post/facebook-hackercup-2015-qualifications/</guid>
+      <description>Facebook recently organized the qualification round of Hacker Cup 2015. They posed some interesting problems and anyone who could get at least one problem right can move to the next round.
+I managed to get a rank of 217, with a perfect score of 100. I have posted my solutions below with a little bit of commentary. You can access the problems here.
+Cooking the Books (15 points) This was the easiest question.</description>
+    </item>
+    
+    <item>
+      <title>Generating Power Set</title>
+      <link>https://www.j4nu5.com/post/generating-power-set/</link>
+      <pubDate>Mon, 05 Jan 2015 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.j4nu5.com/post/generating-power-set/</guid>
+      <description>Iterating over all possible subsets of a set is a problem that can arise not only in competitive programming but also in day-to-day programming. While the total number of possible subsets is quite huge (2^n where n is the cardinality of the input set), often we want an algorithm that systematically considers all subsets for small values of n.
+A power set is a set of all subsets of a given input set.</description>
+    </item>
+    
+    <item>
+      <title>Abstract Classes and Factory Design Pattern in Python</title>
+      <link>https://www.j4nu5.com/post/abstract-classes-and-factory-design-pattern-in-python/</link>
+      <pubDate>Thu, 19 Dec 2013 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.j4nu5.com/post/abstract-classes-and-factory-design-pattern-in-python/</guid>
+      <description>Abstract Classes are one of the most useful and important concepts in Object Oriented Programming. I&amp;rsquo;ll attempt to illustrate their usefulness, and their usage in Python 2.7 with the following (seemingly contrived) example:
+Let us say, you want/have to implement posting updates on Facebook using Python. Your code might look something like this:
+1 2 3 4 5 6 7 8 9  # Attempt 0: Bad code. def facebook_share_init(*args, **kwargs): # Initialize OAuth with facebook # .</description>
+    </item>
+    
+  </channel>
+</rss>

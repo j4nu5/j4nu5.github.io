@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on The Janus List</title>
+    <link>https://www.j4nu5.com/categories/development/</link>
+    <description>Recent content in Development on The Janus List</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Dec 2013 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.j4nu5.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Abstract Classes and Factory Design Pattern in Python</title>
+      <link>https://www.j4nu5.com/post/abstract-classes-and-factory-design-pattern-in-python/</link>
+      <pubDate>Thu, 19 Dec 2013 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.j4nu5.com/post/abstract-classes-and-factory-design-pattern-in-python/</guid>
+      <description>Abstract Classes are one of the most useful and important concepts in Object Oriented Programming. I&amp;rsquo;ll attempt to illustrate their usefulness, and their usage in Python 2.7 with the following (seemingly contrived) example:
+Let us say, you want/have to implement posting updates on Facebook using Python. Your code might look something like this:
+1 2 3 4 5 6 7 8 9  # Attempt 0: Bad code. def facebook_share_init(*args, **kwargs): # Initialize OAuth with facebook # .</description>
+    </item>
+    
+  </channel>
+</rss>

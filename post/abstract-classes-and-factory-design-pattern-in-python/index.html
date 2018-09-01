@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Kushagra Sinha">
+    <meta name="description" content="Kushagra Sinha&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="https://www.j4nu5.com/">
+    <title>
+  Abstract Classes and Factory Design Pattern in Python · The Janus List
+</title>
+
+    <link rel="canonical" href="https://www.j4nu5.com/post/abstract-classes-and-factory-design-pattern-in-python/">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://www.j4nu5.com/css/coder.min.eed2c257f04d6434dadb0efa9a2b880efe926b9b1c0041bca61053be8f1cdfa1.css" integrity="sha256-7tLCV/BNZDTa2w76miuIDv6Sa5scAEG8phBTvo8c36E=" media="screen">
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.j4nu5.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.j4nu5.com/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.48-DEV" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://www.j4nu5.com/">
+      The Janus List
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.j4nu5.com/post/">Blog</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Abstract Classes and Factory Design Pattern in Python</h1>
+    </header>
+
+    
+
+<p><a href="http://en.wikipedia.org/wiki/Class_(computer_programming)#Abstract_and_concrete">Abstract Classes</a>
+are one of the most useful and important concepts in Object Oriented
+Programming. I&rsquo;ll attempt to illustrate their usefulness, and their usage in
+Python 2.7 with the following (seemingly contrived) example:</p>
+
+<p>Let us say, you want/have to implement posting updates on Facebook using
+Python. Your code might look something like this:</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007f7f"># Attempt 0: Bad code.</span>
+
+<span style="color:#fff;font-weight:bold">def</span> facebook_share_init(*args, **kwargs):
+    <span style="color:#007f7f"># Initialize OAuth with facebook</span>
+    <span style="color:#007f7f"># ...</span>
+
+<span style="color:#fff;font-weight:bold">def</span> share_on_facebook(*args, **kwargs):
+    <span style="color:#007f7f"># Post to Facebook</span>
+    <span style="color:#007f7f"># ...</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>It works and everyone is happy. Then one day, you decide to support posting
+tweets in your application. You add the following:</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">def</span> twitter_share_init(*args, **kwargs):
+    <span style="color:#007f7f"># Initialize OAuth with twitter</span>
+    <span style="color:#007f7f"># ...</span>
+
+<span style="color:#fff;font-weight:bold">def</span> share_on_twitter(*args, **kwargs):
+    <span style="color:#007f7f"># Post to Twitter</span>
+    <span style="color:#007f7f"># ...</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>and the part of your code which has to figure out the appropriate sharing
+function to call might look something like:</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">if</span> requested_sharing_platform == <span style="color:#0ff;font-weight:bold">&#34;facebook&#34;</span>:
+    facebook_share_init(*args, **kwargs)
+    share_on_facebook(*args, **kwargs)
+<span style="color:#fff;font-weight:bold">elif</span> requested_sharing_platform == <span style="color:#0ff;font-weight:bold">&#34;twitter&#34;</span>:
+    twitter_share_init(*args, **kwargs)
+    share_on_twitter(*args, **kwargs)</code></pre></td></tr></table>
+</div>
+</div>
+<p>Things quickly become complicated when you have to implement Google+ sharing
+for example and you add two more functions and another couple of lines to the
+if-elif chain.</p>
+
+<p>The real fun starts however when someone else in your team decides to
+copy-paste your if-elif chain and 10 days later, when you implement LinkedIn
+sharing, you expand your if-elif chain, but not your colleague&rsquo;s, leading to
+all kinds of problems.</p>
+
+<p>The above problem can be neatly solved using Abstract Classes
+(and the Factory Pattern).</p>
+
+<p>A good rule of thumb in OOP is to &ldquo;program to an interface, not an
+implementation&rdquo;. What this means is to create an abstraction over related
+objects, that enforces a contract between the caller and the callee. For
+example, consider set of classes called Cat, Lion and Dog. A cat meows, dog
+barks and lion roars. But we may see these as special cases of an abstraction
+called speak, which translates to roaring for lions and barking for dogs. Our
+class definitions may look like:</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">class</span> Animal(<span style="color:#fff;font-weight:bold">object</span>):
+    <span style="color:#fff;font-weight:bold">def</span> speak():
+        <span style="color:#fff;font-weight:bold">pass</span>
+
+<span style="color:#fff;font-weight:bold">class</span> Cat(Animal):
+    <span style="color:#fff;font-weight:bold">def</span> speak():
+        <span style="color:#007f7f"># Meow</span>
+
+<span style="color:#fff;font-weight:bold">class</span> Dog(Animal):
+    <span style="color:#fff;font-weight:bold">def</span> speak():
+        <span style="color:#007f7f"># Bark</span>
+
+<span style="color:#fff;font-weight:bold">class</span> Lion(Animal):
+    <span style="color:#fff;font-weight:bold">def</span> speak():
+        <span style="color:#007f7f"># Roar</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The problem with the above approach is that it is not enforcing. We can easily
+create a class like:</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">class</span> Fish(Animal):
+    <span style="color:#fff;font-weight:bold">def</span> swim():
+        ...</code></pre></td></tr></table>
+</div>
+</div>
+<p>Callers of Cat, Dog or Lion can call the speak method without any problem but
+calls to speak method of Fish instances will be delegated to the superclass,
+which might be a problem in real life examples. Ideally we would want users of
+our abstraction to have an iron clad contractual obligation with respect to
+the methods that we have exposed. This is where abstract classes come in.</p>
+
+<p>Python originally did not have support for abstract classes and some people
+still consider them to be unpythonic. Python has decided to take the middle
+path on this (see PEP 3119) and has added support for abstract classes using
+the abc module, but has not changed the core syntax of the language.</p>
+
+<p>Here is how our original problem of social sharing can be solved using abstract classes:</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">32
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">import</span> abc
+
+<span style="color:#fff;font-weight:bold">class</span> AbstractSocialShare(<span style="color:#fff;font-weight:bold">object</span>):
+    __metaclass__ = abc.ABCMeta
+
+    @abc.abstractmethod
+    <span style="color:#fff;font-weight:bold">def</span> __init__(self, *args, **kwargs):
+        <span style="color:#fff;font-weight:bold">pass</span>
+
+    @abc.abstractmethod
+    <span style="color:#fff;font-weight:bold">def</span> share(self, *args, **kwargs):
+        <span style="color:#fff;font-weight:bold">pass</span>
+
+
+<span style="color:#fff;font-weight:bold">class</span> FacebookShare(AbstractSocialShare):
+    <span style="color:#fff;font-weight:bold">def</span> __init__(self, *args, **kwargs):
+        <span style="color:#007f7f"># Initialize Facebook OAuth</span>
+        ...
+
+    <span style="color:#fff;font-weight:bold">def</span> share(self, *args, **kwargs):
+        <span style="color:#007f7f"># Share on Facebook</span>
+        ...
+
+
+<span style="color:#fff;font-weight:bold">class</span> TwitterShare(AbstractSocialShare):
+    <span style="color:#fff;font-weight:bold">def</span> __init__(self, *args, **kwargs):
+        <span style="color:#007f7f"># Initialize Twitter OAuth</span>
+        ...
+
+    <span style="color:#fff;font-weight:bold">def</span> share(self, *args, **kwargs):
+        <span style="color:#007f7f"># Share on Twitter</span>
+        ...</code></pre></td></tr></table>
+</div>
+</div>
+<p>Try creating an object of the abstract class with:</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">obj = AbstractSocialShare()</code></pre></td></tr></table>
+</div>
+</div>
+<p>You will receive a TypeError.</p>
+
+<p>Now try creating and instantiating this class:</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">class</span> IncorrectShare(AbstractSocialShare):
+    <span style="color:#fff;font-weight:bold">def</span> __init__(self, *args, **kwargs):
+        ...</code></pre></td></tr></table>
+</div>
+</div>
+<p>Since IncorrectShare has not implemented the share method, we will not be able to instantiate it.</p>
+
+<p>How do we take care of the ugly if-elif chain? Thats where the Factory pattern comes in.</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">class</span> SocialShareFactory(<span style="color:#fff;font-weight:bold">object</span>):
+    __share_classes = {
+        <span style="color:#0ff;font-weight:bold">&#34;facebook&#34;</span>: FacebookShare,
+        <span style="color:#0ff;font-weight:bold">&#34;twitter&#34;</span>: TwitterShare
+    }
+
+    @staticmethod
+    <span style="color:#fff;font-weight:bold">def</span> get_share_obj(name, *args, **kwargs):
+        share_class = SocialShareFactory.__share_classes.get(name.lower(), None)
+
+        <span style="color:#fff;font-weight:bold">if</span> share_class:
+            <span style="color:#fff;font-weight:bold">return</span> share_class(*args, **kwargs)
+        <span style="color:#fff;font-weight:bold">raise</span> NotImplementedError(<span style="color:#0ff;font-weight:bold">&#34;The requested sharing has not been implemented&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<p>The usage will be something like:</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">obj = SocialShareFactory.get_share_obj(<span style="color:#0ff;font-weight:bold">&#34;facebook&#34;</span>, *args, **kwargs)
+
+obj.share(<span style="color:#0ff;font-weight:bold">&#34;Something&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Python is an interpreted language which supports and encourages duck typing. Abstract classes may seem superficial in such a language but as I have attempted to illustrate above, they vastly improve code maintainability and reuse.</p>
+
+<p>Comments are welcome!</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+     © 2016    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>. 
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
