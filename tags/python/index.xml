@@ -13,10 +13,10 @@
     
     <item>
       <title>Abstract Classes and Factory Design Pattern in Python</title>
-      <link>https://www.j4nu5.com/post/abstract-classes-and-factory-design-pattern-in-python/</link>
+      <link>https://www.j4nu5.com/posts/abstract-classes-and-factory-design-pattern-in-python/</link>
       <pubDate>Thu, 19 Dec 2013 00:00:00 +0100</pubDate>
       
-      <guid>https://www.j4nu5.com/post/abstract-classes-and-factory-design-pattern-in-python/</guid>
+      <guid>https://www.j4nu5.com/posts/abstract-classes-and-factory-design-pattern-in-python/</guid>
       <description>Abstract Classes are one of the most useful and important concepts in Object Oriented Programming. I&amp;rsquo;ll attempt to illustrate their usefulness, and their usage in Python 2.7 with the following (seemingly contrived) example:
 Let us say, you want/have to implement posting updates on Facebook using Python. Your code might look something like this:
 1 2 3 4 5 6 7 8 9  # Attempt 0: Bad code. def facebook_share_init(*args, **kwargs): # Initialize OAuth with facebook # .</description>
