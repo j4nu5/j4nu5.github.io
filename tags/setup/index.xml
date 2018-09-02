@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Setup on The Janus List</title>
+    <link>https://www.j4nu5.com/tags/setup/</link>
+    <description>Recent content in Setup on The Janus List</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Aug 2017 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.j4nu5.com/tags/setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pelican Setup</title>
+      <link>https://www.j4nu5.com/posts/pelican-setup/</link>
+      <pubDate>Thu, 24 Aug 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.j4nu5.com/posts/pelican-setup/</guid>
+      <description>Install Pelican:
+1  sudo -H pip install pelican Markdown typogrify   Install Pelican themes
+1 2 3  git clone --recursive https://github.com/getpelican/pelican-themes sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex sudo chmod 755 /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex   Install Pelican plugins
+1  git clone --recursive https://github.com/getpelican/pelican-plugins   Fetch blog sources
+1 2 3 4  git clone git@github.com:j4nu5/j4nu5.github.io.git cd j4nu5.github.io.git git fetch git checkout source   Setup for development
+1  mkdir cache output   Verify plugins root</description>
+    </item>
+    
+  </channel>
+</rss>

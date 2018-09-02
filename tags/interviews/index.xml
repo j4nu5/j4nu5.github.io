@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interviews on The Janus List</title>
+    <link>https://www.j4nu5.com/tags/interviews/</link>
+    <description>Recent content in Interviews on The Janus List</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Jul 2014 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.j4nu5.com/tags/interviews/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The toughest interview question</title>
+      <link>https://www.j4nu5.com/posts/the-toughest-interview-question/</link>
+      <pubDate>Tue, 29 Jul 2014 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.j4nu5.com/posts/the-toughest-interview-question/</guid>
+      <description>What is the output of the following C code snippet?
+1 2  int n = 1; printf(&amp;#34;%d %d %d\n&amp;#34;, n++, ++n, n++ + ++n);   This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler&amp;rsquo;s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer&amp;rsquo;s favorite compiler?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,10 +6,34 @@
     <description>Recent content in Development on The Janus List</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Dec 2013 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 24 Aug 2017 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://www.j4nu5.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pelican Setup</title>
+      <link>https://www.j4nu5.com/posts/pelican-setup/</link>
+      <pubDate>Thu, 24 Aug 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.j4nu5.com/posts/pelican-setup/</guid>
+      <description>Install Pelican:
+1  sudo -H pip install pelican Markdown typogrify   Install Pelican themes
+1 2 3  git clone --recursive https://github.com/getpelican/pelican-themes sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex sudo chmod 755 /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex   Install Pelican plugins
+1  git clone --recursive https://github.com/getpelican/pelican-plugins   Fetch blog sources
+1 2 3 4  git clone git@github.com:j4nu5/j4nu5.github.io.git cd j4nu5.github.io.git git fetch git checkout source   Setup for development
+1  mkdir cache output   Verify plugins root</description>
+    </item>
+    
+    <item>
+      <title>Implementing Service Oriented Architecture using Http is a horrible idea</title>
+      <link>https://www.j4nu5.com/posts/soa-using-http-considered-harmful/</link>
+      <pubDate>Sun, 16 Nov 2014 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.j4nu5.com/posts/soa-using-http-considered-harmful/</guid>
+      <description>Service Oriented Architecture is a commonly used design pattern in distributed and enterprise applications. It involves the creation and use of independent services that work together to produce the desired result. The most important benefits, of course, are separation of concerns and the ability to scale each service independent of others, leading to a clean, modular design.
+A common problem faced during the design of a SOA system is the choice of communication protocol.</description>
+    </item>
     
     <item>
       <title>Abstract Classes and Factory Design Pattern in Python</title>

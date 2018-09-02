@@ -11,10 +11,10 @@
 
     <base href="https://www.j4nu5.com/">
     <title>
-  Development · The Janus List
+  USACO setup · The Janus List
 </title>
 
-    <link rel="canonical" href="https://www.j4nu5.com/categories/development/">
+    <link rel="canonical" href="https://www.j4nu5.com/posts/usaco-setup/">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
@@ -33,9 +33,6 @@
     <link rel="icon" type="image/png" href="https://www.j4nu5.com/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://www.j4nu5.com/images/favicon-16x16.png" sizes="16x16">
 
-    
-      <link href="https://www.j4nu5.com/categories/development/index.xml" rel="alternate" type="application/rss+xml" title="The Janus List" />
-      <link href="https://www.j4nu5.com/categories/development/index.xml" rel="feed" type="application/rss+xml" title="The Janus List" />
     
 
     <meta name="generator" content="Hugo 0.48-DEV" />
@@ -70,32 +67,60 @@
 
       <div class="content">
         
-  <section class="container list">
-  <h1 class="title">Development</h1>
-  <ul>
-    
-    <li>
-      <span>August 24, 2017</span><a href="/posts/pelican-setup/">Pelican Setup</a>
-    </li>
-    
-    <li>
-      <span>November 16, 2014</span><a href="/posts/soa-using-http-considered-harmful/">Implementing Service Oriented Architecture using Http is a horrible idea</a>
-    </li>
-    
-    <li>
-      <span>December 19, 2013</span><a href="/posts/abstract-classes-and-factory-design-pattern-in-python/">Abstract Classes and Factory Design Pattern in Python</a>
-    </li>
-    
-  </ul>
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">USACO setup</h1>
+      <h2 class="date">March 28, 2016</h2>
+
+      
+    </header>
+
+    <p><a href="http://www.usaco.org/">USACO</a> is fun. Though it is fairly easy to get up
+and running on the platform, there remain a few repetitive steps during
+problem solving that can be automated. Here is a brief summary of my
+automation steps:</p>
+
+<ol>
+<li>Use a template. Here is mine. Save it as <em>template.cpp</em>:
+<script type="application/javascript" src="//gist.github.com/j4nu5/d2b23dcdc20c9de48715.js?file=usaco_template.cpp"></script></li>
+<li>Save this script as <em>solve.sh</em> in the same directory as above:
+<script type="application/javascript" src="//gist.github.com/j4nu5/55005626c282e056b753.js?file=usaco_solve.sh"></script></li>
+<li>All done!
+Whenever you&rsquo;re ready to begin coding a solution, simply execute
+<code>./solve.sh PROBLEM_NAME</code></li>
+</ol>
+
+<p>All the best!</p>
+
+  </article>
+
+  <br/>
+
   
-
-
-
-
-
-
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "j4nu5" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  
 </section>
-
 
       </div>
 

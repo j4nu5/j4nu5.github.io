@@ -8,6 +8,21 @@
   </url>
   
   <url>
+    <loc>https://www.j4nu5.com/posts/pelican-setup/</loc>
+    <lastmod>2017-08-24T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.j4nu5.com/posts/usaco-setup/</loc>
+    <lastmod>2016-03-28T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.j4nu5.com/posts/hello_usaco/</loc>
+    <lastmod>2016-03-27T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.j4nu5.com/posts/facebook-hackercup-2015-qualifications/</loc>
     <lastmod>2015-01-12T00:00:00+01:00</lastmod>
   </url>
@@ -18,8 +33,28 @@
   </url>
   
   <url>
+    <loc>https://www.j4nu5.com/posts/soa-using-http-considered-harmful/</loc>
+    <lastmod>2014-11-16T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.j4nu5.com/posts/the-toughest-interview-question/</loc>
+    <lastmod>2014-07-29T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.j4nu5.com/posts/in-search-of-the-perfect-blogging-platform/</loc>
+    <lastmod>2014-07-23T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.j4nu5.com/posts/abstract-classes-and-factory-design-pattern-in-python/</loc>
     <lastmod>2016-03-27T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.j4nu5.com/posts/new-year-resolutions-and-nostalgia/</loc>
+    <lastmod>2013-01-01T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -29,37 +64,55 @@
   
   <url>
     <loc>https://www.j4nu5.com/tags/competitive-programming/</loc>
-    <lastmod>2015-01-12T00:00:00+01:00</lastmod>
+    <lastmod>2016-03-28T00:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.j4nu5.com/tags/development/</loc>
-    <lastmod>2015-01-12T00:00:00+01:00</lastmod>
+    <lastmod>2017-08-24T00:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.j4nu5.com/categories/development/</loc>
-    <lastmod>2016-03-27T00:00:00+01:00</lastmod>
+    <lastmod>2017-08-24T00:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.j4nu5.com/tags/interviews/</loc>
+    <lastmod>2014-07-29T00:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.j4nu5.com/tags/misc/</loc>
+    <lastmod>2014-07-23T00:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.j4nu5.com/tags/musings/</loc>
+    <lastmod>2014-07-23T00:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.j4nu5.com/posts/</loc>
-    <lastmod>2015-01-12T00:00:00+01:00</lastmod>
+    <lastmod>2017-08-24T00:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.j4nu5.com/tags/programming/</loc>
-    <lastmod>2015-01-12T00:00:00+01:00</lastmod>
+    <lastmod>2016-03-28T00:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.j4nu5.com/categories/programming/</loc>
-    <lastmod>2015-01-12T00:00:00+01:00</lastmod>
+    <lastmod>2016-03-28T00:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -70,8 +123,20 @@
   </url>
   
   <url>
+    <loc>https://www.j4nu5.com/categories/random/</loc>
+    <lastmod>2014-07-23T00:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.j4nu5.com/tags/setup/</loc>
+    <lastmod>2017-08-24T00:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.j4nu5.com/tags/</loc>
-    <lastmod>2015-01-12T00:00:00+01:00</lastmod>
+    <lastmod>2016-03-28T00:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,31 @@
     <description>Recent content in Programming on The Janus List</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Jan 2015 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 28 Mar 2016 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://www.j4nu5.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>USACO setup</title>
+      <link>https://www.j4nu5.com/posts/usaco-setup/</link>
+      <pubDate>Mon, 28 Mar 2016 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.j4nu5.com/posts/usaco-setup/</guid>
+      <description>USACO is fun. Though it is fairly easy to get up and running on the platform, there remain a few repetitive steps during problem solving that can be automated. Here is a brief summary of my automation steps:
+ Use a template. Here is mine. Save it as template.cpp:  Save this script as solve.sh in the same directory as above:  All done! Whenever you&amp;rsquo;re ready to begin coding a solution, simply execute .</description>
+    </item>
+    
+    <item>
+      <title>Hello USACO</title>
+      <link>https://www.j4nu5.com/posts/hello_usaco/</link>
+      <pubDate>Sun, 27 Mar 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.j4nu5.com/posts/hello_usaco/</guid>
+      <description>I love competitive programming. I love the anticipation while I wait with my fingers crossed after submitting a solution. And the rush that follows after getting an &amp;lsquo;AC&amp;rsquo;.
+After stagnating near the 60-70th percentile for eons, I have decided to dedicate focused practice time for competitive programming. The next series of blog posts will track my journey through USACO.
+All the best to me!</description>
+    </item>
     
     <item>
       <title>Facebook Hacker Cup 2015 Qualification Round Solutions</title>
@@ -30,6 +51,26 @@ Cooking the Books (15 points) This was the easiest question.</description>
       <guid>https://www.j4nu5.com/posts/generating-power-set/</guid>
       <description>Iterating over all possible subsets of a set is a problem that can arise not only in competitive programming but also in day-to-day programming. While the total number of possible subsets is quite huge (2^n where n is the cardinality of the input set), often we want an algorithm that systematically considers all subsets for small values of n.
 A power set is a set of all subsets of a given input set.</description>
+    </item>
+    
+    <item>
+      <title>Implementing Service Oriented Architecture using Http is a horrible idea</title>
+      <link>https://www.j4nu5.com/posts/soa-using-http-considered-harmful/</link>
+      <pubDate>Sun, 16 Nov 2014 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.j4nu5.com/posts/soa-using-http-considered-harmful/</guid>
+      <description>Service Oriented Architecture is a commonly used design pattern in distributed and enterprise applications. It involves the creation and use of independent services that work together to produce the desired result. The most important benefits, of course, are separation of concerns and the ability to scale each service independent of others, leading to a clean, modular design.
+A common problem faced during the design of a SOA system is the choice of communication protocol.</description>
+    </item>
+    
+    <item>
+      <title>The toughest interview question</title>
+      <link>https://www.j4nu5.com/posts/the-toughest-interview-question/</link>
+      <pubDate>Tue, 29 Jul 2014 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.j4nu5.com/posts/the-toughest-interview-question/</guid>
+      <description>What is the output of the following C code snippet?
+1 2  int n = 1; printf(&amp;#34;%d %d %d\n&amp;#34;, n++, ++n, n++ + ++n);   This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler&amp;rsquo;s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer&amp;rsquo;s favorite compiler?</description>
     </item>
     
   </channel>
