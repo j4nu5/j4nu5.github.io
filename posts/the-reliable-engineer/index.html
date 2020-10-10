@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Kushagra Sinha">
+    <meta name="description" content="A friend recently told me that he is focusing on becoming a reliable engineer, and wanted my opinion on this topic. Reliability has probably been my strongest attribute as an employee so I felt somewhat qualified to write about it.
+What is Reliability? One of the lenses through which I view my job is as a service that I provide to my immediate manager. This is different from any additional obligations that I may have to my employer.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Reliable Engineer"/>
+<meta name="twitter:description" content="A friend recently told me that he is focusing on becoming a reliable engineer, and wanted my opinion on this topic. Reliability has probably been my strongest attribute as an employee so I felt somewhat qualified to write about it.
+What is Reliability? One of the lenses through which I view my job is as a service that I provide to my immediate manager. This is different from any additional obligations that I may have to my employer."/>
+
+    <meta property="og:title" content="The Reliable Engineer" />
+<meta property="og:description" content="A friend recently told me that he is focusing on becoming a reliable engineer, and wanted my opinion on this topic. Reliability has probably been my strongest attribute as an employee so I felt somewhat qualified to write about it.
+What is Reliability? One of the lenses through which I view my job is as a service that I provide to my immediate manager. This is different from any additional obligations that I may have to my employer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.j4nu5.com/posts/the-reliable-engineer/" />
+<meta property="article:published_time" content="2020-10-10T19:03:13+02:00" />
+<meta property="article:modified_time" content="2020-10-10T19:03:13+02:00" />
+
+
+    <title>
+  The Reliable Engineer · The Janus List
+</title>
+
+    
+      <link rel="canonical" href="https://www.j4nu5.com/posts/the-reliable-engineer/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.77.0-DEV" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      The Janus List
+    </a>
+    
+      
+        <span id="dark-mode-toggle" class="float-right">
+          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </span>
+      
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+        
+          <li class="navigation-item separator">
+            <span>|</span>
+          </li>
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">The Reliable Engineer</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2020-10-10T19:03:13&#43;02:00'>
+                October 10, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              7-minute read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/development/">Development</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <a href="/tags/development/">development</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>A friend recently told me that he is focusing on becoming a <em>reliable</em>
+engineer, and wanted my opinion on this topic. <em>Reliability</em> has probably been
+my strongest attribute as an employee so I felt somewhat qualified to write
+about it.</p>
+<h1 id="what-is-_reliability_">What is <em>Reliability</em>?</h1>
+<p>One of the lenses through which I view my job is as a <em>service</em> that I provide
+to my <em>immediate</em> manager. This is different from any additional obligations
+that I may have to my employer.<br>
+From this lens, I want to provide such a quality of service where my manager is
+able to assign a task to me, and <em><strong>forget about it</strong></em>.<br>
+The extent to which I can meet this bar, is <em>reliability</em>.</p>
+<h1 id="the-magical-number-seven-plus-or-minus-two">The Magical Number Seven, Plus or Minus Two</h1>
+<p>Humans have a limited working memory capacity. In one of the most highly cited
+<a href="https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two">papers</a>
+in psychology, cognitive psychologist George A. Miller of Harvard University&rsquo;s
+Department of Psychology, argues that the limit is observed to be somewhere
+around 7 distinct stimuli.</p>
+<p>While the exact number may vary from person to person, the fact remains that our
+working memory has a limit. We cannot meaningfully think about 100 things at the
+same time.<br>
+This limitation shows up everywhere in software engineering. This limit is the
+reason behind a well written function taking only a small number of parameters,
+or classes having only a few, closely related, member fields, and good managers
+having a small number of direct reports.<br>
+As a manager, to be able to effectively think about your team&rsquo;s overall
+objective and direction, you need good <em>lieutenants</em> - people who can take up
+and own meaningful chunks, leaving you free to think about the bigger picture.<br>
+The effectiveness of a <em>lieutenant</em> in providing this <em>service</em> determines their
+reliability.</p>
+<h1 id="o-captain-my-captain">O Captain! My Captain!</h1>
+<p>How does one become a reliable lieutenant?<br>
+Firstly, let&rsquo;s cover what <em>not</em> to do. The most common mistake that people make
+is <em>demand</em> to be deemed reliable - most commonly, based on their tenure at the
+company, or in some cases, at their previous employers. This doesn&rsquo;t help their
+cause. Just like respect, this is something that cannot be demanded. It has to
+be earned.</p>
+<p>Becoming a reliable engineer involves 3 areas of development. First and most
+important - your relationship with your manager. Second, your attitude or
+mindset, and third, your tactical day to day work. Let&rsquo;s unpack these one at a
+time.</p>
+<p>Your relationship with your manager should be like your relationship with your
+priest or psychologist. You should have an open channel of communication with
+them, and you should feel comfortable sharing updates about your failures,
+without any fear of judgement. If you don&rsquo;t think you have such a relationship
+with your manager, you should talk to them about it and come up with a plan that
+works for both of you. If you think that this is infeasible or this plan is not
+succeeding despite your best efforts - talk to your skip manager, or get a new
+manager - either by switching teams or by switching employers. I can&rsquo;t think of
+anyone I&rsquo;ve met who has been succeeding at their job despite having a bad
+relationship with their manager.<br>
+Also, realize that this is a continuous process. Like any relationship, you&rsquo;ll
+have to continually work on it to remain effective.</p>
+<p>The second most important component is your own mindset. If I can summarize this
+in one word, it would be - <em>ownership</em>.
+The other day, I had a friend from work waiting for me to finish something at
+work so that we can go out for the evening. I remember him asking me, &ldquo;Why do
+you need to do this today? Who is asking for it?&rdquo; I realized that I didn&rsquo;t know
+the answer to this question. In fact, this question would have never even
+occurred to me in the first place. Because <em>I am the one asking for it!</em>.
+This is the essence of ownership. When you can say that &ldquo;the buck stops here&rdquo;,
+when you know and feel that the success and failure of your task lies entirely
+on you <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.<br>
+Your manager will never give you tasks they feel you cannot own. It is only
+through demonstrating ownership and success with smaller tasks that you can
+progress onto bigger tasks. Start by owning implementation of functions and
+classes. Move up to owning modules. Over time you will start owning projects
+and product areas.</p>
+<h1 id="the-road-to-success">The Road to Success</h1>
+<p>Now that we have done the strategic foundational work, how do we plan for the
+day to day practical work? While this list is far from exhaustive, here are the
+most important tools and attributes that I have found:</p>
+<h4 id="regular-status-updates">Regular Status Updates</h4>
+<p>The only way your manager is going to feel comfortable about &ldquo;forgetting&rdquo; your
+project is if they feel they know the status of the project at all times. One of
+the easiest way of doing this is to set up regular 1:1 meetings with your
+manager.<br>
+While the scope of 1:1 meetings is beyond this blog post, the majority of this
+time will be status updates from both of you.<br>
+Your status updates can be one of three things:</p>
+<ol>
+<li>FYI - No action required from your manager. This is just so that your
+manager gets a sense of the most complex challenges you have been facing and how
+you have been overcoming them. This is your chance to shine!</li>
+<li>A storm is coming - There is a knotty problem that may or may not need your
+manager&rsquo;s attention in the near future. It is <em>extremely</em> important that they
+know about this sooner rather than later. I personally consider it to be a
+personal failure when an escalation reaches my manager which they were not
+already expecting.</li>
+<li>Fire! - You need immediate help. If it&rsquo;s too urgent, don&rsquo;t even wait for your
+1:1 and talk to your manager ASAP.</li>
+</ol>
+<p>Your goal should be to be extremely proactive in this communication. If your
+manager has to &ldquo;ask about it&rdquo;, you have failed.</p>
+<p>This will also provide you a way to track your own progress. Initially, most of
+your updates will be in category #2 and #3. Over time, you should see an
+increase in proportion in category #1 updates.</p>
+<p>Another important observation will be the content of these updates. Initially,
+you would be talking about how you wrote a particular piece of code. Over time,
+you should see yourself talking about de-risking projects and resolving external
+dependencies.</p>
+<h4 id="responsiveness">Responsiveness</h4>
+<p>Your manager will need some information from you now and then. The sooner you
+provide an accurate answer, the more reliable you&rsquo;ll become.</p>
+<h4 id="ability-to-say-i-dont-know">Ability to say &ldquo;I don&rsquo;t know&rdquo;</h4>
+<p>I once had the misfortune of leading an engineer in my team who never said &ldquo;I
+don&rsquo;t know&rdquo;. He would rather give me a quick, responsive, but wholly inaccurate
+answer. Needless to say, it did nothing to increase his reliability.<br>
+Although it can be exciting to give quick answers or embarrassing to admit when
+you don&rsquo;t know something, remember that your manager / tech lead has to use the
+information you provide, and will know about the accuracy of this information
+soon enough. Providing inaccurate, unreliable information is the most effective
+way of reducing your reliability.</p>
+<h4 id="self-direction">Self Direction</h4>
+<p>This ties a bit into ownership. One of the hallmarks of a great engineer is
+their ability to self direct.<br>
+You should be willing to do everything to keep your task / project on track. It
+may involve talking to third parties or external teams or resolving some
+internal conflict. While it&rsquo;s OK to ask your manager for help when you&rsquo;re stuck
+but they should be able to see that you tried your best before approaching them.</p>
+<h1 id="profit">Profit</h1>
+<p>I hope this was helpful. Please feel free to comment with your take on the
+topic.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Sidenote on leadership: The success of a project belongs to your team.
+Failure lies on you. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "j4nu5" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         Kushagra Sinha 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+      
+      <script src="/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24193913-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+    
+
+    
+  </body>
+
+</html>

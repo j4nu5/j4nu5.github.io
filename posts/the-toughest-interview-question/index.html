@@ -1,66 +1,108 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Kushagra Sinha">
-    <meta name="description" content="Kushagra Sinha&#39;s personal website">
+    <meta name="description" content="What is the output of the following C code snippet?
+1 2  int n = 1; printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n);   This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler&rsquo;s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer&rsquo;s favorite compiler?">
     <meta name="keywords" content="blog,developer,personal">
 
-    <base href="https://www.j4nu5.com/">
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The toughest interview question"/>
+<meta name="twitter:description" content="What is the output of the following C code snippet?
+1 2  int n = 1; printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n);   This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler&rsquo;s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer&rsquo;s favorite compiler?"/>
+
+    <meta property="og:title" content="The toughest interview question" />
+<meta property="og:description" content="What is the output of the following C code snippet?
+1 2  int n = 1; printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n);   This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler&rsquo;s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer&rsquo;s favorite compiler?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.j4nu5.com/posts/the-toughest-interview-question/" />
+<meta property="article:published_time" content="2014-07-29T00:00:00+02:00" />
+<meta property="article:modified_time" content="2014-07-29T00:00:00+02:00" />
+
+
     <title>
   The toughest interview question · The Janus List
 </title>
 
-    <link rel="canonical" href="https://www.j4nu5.com/posts/the-toughest-interview-question/">
+    
+      <link rel="canonical" href="https://www.j4nu5.com/posts/the-toughest-interview-question/">
+    
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
 
     
       
       
-      <link rel="stylesheet" href="https://www.j4nu5.com/css/coder.min.eed2c257f04d6434dadb0efa9a2b880efe926b9b1c0041bca61053be8f1cdfa1.css" integrity="sha256-7tLCV/BNZDTa2w76miuIDv6Sa5scAEG8phBTvo8c36E=" media="screen">
+      <link rel="stylesheet" href="/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
     
 
     
 
     
 
-    <link rel="icon" type="image/png" href="https://www.j4nu5.com/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://www.j4nu5.com/images/favicon-16x16.png" sizes="16x16">
+    
 
     
 
-    <meta name="generator" content="Hugo 0.48-DEV" />
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.77.0-DEV" />
   </head>
 
-  <body class="">
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="https://www.j4nu5.com/">
+    <a class="navigation-title" href="/">
       The Janus List
     </a>
-    <input type="checkbox" id="menu-toggle" />
-    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
-    <ul class="navigation-list">
+    
       
+        <span id="dark-mode-toggle" class="float-right">
+          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </span>
+      
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://www.j4nu5.com/posts/">Blog</a>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+        
+          <li class="navigation-item separator">
+            <span>|</span>
           </li>
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://www.j4nu5.com/about/">About</a>
-          </li>
-        
-      
-      
-    </ul>
+      </ul>
+    
   </section>
 </nav>
 
@@ -68,59 +110,77 @@
       <div class="content">
         
   <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">The toughest interview question</h1>
-      <h2 class="date">July 29, 2014</h2>
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">The toughest interview question</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2014-07-29T00:00:00&#43;02:00'>
+                July 29, 2014
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/programming/">Programming</a></div>
 
-      
-    </header>
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <a href="/tags/programming/">programming</a>
+      <span class="separator">•</span>
+    <a href="/tags/interviews/">interviews</a></div>
 
-    <p>What is the output of the following C code snippet?</p>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+        </div>
+      </header>
+
+      <div>
+        
+        <p>What is the output of the following C code snippet?</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fff;font-weight:bold">int</span> n = <span style="color:#ff0;font-weight:bold">1</span>;
-printf(<span style="color:#0ff;font-weight:bold">&#34;%d %d %d</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>, n++, ++n, n++ + ++n);</code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="">int</span> n = 1;
+printf(<span style="font-style:italic">&#34;%d %d %d</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>, n++, ++n, n++ + ++n);
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>This is a tricky question. Any attempt to answer this question requires either
+</div><p>This is a tricky question. Any attempt to answer this question requires either
 a deep understanding of your compiler&rsquo;s parser or a complete ignorance of C.
 Even if you fall under the first category and know the ins and outs of your
 favorite compiler, how do you know which is your <em>interviewer&rsquo;s</em> favorite
 compiler?</p>
-
 <p>The ANSI C language specification, you see, specifies neither the evaluation
 order of function arguments nor the exact <em>side effect</em> evaluation time of
 prefix and postfix operators. The answer to the above problem depends on the
 compiler being used.</p>
-
 <p>Unfortunately, these kinds of puzzles form the bulk of programming interview
 questions for IT companies in India. They are even common in term papers in
 colleges.</p>
-
 <p>I could never fathom the utility of such questions. The correct answer,
 <em>Depends on the compiler</em> is <em>never</em> an option for this question. What am I
 supposed to do with this? Should I just evaluate from left to right and
 calculate the side effects ASAP or should I try to second guess my interviewer
 and assume that he/she is terribly confused by the C function call stack
 convention and thinks that the compiler always evaluates from right to left?</p>
-
 <p>One day I chanced upon a book that actually taught that C compilers evaluate
 function arguments from right to left. This gem of a book is quite famous in
 India. It is called <em>Let Us C</em>, written by the renowned
 <a href="https://en.wikipedia.org/wiki/Yashavant_Kanetkar">Yashwant Kanetkar</a>, who
 according to his Wikipedia page,</p>
-
 <blockquote>
-<p>&rdquo; &hellip; has created, moulded and groomed many IT professionals in the last decade and half.&rdquo;</p>
+<p>&quot; &hellip; has created, moulded and groomed many IT professionals in the last decade and half.&quot;</p>
 </blockquote>
-
 <p>How poetic &hellip;</p>
-
 <p>If there is a single most important factor behind the stagnation of the Indian
 IT industry, I think it is this book. Forget about complying to ANSI C
 standards, it professes and quizzes on the areas of C that have deliberately
@@ -128,17 +188,18 @@ been left to the compiler. Professors and interviewers who unfortunately never
 got a chance to study <em>K&amp;R C</em> think of <em>Let Us C</em> as <em>the</em> authority on the C
 programming language. Most of their questions are a straight copy-paste from
 this book.</p>
-
 <p>This is a sad state of affairs. Mainly because the people who <em>actually</em> know
 C are <em>never</em> able to answer this question correctly. If you are one of them,
 Congrats! You are on the right path towards mastering C.</p>
 
-  </article>
+      </div>
 
-  <br/>
 
-  
-      <div id="disqus_thread"></div>
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
 <script type="application/javascript">
     var disqus_config = function () {
     
@@ -158,20 +219,42 @@ Congrats! You are on the right path towards mastering C.</p>
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-  
-  
-</section>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
 
       </div>
 
-      <footer class="footer">
-  <section class="container">
-    
-     © 2018    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>. 
-  </section>
-</footer>
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         Kushagra Sinha 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
 
     </main>
+
+    
+      
+      <script src="/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
 
     
 <script type="application/javascript">
@@ -188,6 +271,11 @@ if (!doNotTrack) {
 </script>
 
 
+    
+
+    
+
+    
   </body>
 
 </html>

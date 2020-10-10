@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on The Janus List</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Programming on The Janus List</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Sep 2018 18:24:40 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.j4nu5.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 02 Sep 2018 18:24:40 +0200</lastBuildDate><atom:link href="https://www.j4nu5.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Const References to Temporary Objects</title>
       <link>https://www.j4nu5.com/posts/const-reference-to-temporary-objects/</link>
@@ -18,8 +14,8 @@
       
       <guid>https://www.j4nu5.com/posts/const-reference-to-temporary-objects/</guid>
       <description>Consider the following code snippet:
-1 2 3 4 5 6 7 8 9 10 11 12 13  #include &amp;lt;iostream&amp;gt; int GetInt() { int x = 1; return x; } int main() { const int&amp;amp; x = GetInt(); std::cout &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl; return 0; }    In particular, pay attention to line #9. Is it guaranteed to be safe?
-In this case, the answer is yes.</description>
+1 2 3 4 5 6 7 8 9 10 11 12  #include &amp;lt;iostream&amp;gt; int GetInt() { int x = 1; return x; } int main() { const int&amp;amp; x = GetInt(); std::cout &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl; return 0; }   In particular, pay attention to line #9. Is it guaranteed to be safe?
+In this case, the answer is yes. The C++ standard guarantees that binding a temporary to a const reference on the stack, extends the lifetime of the temporary to the lifetime of the const reference.</description>
     </item>
     
     <item>
@@ -29,7 +25,7 @@ In this case, the answer is yes.</description>
       
       <guid>https://www.j4nu5.com/posts/usaco-setup/</guid>
       <description>USACO is fun. Though it is fairly easy to get up and running on the platform, there remain a few repetitive steps during problem solving that can be automated. Here is a brief summary of my automation steps:
- Use a template. Here is mine. Save it as template.cpp:  Save this script as solve.sh in the same directory as above:  All done! Whenever you&amp;rsquo;re ready to begin coding a solution, simply execute .</description>
+ Use a template. Here is mine. Save it as template.cpp:   Save this script as solve.sh in the same directory as above:   All done! Whenever you&amp;rsquo;re ready to begin coding a solution, simply execute .</description>
     </item>
     
     <item>

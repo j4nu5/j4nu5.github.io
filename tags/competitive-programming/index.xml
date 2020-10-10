@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Competitive Programming on The Janus List</title>
+    <title>competitive programming on The Janus List</title>
     <link>https://www.j4nu5.com/tags/competitive-programming/</link>
-    <description>Recent content in Competitive Programming on The Janus List</description>
+    <description>Recent content in competitive programming on The Janus List</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Mar 2016 00:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.j4nu5.com/tags/competitive-programming/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 28 Mar 2016 00:00:00 +0200</lastBuildDate><atom:link href="https://www.j4nu5.com/tags/competitive-programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>USACO setup</title>
       <link>https://www.j4nu5.com/posts/usaco-setup/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://www.j4nu5.com/posts/usaco-setup/</guid>
       <description>USACO is fun. Though it is fairly easy to get up and running on the platform, there remain a few repetitive steps during problem solving that can be automated. Here is a brief summary of my automation steps:
- Use a template. Here is mine. Save it as template.cpp:  Save this script as solve.sh in the same directory as above:  All done! Whenever you&amp;rsquo;re ready to begin coding a solution, simply execute .</description>
+ Use a template. Here is mine. Save it as template.cpp:   Save this script as solve.sh in the same directory as above:   All done! Whenever you&amp;rsquo;re ready to begin coding a solution, simply execute .</description>
     </item>
     
     <item>
