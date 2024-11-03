@@ -1,113 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="en">
-
-    <meta name="author" content="Kushagra Sinha">
-    <meta name="description" content="Iterating over all possible subsets of a set is a problem that can arise not only in competitive programming but also in day-to-day programming. While the total number of possible subsets is quite huge (2^n where n is the cardinality of the input set), often we want an algorithm that systematically considers all subsets for small values of n.
-A power set is a set of all subsets of a given input set.">
-    <meta name="keywords" content="blog,developer,personal">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Generating Power Set"/>
-<meta name="twitter:description" content="Iterating over all possible subsets of a set is a problem that can arise not only in competitive programming but also in day-to-day programming. While the total number of possible subsets is quite huge (2^n where n is the cardinality of the input set), often we want an algorithm that systematically considers all subsets for small values of n.
-A power set is a set of all subsets of a given input set."/>
-
-    <meta property="og:title" content="Generating Power Set" />
-<meta property="og:description" content="Iterating over all possible subsets of a set is a problem that can arise not only in competitive programming but also in day-to-day programming. While the total number of possible subsets is quite huge (2^n where n is the cardinality of the input set), often we want an algorithm that systematically considers all subsets for small values of n.
-A power set is a set of all subsets of a given input set." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.j4nu5.com/posts/generating-power-set/" />
-<meta property="article:published_time" content="2015-01-05T00:00:00+01:00" />
-<meta property="article:modified_time" content="2015-01-05T00:00:00+01:00" />
-
-
-    <title>
+<head>
+  <title>
   Generating Power Set · The Janus List
 </title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
 
-    
-      <link rel="canonical" href="https://www.j4nu5.com/posts/generating-power-set/">
-    
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
 
-    
-      
-      
-      <link rel="stylesheet" href="/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
-    
 
-    
+<meta name="author" content="Kushagra Sinha">
+<meta name="description" content="Iterating over all possible subsets of a set is a problem that can arise not
+only in competitive programming but also in day-to-day programming. While the
+total number of possible subsets is quite huge (2^n where n is the
+cardinality of the input set), often we want an algorithm that systematically
+considers all subsets for small values of n.
+A power set is a set of all subsets
+of a given input set. Often we may want to simply iterate over all members of
+the power set, but sometimes (if we have enough memory) we may need the power
+set itself. In the following post, I have attempted to present some algorithms
+(with C&#43;&#43;11 implementations) that solve both kinds of problems (simple
+iteration and complete power set construction).">
+<meta name="keywords" content="blog,developer,personal">
 
-    
-      
-        
-        
-        <link rel="stylesheet" href="/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
-      
-    
 
-    
 
-    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Generating Power Set">
+  <meta name="twitter:description" content="Iterating over all possible subsets of a set is a problem that can arise not only in competitive programming but also in day-to-day programming. While the total number of possible subsets is quite huge (2^n where n is the cardinality of the input set), often we want an algorithm that systematically considers all subsets for small values of n.
+A power set is a set of all subsets of a given input set. Often we may want to simply iterate over all members of the power set, but sometimes (if we have enough memory) we may need the power set itself. In the following post, I have attempted to present some algorithms (with C&#43;&#43;11 implementations) that solve both kinds of problems (simple iteration and complete power set construction).">
 
-    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+<meta property="og:url" content="https://sinhak.dev/posts/generating-power-set/">
+  <meta property="og:site_name" content="The Janus List">
+  <meta property="og:title" content="Generating Power Set">
+  <meta property="og:description" content="Iterating over all possible subsets of a set is a problem that can arise not only in competitive programming but also in day-to-day programming. While the total number of possible subsets is quite huge (2^n where n is the cardinality of the input set), often we want an algorithm that systematically considers all subsets for small values of n.
+A power set is a set of all subsets of a given input set. Often we may want to simply iterate over all members of the power set, but sometimes (if we have enough memory) we may need the power set itself. In the following post, I have attempted to present some algorithms (with C&#43;&#43;11 implementations) that solve both kinds of problems (simple iteration and complete power set construction).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2015-01-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2015-01-05T00:00:00+00:00">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Competitive Programming">
 
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
-    
 
-    <meta name="generator" content="Hugo 0.77.0-DEV" />
-  </head>
+
+<link rel="canonical" href="https://sinhak.dev/posts/generating-power-set/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
 
   
   
-    
+  <link rel="stylesheet" href="/css/coder.min.aa5ef26fa979d6793724ae2dbd71efa94fd16cb1c5c7db3b6651f21f9892a5fd.css" integrity="sha256-ql7yb6l51nk3JK4tvXHvqU/RbLHFx9s7ZlHyH5iSpf0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
   
-  <body class="colorscheme-auto"
-        onload=""
-  >
-    <main class="wrapper">
-      <nav class="navigation">
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="/">
+    
+    <a class="navigation-title" href="https://sinhak.dev/">
       The Janus List
     </a>
     
-      
-        <span id="dark-mode-toggle" class="float-right">
-          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-        </span>
-      
+    
       <input type="checkbox" id="menu-toggle" />
       <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
       </label>
       <ul class="navigation-list">
         
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">Blog</a>
+              <a class="navigation-link " href="/posts/">Blog</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/about/">About</a>
+              <a class="navigation-link " href="/about/">About</a>
             </li>
           
         
-        
-        
-          <li class="navigation-item separator">
-            <span>|</span>
-          </li>
         
       </ul>
     
@@ -115,54 +145,69 @@ A power set is a set of all subsets of a given input set." />
 </nav>
 
 
-      <div class="content">
-        
+    <div class="content">
+      
   <section class="container post">
     <article>
       <header>
         <div class="post-title">
-          <h1 class="title">Generating Power Set</h1>
+          <h1 class="title">
+            <a class="title-link" href="https://sinhak.dev/posts/generating-power-set/">
+              Generating Power Set
+            </a>
+          </h1>
         </div>
         <div class="post-meta">
           <div class="date">
             <span class="posted-on">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime='2015-01-05T00:00:00&#43;01:00'>
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2015-01-05T00:00:00Z">
                 January 5, 2015
               </time>
             </span>
             <span class="reading-time">
-              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
               5-minute read
             </span>
           </div>
+          
           <div class="categories">
-  <i class="fa fa-folder" aria-hidden="true"></i>
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
     <a href="/categories/programming/">Programming</a></div>
 
           <div class="tags">
-  <i class="fa fa-tag" aria-hidden="true"></i>
-    <a href="/tags/programming/">programming</a>
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/programming/">Programming</a>
+    </span>
       <span class="separator">•</span>
-    <a href="/tags/competitive-programming/">competitive programming</a></div>
+    <span class="tag">
+      <a href="/tags/competitive-programming/">Competitive Programming</a>
+    </span></div>
 
         </div>
       </header>
 
-      <div>
+      <div class="post-content">
         
         <p>Iterating over all possible subsets of a set is a problem that can arise not
 only in competitive programming but also in day-to-day programming. While the
 total number of possible subsets is quite huge (<em>2^n</em> where <em>n</em> is the
 cardinality of the input set), often we want an algorithm that systematically
 considers all subsets for small values of <em>n</em>.</p>
-<p>A <a href="http://en.wikipedia.org/wiki/Power_set">power set</a> is a set of all subsets
+<p>A <a href="http://en.wikipedia.org/wiki/Power_set"  class="external-link" target="_blank" rel="noopener">power set</a> is a set of all subsets
 of a given input set. Often we may want to simply iterate over all members of
 the power set, but sometimes (if we have enough memory) we may need the power
 set itself. In the following post, I have attempted to present some algorithms
 (with C++11 implementations) that solve both kinds of problems (simple
 iteration and complete power set construction).</p>
-<h2 id="recursive-algorithm-for-power-set-generation">Recursive algorithm for power set generation</h2>
+<h2 id="recursive-algorithm-for-power-set-generation">
+  Recursive algorithm for power set generation
+  <a class="heading-link" href="#recursive-algorithm-for-power-set-generation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
 <p>Power set generation is a problem that yields naturally to a recursive
 algorithm. Consider a set say, $\lbrace 1, 2, 3, 4 \rbrace$. If we had a
 function that can generate the power set, $\mathbb{S}$, of
@@ -178,97 +223,109 @@ $\lbrace \lbrace 1 \rbrace, \lbrace 1, 2 \rbrace, \lbrace 1, 3 \rbrace, \lbrace 
 Union of $\mathbb{S}$ and $\mathbb{T}$ gives us the required answer:
 $\lbrace \phi, \lbrace 2 \rbrace , \lbrace 3 \rbrace , \lbrace 2, 3 \rbrace, \lbrace 1 \rbrace, \lbrace 1, 2 \rbrace, \lbrace 1, 3 \rbrace, \lbrace 1, 2, 3 \rbrace \rbrace$.</p>
 <p>Translating the above idea to code (C++11):</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="font-style:italic">// Accepts a set of integers and optionally a position to start reading the
-</span><span style="font-style:italic">// array from.
-</span><span style="font-style:italic">// Returns the powerset of integers from arr [pos=0 ... arr.size()-1]
-</span><span style="font-style:italic"></span>vector&lt; vector&lt;<span style="">int</span>&gt; &gt; powerset1(<span style="font-weight:bold">const</span> vector&lt;<span style="">int</span>&gt; &amp;arr, <span style="">int</span> pos=0) {
-    <span style="">int</span> arr_size = arr.size();
-    vector&lt; vector&lt;<span style="">int</span>&gt; &gt; results;
-
-    <span style="font-weight:bold">if</span> (pos &gt;= arr_size) {
-        <span style="font-style:italic">// Recursion base case
-</span><span style="font-style:italic"></span>        results.push_back(vector&lt;<span style="">int</span>&gt;());
-        <span style="font-weight:bold">return</span> results;
-    }
-
-    vector&lt; vector&lt;<span style="">int</span>&gt; &gt; rest = powerset1(arr, pos+1);
-    results = rest;
-    <span style="font-weight:bold">for</span> (<span style="font-weight:bold">auto</span> &amp;subset : rest) {
-        subset.push_back(arr[pos]);
-        results.push_back(subset);
-    }
-    <span style="font-weight:bold">return</span> results;
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="font-style:italic">// Accepts a set of integers and optionally a position to start reading the
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">// array from.
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">// Returns the powerset of integers from arr [pos=0 ... arr.size()-1]
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>vector&lt; vector&lt;<span style="">int</span>&gt; &gt; powerset1(<span style="font-weight:bold">const</span> vector&lt;<span style="">int</span>&gt; &amp;arr, <span style="">int</span> pos=0) {
+</span></span><span style="display:flex;"><span>    <span style="">int</span> arr_size = arr.size();
+</span></span><span style="display:flex;"><span>    vector&lt; vector&lt;<span style="">int</span>&gt; &gt; results;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span> (pos &gt;= arr_size) {
+</span></span><span style="display:flex;"><span>        <span style="font-style:italic">// Recursion base case
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>        results.push_back(vector&lt;<span style="">int</span>&gt;());
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">return</span> results;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    vector&lt; vector&lt;<span style="">int</span>&gt; &gt; rest = powerset1(arr, pos+1);
+</span></span><span style="display:flex;"><span>    results = rest;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span> (<span style="font-weight:bold">auto</span> &amp;subset : rest) {
+</span></span><span style="display:flex;"><span>        subset.push_back(arr[pos]);
+</span></span><span style="display:flex;"><span>        results.push_back(subset);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> results;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>I have assumed a set of integers that do not have duplicates. The code can be
 easily modified to accept other datatypes or maybe templates. If the vector has
 duplicate elements, just copy and deduplicate it before passing.</p>
 <p>Since this method returns the complete power set, the space complexity is of the
 order of <em>2 ^ n</em>. The time complexity is exponential.</p>
-<h2 id="iterative-algorithm-same-idea">Iterative algorithm, same idea</h2>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+<h2 id="iterative-algorithm-same-idea">
+  Iterative algorithm, same idea
+  <a class="heading-link" href="#iterative-algorithm-same-idea">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt; vector&lt;<span style="">int</span>&gt; &gt; powerset2(<span style="font-weight:bold">const</span> vector&lt;<span style="">int</span>&gt; &amp;arr) {
-    <span style="">int</span> arr_size = arr.size();
-
-    vector&lt; vector&lt;<span style="">int</span>&gt; &gt; pset;
-    pset.push_back(vector&lt;<span style="">int</span>&gt;());
-
-    <span style="font-weight:bold">for</span> (<span style="">int</span> pos = 0; pos &lt; arr_size; pos++) {
-        vector&lt; vector&lt;<span style="">int</span>&gt; &gt; tmp(pset);
-        <span style="font-weight:bold">for</span> (<span style="font-weight:bold">auto</span> &amp;subset : tmp)
-            subset.push_back(arr[pos]);
-        copy(tmp.begin(), tmp.end(), back_inserter(pset));
-    }
-
-    <span style="font-weight:bold">return</span> pset;
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>vector&lt; vector&lt;<span style="">int</span>&gt; &gt; powerset2(<span style="font-weight:bold">const</span> vector&lt;<span style="">int</span>&gt; &amp;arr) {
+</span></span><span style="display:flex;"><span>    <span style="">int</span> arr_size = arr.size();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    vector&lt; vector&lt;<span style="">int</span>&gt; &gt; pset;
+</span></span><span style="display:flex;"><span>    pset.push_back(vector&lt;<span style="">int</span>&gt;());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span> (<span style="">int</span> pos = 0; pos &lt; arr_size; pos++) {
+</span></span><span style="display:flex;"><span>        vector&lt; vector&lt;<span style="">int</span>&gt; &gt; tmp(pset);
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">for</span> (<span style="font-weight:bold">auto</span> &amp;subset : tmp)
+</span></span><span style="display:flex;"><span>            subset.push_back(arr[pos]);
+</span></span><span style="display:flex;"><span>        copy(tmp.begin(), tmp.end(), back_inserter(pset));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> pset;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="iterating-over-power-set-using-a-bitmask-lexical-ordering">Iterating over power set, using a bitmask (lexical ordering)</h2>
+</div><h2 id="iterating-over-power-set-using-a-bitmask-lexical-ordering">
+  Iterating over power set, using a bitmask (lexical ordering)
+  <a class="heading-link" href="#iterating-over-power-set-using-a-bitmask-lexical-ordering">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
 <p>We can use a bitmask of length = size of input set to denote a subset choice.
 For example, a selection of {1, 2} in {1, 2, 3, 4} can be denoted by 0011,
 where the LSB (least significant bit) denotes 0th index and MSB denotes the
@@ -281,87 +338,99 @@ all possible bitmasks of length <em>n</em> is simply [0 &hellip; 2^n - 1].</p>
 computer. I am going to use a 64-bit unsigned long long for this. If you have a
 set bigger than this, you cannot do it in a reasonable amount of time on a
 single machine.</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="">void</span> powerset3(<span style="font-weight:bold">const</span> vector&lt;<span style="">int</span>&gt; &amp;arr) {
-    <span style="">int</span> arr_size = arr.size();
-
-    <span style="">unsigned</span> <span style="">long</span> <span style="">long</span> lim = (1 &lt;&lt; arr_size) - 1;
-    <span style="font-weight:bold">for</span> (<span style="">unsigned</span> <span style="">long</span> <span style="">long</span> i = 0; i &lt;= lim; i++) {
-        <span style="">unsigned</span> <span style="">long</span> <span style="">long</span> mask = i;
-
-        <span style="font-weight:bold">for</span> (<span style="">int</span> idx = 0; idx &lt; <span style="font-weight:bold">sizeof</span>(mask) * 8; idx++) {
-            <span style="font-weight:bold">if</span> ((mask &gt;&gt; idx) &amp; 1)
-                cout &lt;&lt; arr[idx] &lt;&lt; <span style="font-style:italic">&#34; &#34;</span>;
-        }
-        cout &lt;&lt; <span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>;
-    }
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="">void</span> powerset3(<span style="font-weight:bold">const</span> vector&lt;<span style="">int</span>&gt; &amp;arr) {
+</span></span><span style="display:flex;"><span>    <span style="">int</span> arr_size = arr.size();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="">unsigned</span> <span style="">long</span> <span style="">long</span> lim = (1 &lt;&lt; arr_size) - 1;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span> (<span style="">unsigned</span> <span style="">long</span> <span style="">long</span> i = 0; i &lt;= lim; i++) {
+</span></span><span style="display:flex;"><span>        <span style="">unsigned</span> <span style="">long</span> <span style="">long</span> mask = i;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">for</span> (<span style="">int</span> idx = 0; idx &lt; <span style="font-weight:bold">sizeof</span>(mask) * 8; idx++) {
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">if</span> ((mask &gt;&gt; idx) &amp; 1)
+</span></span><span style="display:flex;"><span>                cout &lt;&lt; arr[idx] &lt;&lt; <span style="font-style:italic">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        cout &lt;&lt; <span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="iterating-over-power-set-using-bankers-sequence">Iterating over power set, using banker&rsquo;s sequence</h2>
-<p>Using <a href="http://applied-math.org/subset.pdf">banker&rsquo;s sequence</a> we can generate
+</div><h2 id="iterating-over-power-set-using-bankers-sequence">
+  Iterating over power set, using banker&rsquo;s sequence
+  <a class="heading-link" href="#iterating-over-power-set-using-bankers-sequence">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Using <a href="http://applied-math.org/subset.pdf"  class="external-link" target="_blank" rel="noopener">banker&rsquo;s sequence</a> we can generate
 subsets in a monotonically increasing order of cardinality. Depending on your
 use case, it may be extremely useful. The idea is to use a bitmask as before
 but we will consider all bitmasks with set bits = k before we consider any
 mask with set bits &gt; k.</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="">void</span> powerset4(<span style="font-weight:bold">const</span> vector&lt;<span style="">int</span>&gt; &amp;arr) {
-    <span style="">int</span> arr_size = arr.size();
-    vector&lt;<span style="">bool</span>&gt; mask(arr_size, false);
-
-    <span style="font-weight:bold">for</span> (<span style="">int</span> i = 0; i &lt;= arr_size; i++) {
-        fill(mask.begin(), mask.end()-i, false);
-        fill(mask.end()-i, mask.end(), true);
-
-        <span style="font-weight:bold">do</span> {
-            <span style="font-weight:bold">for</span> (<span style="">int</span> j = 0; j &lt; arr_size; j++) {
-                <span style="font-weight:bold">if</span> (mask[j])
-                    cout &lt;&lt; arr[j] &lt;&lt; <span style="font-style:italic">&#34; &#34;</span>;
-            }
-            cout &lt;&lt; <span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>;
-        } <span style="font-weight:bold">while</span>(next_permutation(mask.begin(), mask.end()));
-    }
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="">void</span> powerset4(<span style="font-weight:bold">const</span> vector&lt;<span style="">int</span>&gt; &amp;arr) {
+</span></span><span style="display:flex;"><span>    <span style="">int</span> arr_size = arr.size();
+</span></span><span style="display:flex;"><span>    vector&lt;<span style="">bool</span>&gt; mask(arr_size, false);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span> (<span style="">int</span> i = 0; i &lt;= arr_size; i++) {
+</span></span><span style="display:flex;"><span>        fill(mask.begin(), mask.end()-i, false);
+</span></span><span style="display:flex;"><span>        fill(mask.end()-i, mask.end(), true);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">do</span> {
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">for</span> (<span style="">int</span> j = 0; j &lt; arr_size; j++) {
+</span></span><span style="display:flex;"><span>                <span style="font-weight:bold">if</span> (mask[j])
+</span></span><span style="display:flex;"><span>                    cout &lt;&lt; arr[j] &lt;&lt; <span style="font-style:italic">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            cout &lt;&lt; <span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>;
+</span></span><span style="display:flex;"><span>        } <span style="font-weight:bold">while</span>(next_permutation(mask.begin(), mask.end()));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="conclusion">Conclusion</h2>
+</div><h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
 <p>As Donald Knuth once remarked, there seems to be as many algorithms for
 unsorting data as there are for sorting it. There are many approaches and
 algorithms for power set generation. I hope I have provided a decent coverage
@@ -376,8 +445,8 @@ of the most popular ones.</p>
 
 
         <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+<script>
+  window.disqus_config = function () {
     
     
     
@@ -388,86 +457,105 @@ of the most popular ones.</p>
             return;
         }
         var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "j4nu5" + '.disqus.com/embed.js';
+        s.src = '//' + "the-janus-list" + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+        
+        
         
         
       </footer>
     </article>
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          ['$', '$'], ['\\(', '\\)']
-        ],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
       }
-    };
-  </script>
+    );"></script>
   </section>
 
-      </div>
+    </div>
 
-      
-  <footer class="footer">
-    <section class="container">
-      
-      
-        ©
-        
-        2020
-         Kushagra Sinha 
-      
-      
-         · 
-        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-      
-      
-    </section>
-  </footer>
-
-    </main>
-
+    <footer class="footer">
+  <section class="container">
+    ©
     
-      
-      <script src="/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    2024
+     Kushagra Sinha 
+    ·
     
-
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
     
+  </section>
+</footer>
 
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-24193913-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
 
 
-    
+  
 
-    
+  
 
-    
-  </body>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
 
 </html>

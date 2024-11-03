@@ -2,152 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>The Janus List</title>
-    <link>https://www.j4nu5.com/</link>
+    <link>https://sinhak.dev/</link>
     <description>Recent content on The Janus List</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Oct 2020 19:03:13 +0200</lastBuildDate><atom:link href="https://www.j4nu5.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Oct 2020 19:03:13 +0200</lastBuildDate>
+    <atom:link href="https://sinhak.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Reliable Engineer</title>
-      <link>https://www.j4nu5.com/posts/the-reliable-engineer/</link>
+      <link>https://sinhak.dev/posts/the-reliable-engineer/</link>
       <pubDate>Sat, 10 Oct 2020 19:03:13 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/the-reliable-engineer/</guid>
-      <description>What is Reliability? One of the lenses through which I view my job is as a service that I provide to my immediate manager. This is different from any additional obligations that I may have to my employer.
-From this lens, I want to provide such a quality of service where my manager is able to assign a task to me, and forget about it.
-The extent to which I can meet this bar, is reliability.</description>
+      <guid>https://sinhak.dev/posts/the-reliable-engineer/</guid>
+      <description>&lt;h1 id=&#34;what-is-_reliability_&#34;&gt;&#xA;  What is &lt;em&gt;Reliability&lt;/em&gt;?&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#what-is-_reliability_&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;One of the lenses through which I view my job is as a &lt;em&gt;service&lt;/em&gt; that I provide&#xA;to my &lt;em&gt;immediate&lt;/em&gt; manager. This is different from any additional obligations&#xA;that I may have to my employer.&lt;br&gt;&#xA;From this lens, I want to provide such a quality of service where my manager is&#xA;able to assign a task to me, and &lt;em&gt;&lt;strong&gt;forget about it&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;&#xA;The extent to which I can meet this bar, is &lt;em&gt;reliability&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Const References to Temporary Objects</title>
-      <link>https://www.j4nu5.com/posts/const-reference-to-temporary-objects/</link>
+      <link>https://sinhak.dev/posts/const-reference-to-temporary-objects/</link>
       <pubDate>Sun, 02 Sep 2018 18:24:40 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/const-reference-to-temporary-objects/</guid>
-      <description>Consider the following code snippet:
-1 2 3 4 5 6 7 8 9 10 11 12  #include &amp;lt;iostream&amp;gt; int GetInt() { int x = 1; return x; } int main() { const int&amp;amp; x = GetInt(); std::cout &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl; return 0; }   In particular, pay attention to line #9. Is it guaranteed to be safe?
-In this case, the answer is yes. The C++ standard guarantees that binding a temporary to a const reference on the stack, extends the lifetime of the temporary to the lifetime of the const reference.</description>
+      <guid>https://sinhak.dev/posts/const-reference-to-temporary-objects/</guid>
+      <description>&lt;p&gt;Consider the following code snippet:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;&#34;&gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;&#34;&gt;int&lt;/span&gt; GetInt() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;&#34;&gt;int&lt;/span&gt; x = 1;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;font-weight:bold&#34;&gt;return&lt;/span&gt; x;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;&#34;&gt;int&lt;/span&gt; main() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;&#34;&gt;int&lt;/span&gt;&amp;amp; x = GetInt();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    std::cout &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;font-weight:bold&#34;&gt;return&lt;/span&gt; 0;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;In particular, pay attention to line #9. Is it guaranteed to be safe?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>About Me</title>
-      <link>https://www.j4nu5.com/about/</link>
+      <link>https://sinhak.dev/about/</link>
       <pubDate>Sun, 02 Sep 2018 03:25:39 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/about/</guid>
-      <description>Hi! I am Kushagra Sinha.
-I am a Software Engineer working on Chrome OS, at Google, in the beautiful German city of Munich.
-I have been working in the software industry since 2013. Past jobs have included Web 2.0 startups and a fin-tech startup. I am fluent in C++, Java and Python.
-You can mail me at kush @ this domain.</description>
+      <guid>https://sinhak.dev/about/</guid>
+      <description>&lt;p&gt;Hi! I am Kushagra Sinha.&lt;/p&gt;&#xA;&lt;p&gt;I am a Software Engineer working on Chrome OS, at Google, in the beautiful&#xA;German city of Munich.&lt;/p&gt;&#xA;&lt;p&gt;I have been working in the software industry since 2013. Past jobs have included&#xA;Web 2.0 startups and a fin-tech startup. I am fluent in C++, Java and Python.&lt;/p&gt;&#xA;&lt;p&gt;You can mail me at kush @ this domain.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Pelican Setup</title>
-      <link>https://www.j4nu5.com/posts/pelican-setup/</link>
-      <pubDate>Thu, 24 Aug 2017 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/pelican-setup/</guid>
-      <description>Install Pelican:
-1  sudo -H pip install pelican Markdown typogrify   Install Pelican themes
-1 2 3  git clone --recursive https://github.com/getpelican/pelican-themes sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex sudo chmod 755 /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex   Install Pelican plugins
-1  git clone --recursive https://github.com/getpelican/pelican-plugins   Fetch blog sources
-1 2 3 4  git clone git@github.com:j4nu5/j4nu5.github.io.git cd j4nu5.github.io.git git fetch git checkout source   Setup for development
-1  mkdir cache output   Verify plugins root</description>
+      <link>https://sinhak.dev/posts/pelican-setup/</link>
+      <pubDate>Thu, 24 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/posts/pelican-setup/</guid>
+      <description>&lt;p&gt;Install Pelican:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo -H pip install pelican Markdown typogrify&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;Install Pelican themes&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone --recursive https://github.com/getpelican/pelican-themes&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo chmod 755 /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;Install Pelican plugins&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone --recursive https://github.com/getpelican/pelican-plugins&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;Fetch blog sources&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone git@github.com:j4nu5/j4nu5.github.io.git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd j4nu5.github.io.git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git fetch&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout source&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;Setup for development&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>USACO setup</title>
-      <link>https://www.j4nu5.com/posts/usaco-setup/</link>
-      <pubDate>Mon, 28 Mar 2016 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/usaco-setup/</guid>
-      <description>USACO is fun. Though it is fairly easy to get up and running on the platform, there remain a few repetitive steps during problem solving that can be automated. Here is a brief summary of my automation steps:
- Use a template. Here is mine. Save it as template.cpp:   Save this script as solve.sh in the same directory as above:   All done! Whenever you&amp;rsquo;re ready to begin coding a solution, simply execute .</description>
+      <link>https://sinhak.dev/posts/usaco-setup/</link>
+      <pubDate>Mon, 28 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/posts/usaco-setup/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.usaco.org/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;USACO&lt;/a&gt; is fun. Though it is fairly easy to get up&#xA;and running on the platform, there remain a few repetitive steps during&#xA;problem solving that can be automated. Here is a brief summary of my&#xA;automation steps:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Use a template. Here is mine. Save it as &lt;em&gt;template.cpp&lt;/em&gt;:&#xA;&lt;script src=&#34;https://gist.github.com/j4nu5/d2b23dcdc20c9de48715.js?file=usaco_template.cpp&#34;&gt;&lt;/script&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Save this script as &lt;em&gt;solve.sh&lt;/em&gt; in the same directory as above:&#xA;&lt;script src=&#34;https://gist.github.com/j4nu5/55005626c282e056b753.js?file=usaco_solve.sh&#34;&gt;&lt;/script&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;All done!&#xA;Whenever you&amp;rsquo;re ready to begin coding a solution, simply execute&#xA;&lt;code&gt;./solve.sh PROBLEM_NAME&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;All the best!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hello USACO</title>
-      <link>https://www.j4nu5.com/posts/hello_usaco/</link>
-      <pubDate>Sun, 27 Mar 2016 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/hello_usaco/</guid>
-      <description>I love competitive programming. I love the anticipation while I wait with my fingers crossed after submitting a solution. And the rush that follows after getting an &amp;lsquo;AC&amp;rsquo;.
-After stagnating near the 60-70th percentile for eons, I have decided to dedicate focused practice time for competitive programming. The next series of blog posts will track my journey through USACO.
-All the best to me!</description>
+      <link>https://sinhak.dev/posts/hello_usaco/</link>
+      <pubDate>Sun, 27 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/posts/hello_usaco/</guid>
+      <description>&lt;p&gt;I love competitive programming. I love the anticipation while I wait with my&#xA;fingers crossed after submitting a solution. And the rush that follows after&#xA;getting an &amp;lsquo;AC&amp;rsquo;.&lt;/p&gt;&#xA;&lt;p&gt;After stagnating near the 60-70th percentile for eons, I have decided to&#xA;dedicate focused practice time for competitive programming. The next series&#xA;of blog posts will track my journey through &lt;a href=&#34;http://www.usaco.org/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;USACO&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;All the best to me!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facebook Hacker Cup 2015 Qualification Round Solutions</title>
-      <link>https://www.j4nu5.com/posts/facebook-hackercup-2015-qualifications/</link>
-      <pubDate>Mon, 12 Jan 2015 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/facebook-hackercup-2015-qualifications/</guid>
-      <description>Facebook recently organized the qualification round of Hacker Cup 2015. They posed some interesting problems and anyone who could get at least one problem right can move to the next round.
-I managed to get a rank of 217, with a perfect score of 100. I have posted my solutions below with a little bit of commentary. You can access the problems here.
-Cooking the Books (15 points) This was the easiest question.</description>
+      <link>https://sinhak.dev/posts/facebook-hackercup-2015-qualifications/</link>
+      <pubDate>Mon, 12 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/posts/facebook-hackercup-2015-qualifications/</guid>
+      <description>&lt;p&gt;Facebook recently organized the qualification round of Hacker Cup 2015. They&#xA;posed some interesting problems and anyone who could get at least one problem&#xA;right can move to the next round.&lt;/p&gt;&#xA;&lt;p&gt;I managed to get a rank of 217, with a perfect score of 100. I have posted my&#xA;solutions below with a little bit of commentary. You can access the problems&#xA;&lt;a href=&#34;https://www.facebook.com/hackercup/problems.php?round=742632349177460&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;cooking-the-books-15-points&#34;&gt;&#xA;  Cooking the Books (15 points)&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#cooking-the-books-15-points&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This was the easiest question. Since the constraints were so small, it suffices&#xA;to use brute force and try all possible swaps. Care has to be taken however to&#xA;make sure that a number never starts with 0.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Generating Power Set</title>
-      <link>https://www.j4nu5.com/posts/generating-power-set/</link>
-      <pubDate>Mon, 05 Jan 2015 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/generating-power-set/</guid>
-      <description>Iterating over all possible subsets of a set is a problem that can arise not only in competitive programming but also in day-to-day programming. While the total number of possible subsets is quite huge (2^n where n is the cardinality of the input set), often we want an algorithm that systematically considers all subsets for small values of n.
-A power set is a set of all subsets of a given input set.</description>
+      <link>https://sinhak.dev/posts/generating-power-set/</link>
+      <pubDate>Mon, 05 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/posts/generating-power-set/</guid>
+      <description>&lt;p&gt;Iterating over all possible subsets of a set is a problem that can arise not&#xA;only in competitive programming but also in day-to-day programming. While the&#xA;total number of possible subsets is quite huge (&lt;em&gt;2^n&lt;/em&gt; where &lt;em&gt;n&lt;/em&gt; is the&#xA;cardinality of the input set), often we want an algorithm that systematically&#xA;considers all subsets for small values of &lt;em&gt;n&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;A &lt;a href=&#34;http://en.wikipedia.org/wiki/Power_set&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;power set&lt;/a&gt; is a set of all subsets&#xA;of a given input set. Often we may want to simply iterate over all members of&#xA;the power set, but sometimes (if we have enough memory) we may need the power&#xA;set itself. In the following post, I have attempted to present some algorithms&#xA;(with C++11 implementations) that solve both kinds of problems (simple&#xA;iteration and complete power set construction).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Implementing Service Oriented Architecture using Http is a horrible idea</title>
-      <link>https://www.j4nu5.com/posts/soa-using-http-considered-harmful/</link>
-      <pubDate>Sun, 16 Nov 2014 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/soa-using-http-considered-harmful/</guid>
-      <description>Service Oriented Architecture is a commonly used design pattern in distributed and enterprise applications. It involves the creation and use of independent services that work together to produce the desired result. The most important benefits, of course, are separation of concerns and the ability to scale each service independent of others, leading to a clean, modular design.
-A common problem faced during the design of a SOA system is the choice of communication protocol.</description>
+      <link>https://sinhak.dev/posts/soa-using-http-considered-harmful/</link>
+      <pubDate>Sun, 16 Nov 2014 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/posts/soa-using-http-considered-harmful/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Service-oriented_architecture&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Service Oriented Architecture&lt;/a&gt;&#xA;is a commonly used design pattern in distributed and enterprise applications.&#xA;It involves the creation and use of independent &lt;em&gt;services&lt;/em&gt; that work together&#xA;to produce the desired result. The most important benefits, of course, are&#xA;separation of concerns and the ability to scale each service independent of&#xA;others, leading to a clean, modular design.&lt;/p&gt;&#xA;&lt;p&gt;A common problem faced during the design of a SOA system is the choice of&#xA;communication protocol. Ideally we want our services to communicate with each&#xA;other with minimum communication overhead. This involves:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>The toughest interview question</title>
-      <link>https://www.j4nu5.com/posts/the-toughest-interview-question/</link>
-      <pubDate>Tue, 29 Jul 2014 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/the-toughest-interview-question/</guid>
-      <description>What is the output of the following C code snippet?
-1 2  int n = 1; printf(&amp;#34;%d %d %d\n&amp;#34;, n++, ++n, n++ + ++n);   This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler&amp;rsquo;s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer&amp;rsquo;s favorite compiler?</description>
+      <link>https://sinhak.dev/posts/the-toughest-interview-question/</link>
+      <pubDate>Tue, 29 Jul 2014 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/posts/the-toughest-interview-question/</guid>
+      <description>&lt;p&gt;What is the output of the following C code snippet?&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;&#34;&gt;int&lt;/span&gt; n = 1;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;printf(&lt;span style=&#34;font-style:italic&#34;&gt;&amp;#34;%d %d %d&lt;/span&gt;&lt;span style=&#34;font-weight:bold;font-style:italic&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;font-style:italic&#34;&gt;&amp;#34;&lt;/span&gt;, n++, ++n, n++ + ++n);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;This is a tricky question. Any attempt to answer this question requires either&#xA;a deep understanding of your compiler&amp;rsquo;s parser or a complete ignorance of C.&#xA;Even if you fall under the first category and know the ins and outs of your&#xA;favorite compiler, how do you know which is your &lt;em&gt;interviewer&amp;rsquo;s&lt;/em&gt; favorite&#xA;compiler?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>In search of the perfect blogging platform</title>
-      <link>https://www.j4nu5.com/posts/in-search-of-the-perfect-blogging-platform/</link>
-      <pubDate>Wed, 23 Jul 2014 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/in-search-of-the-perfect-blogging-platform/</guid>
-      <description>What makes a good blogging platform?
-Leaving the tech details, feature lists and other bells and whistles aside, a good blogging platform&amp;rsquo;s primary aim is twofold:
- Make blogging enjoyable. Entice the blogger into writing more articles. Make reading enjoyable. The output of the blogging platform should be easy to consume. A good support for themes and customization is a must.  I had been using Syte as my homepage. Tumblr was the underlying blogging platform and the whole thing was hosted on Heroku.</description>
+      <link>https://sinhak.dev/posts/in-search-of-the-perfect-blogging-platform/</link>
+      <pubDate>Wed, 23 Jul 2014 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/posts/in-search-of-the-perfect-blogging-platform/</guid>
+      <description>&lt;p&gt;What makes a good blogging platform?&lt;/p&gt;&#xA;&lt;p&gt;Leaving the tech details, feature lists and other bells and whistles&#xA;aside, a good blogging platform&amp;rsquo;s primary aim is twofold:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Make blogging enjoyable. Entice the blogger into writing more articles.&lt;/li&gt;&#xA;&lt;li&gt;Make reading enjoyable. The output of the blogging platform should be easy&#xA;to consume. A good support for themes and customization is a must.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;I had been using &lt;a href=&#34;https://github.com/rigoneri/syte&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Syte&lt;/a&gt; as my homepage.&#xA;&lt;a href=&#34;https://www.tumblr.com/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tumblr&lt;/a&gt; was the underlying blogging platform and&#xA;the whole thing was hosted on &lt;a href=&#34;https://www.heroku.com/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Heroku&lt;/a&gt;. As it turns&#xA;out, all three of my aforementioned choices were sub-optimal as far as my&#xA;blogging requirements were considered.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Abstract Classes and Factory Design Pattern in Python</title>
-      <link>https://www.j4nu5.com/posts/abstract-classes-and-factory-design-pattern-in-python/</link>
-      <pubDate>Thu, 19 Dec 2013 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/abstract-classes-and-factory-design-pattern-in-python/</guid>
-      <description>Abstract Classes are one of the most useful and important concepts in Object Oriented Programming. I&amp;rsquo;ll attempt to illustrate their usefulness, and their usage in Python 2.7 with the following (seemingly contrived) example:
-Let us say, you want/have to implement posting updates on Facebook using Python. Your code might look something like this:
-1 2 3 4 5 6 7 8 9  # Attempt 0: Bad code. def facebook_share_init(*args, **kwargs): # Initialize OAuth with facebook # .</description>
+      <link>https://sinhak.dev/posts/abstract-classes-and-factory-design-pattern-in-python/</link>
+      <pubDate>Thu, 19 Dec 2013 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/posts/abstract-classes-and-factory-design-pattern-in-python/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Class_%28computer_programming%29#Abstract_and_concrete&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Abstract Classes&lt;/a&gt;&#xA;are one of the most useful and important concepts in Object Oriented&#xA;Programming. I&amp;rsquo;ll attempt to illustrate their usefulness, and their usage in&#xA;Python 2.7 with the following (seemingly contrived) example:&lt;/p&gt;&#xA;&lt;p&gt;Let us say, you want/have to implement posting updates on Facebook using&#xA;Python. Your code might look something like this:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;9&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;font-style:italic&#34;&gt;# Attempt 0: Bad code.&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;font-weight:bold&#34;&gt;def&lt;/span&gt; facebook_share_init(*args, **kwargs):&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;font-style:italic&#34;&gt;# Initialize OAuth with facebook&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;font-style:italic&#34;&gt;# ...&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;font-weight:bold&#34;&gt;def&lt;/span&gt; share_on_facebook(*args, **kwargs):&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;font-style:italic&#34;&gt;# Post to Facebook&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;font-style:italic&#34;&gt;# ...&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;It works and everyone is happy. Then one day, you decide to support posting&#xA;tweets in your application. You add the following:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>New Year Resolutions and Nostalgia</title>
-      <link>https://www.j4nu5.com/posts/new-year-resolutions-and-nostalgia/</link>
-      <pubDate>Tue, 01 Jan 2013 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.j4nu5.com/posts/new-year-resolutions-and-nostalgia/</guid>
-      <description>I was going through this link today when I could not help but feel an overwhelming sense of sadness and incompleteness.
-I will be graduating in May, 2013 from the Indian Institute of Technology, Varanasi. The best 4 years of my life already behind me. As I was going through this list, I found a lot of things I wish I could have done, many others I wish I had done in a better fashion and many still that I have to do.</description>
+      <link>https://sinhak.dev/posts/new-year-resolutions-and-nostalgia/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/posts/new-year-resolutions-and-nostalgia/</guid>
+      <description>&lt;p&gt;I was going through this &lt;a href=&#34;http://mitadmissions.org/blogs/entry/50_things&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&#xA;today when I could not help but feel an overwhelming sense of sadness and&#xA;incompleteness.&lt;/p&gt;&#xA;&lt;p&gt;I will be graduating in May, 2013 from the Indian Institute of Technology,&#xA;Varanasi. The best 4 years of my life already behind me. As I was going&#xA;through this list, I found a lot of things I wish I could have done, many&#xA;others I wish I had done in a better fashion and many still that I have to do.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

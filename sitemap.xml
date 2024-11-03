@@ -1,145 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://www.j4nu5.com/categories/</loc>
+    <loc>https://sinhak.dev/categories/</loc>
     <lastmod>2020-10-10T19:03:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/categories/development/</loc>
+  </url><url>
+    <loc>https://sinhak.dev/tags/development/</loc>
     <lastmod>2020-10-10T19:03:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/tags/development/</loc>
+  </url><url>
+    <loc>https://sinhak.dev/categories/development/</loc>
     <lastmod>2020-10-10T19:03:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/</loc>
+  </url><url>
+    <loc>https://sinhak.dev/posts/</loc>
     <lastmod>2020-10-10T19:03:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/tags/</loc>
+  </url><url>
+    <loc>https://sinhak.dev/tags/</loc>
     <lastmod>2020-10-10T19:03:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/</loc>
+  </url><url>
+    <loc>https://sinhak.dev/</loc>
     <lastmod>2020-10-10T19:03:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/the-reliable-engineer/</loc>
+  </url><url>
+    <loc>https://sinhak.dev/posts/the-reliable-engineer/</loc>
     <lastmod>2020-10-10T19:03:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/const-reference-to-temporary-objects/</loc>
+  </url><url>
+    <loc>https://sinhak.dev/posts/const-reference-to-temporary-objects/</loc>
     <lastmod>2018-09-02T18:24:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/categories/programming/</loc>
+  </url><url>
+    <loc>https://sinhak.dev/tags/programming/</loc>
     <lastmod>2018-09-02T18:24:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/tags/programming/</loc>
+  </url><url>
+    <loc>https://sinhak.dev/categories/programming/</loc>
     <lastmod>2018-09-02T18:24:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/about/</loc>
+  </url><url>
+    <loc>https://sinhak.dev/about/</loc>
     <lastmod>2018-09-02T03:25:39+02:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/posts/pelican-setup/</loc>
+    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/tags/setup/</loc>
+    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/tags/competitive-programming/</loc>
+    <lastmod>2016-03-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/posts/usaco-setup/</loc>
+    <lastmod>2016-03-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/posts/hello_usaco/</loc>
+    <lastmod>2016-03-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/posts/facebook-hackercup-2015-qualifications/</loc>
+    <lastmod>2015-01-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/posts/generating-power-set/</loc>
+    <lastmod>2015-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/posts/soa-using-http-considered-harmful/</loc>
+    <lastmod>2014-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/tags/interviews/</loc>
+    <lastmod>2014-07-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/posts/the-toughest-interview-question/</loc>
+    <lastmod>2014-07-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/posts/in-search-of-the-perfect-blogging-platform/</loc>
+    <lastmod>2014-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/tags/misc/</loc>
+    <lastmod>2014-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/tags/musings/</loc>
+    <lastmod>2014-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/categories/random/</loc>
+    <lastmod>2014-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/posts/abstract-classes-and-factory-design-pattern-in-python/</loc>
+    <lastmod>2016-03-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/tags/python/</loc>
+    <lastmod>2016-03-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinhak.dev/posts/new-year-resolutions-and-nostalgia/</loc>
+    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/pelican-setup/</loc>
-    <lastmod>2017-08-24T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/tags/setup/</loc>
-    <lastmod>2017-08-24T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/tags/competitive-programming/</loc>
-    <lastmod>2016-03-28T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/usaco-setup/</loc>
-    <lastmod>2016-03-28T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/hello_usaco/</loc>
-    <lastmod>2016-03-27T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/facebook-hackercup-2015-qualifications/</loc>
-    <lastmod>2015-01-12T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/generating-power-set/</loc>
-    <lastmod>2015-01-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/soa-using-http-considered-harmful/</loc>
-    <lastmod>2014-11-16T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/tags/interviews/</loc>
-    <lastmod>2014-07-29T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/the-toughest-interview-question/</loc>
-    <lastmod>2014-07-29T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/in-search-of-the-perfect-blogging-platform/</loc>
-    <lastmod>2014-07-23T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/tags/misc/</loc>
-    <lastmod>2014-07-23T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/tags/musings/</loc>
-    <lastmod>2014-07-23T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/categories/random/</loc>
-    <lastmod>2014-07-23T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/abstract-classes-and-factory-design-pattern-in-python/</loc>
-    <lastmod>2016-03-27T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/tags/python/</loc>
-    <lastmod>2016-03-27T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.j4nu5.com/posts/new-year-resolutions-and-nostalgia/</loc>
-    <lastmod>2013-01-01T00:00:00+01:00</lastmod>
-  </url>
-  
 </urlset>

@@ -2,82 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on The Janus List</title>
-    <link>https://www.j4nu5.com/tags/</link>
+    <link>https://sinhak.dev/tags/</link>
     <description>Recent content in Tags on The Janus List</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Oct 2020 19:03:13 +0200</lastBuildDate><atom:link href="https://www.j4nu5.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Oct 2020 19:03:13 +0200</lastBuildDate>
+    <atom:link href="https://sinhak.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>development</title>
-      <link>https://www.j4nu5.com/tags/development/</link>
+      <title>Development</title>
+      <link>https://sinhak.dev/tags/development/</link>
       <pubDate>Sat, 10 Oct 2020 19:03:13 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/tags/development/</guid>
+      <guid>https://sinhak.dev/tags/development/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>programming</title>
-      <link>https://www.j4nu5.com/tags/programming/</link>
+      <title>Programming</title>
+      <link>https://sinhak.dev/tags/programming/</link>
       <pubDate>Sun, 02 Sep 2018 18:24:40 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/tags/programming/</guid>
+      <guid>https://sinhak.dev/tags/programming/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>setup</title>
-      <link>https://www.j4nu5.com/tags/setup/</link>
-      <pubDate>Thu, 24 Aug 2017 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/tags/setup/</guid>
+      <title>Setup</title>
+      <link>https://sinhak.dev/tags/setup/</link>
+      <pubDate>Thu, 24 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/tags/setup/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>competitive programming</title>
-      <link>https://www.j4nu5.com/tags/competitive-programming/</link>
-      <pubDate>Mon, 28 Mar 2016 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/tags/competitive-programming/</guid>
+      <title>Competitive Programming</title>
+      <link>https://sinhak.dev/tags/competitive-programming/</link>
+      <pubDate>Mon, 28 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/tags/competitive-programming/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>interviews</title>
-      <link>https://www.j4nu5.com/tags/interviews/</link>
-      <pubDate>Tue, 29 Jul 2014 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/tags/interviews/</guid>
+      <title>Interviews</title>
+      <link>https://sinhak.dev/tags/interviews/</link>
+      <pubDate>Tue, 29 Jul 2014 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/tags/interviews/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>misc</title>
-      <link>https://www.j4nu5.com/tags/misc/</link>
-      <pubDate>Wed, 23 Jul 2014 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/tags/misc/</guid>
+      <title>Misc</title>
+      <link>https://sinhak.dev/tags/misc/</link>
+      <pubDate>Wed, 23 Jul 2014 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/tags/misc/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>musings</title>
-      <link>https://www.j4nu5.com/tags/musings/</link>
-      <pubDate>Wed, 23 Jul 2014 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.j4nu5.com/tags/musings/</guid>
+      <title>Musings</title>
+      <link>https://sinhak.dev/tags/musings/</link>
+      <pubDate>Wed, 23 Jul 2014 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/tags/musings/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python</title>
-      <link>https://www.j4nu5.com/tags/python/</link>
-      <pubDate>Thu, 19 Dec 2013 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.j4nu5.com/tags/python/</guid>
+      <title>Python</title>
+      <link>https://sinhak.dev/tags/python/</link>
+      <pubDate>Thu, 19 Dec 2013 00:00:00 +0000</pubDate>
+      <guid>https://sinhak.dev/tags/python/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
