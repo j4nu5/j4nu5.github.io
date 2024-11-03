@@ -6,6 +6,7 @@
     <description>Recent content in Musings on The Janus List</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <copyright>© Kushagra Sinha</copyright>
     <lastBuildDate>Wed, 23 Jul 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://sinhak.dev/tags/musings/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -13,14 +14,14 @@
       <link>https://sinhak.dev/posts/in-search-of-the-perfect-blogging-platform/</link>
       <pubDate>Wed, 23 Jul 2014 00:00:00 +0000</pubDate>
       <guid>https://sinhak.dev/posts/in-search-of-the-perfect-blogging-platform/</guid>
-      <description>&lt;p&gt;What makes a good blogging platform?&lt;/p&gt;&#xA;&lt;p&gt;Leaving the tech details, feature lists and other bells and whistles&#xA;aside, a good blogging platform&amp;rsquo;s primary aim is twofold:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Make blogging enjoyable. Entice the blogger into writing more articles.&lt;/li&gt;&#xA;&lt;li&gt;Make reading enjoyable. The output of the blogging platform should be easy&#xA;to consume. A good support for themes and customization is a must.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;I had been using &lt;a href=&#34;https://github.com/rigoneri/syte&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Syte&lt;/a&gt; as my homepage.&#xA;&lt;a href=&#34;https://www.tumblr.com/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tumblr&lt;/a&gt; was the underlying blogging platform and&#xA;the whole thing was hosted on &lt;a href=&#34;https://www.heroku.com/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Heroku&lt;/a&gt;. As it turns&#xA;out, all three of my aforementioned choices were sub-optimal as far as my&#xA;blogging requirements were considered.&lt;/p&gt;</description>
+      <description>&lt;p&gt;What makes a good blogging platform?&lt;/p&gt;&#xA;&lt;p&gt;Leaving the tech details, feature lists and other bells and whistles&#xA;aside, a good blogging platform&amp;rsquo;s primary aim is twofold:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Make blogging enjoyable. Entice the blogger into writing more articles.&lt;/li&gt;&#xA;&lt;li&gt;Make reading enjoyable. The output of the blogging platform should be easy&#xA;to consume. A good support for themes and customization is a must.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;I had been using &lt;a href=&#34;https://github.com/rigoneri/syte&#34;&gt;Syte&lt;/a&gt; as my homepage.&#xA;&lt;a href=&#34;https://www.tumblr.com/&#34;&gt;Tumblr&lt;/a&gt; was the underlying blogging platform and&#xA;the whole thing was hosted on &lt;a href=&#34;https://www.heroku.com/&#34;&gt;Heroku&lt;/a&gt;. As it turns&#xA;out, all three of my aforementioned choices were sub-optimal as far as my&#xA;blogging requirements were considered.&lt;/p&gt;</description>
     </item>
     <item>
       <title>New Year Resolutions and Nostalgia</title>
       <link>https://sinhak.dev/posts/new-year-resolutions-and-nostalgia/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
       <guid>https://sinhak.dev/posts/new-year-resolutions-and-nostalgia/</guid>
-      <description>&lt;p&gt;I was going through this &lt;a href=&#34;http://mitadmissions.org/blogs/entry/50_things&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&#xA;today when I could not help but feel an overwhelming sense of sadness and&#xA;incompleteness.&lt;/p&gt;&#xA;&lt;p&gt;I will be graduating in May, 2013 from the Indian Institute of Technology,&#xA;Varanasi. The best 4 years of my life already behind me. As I was going&#xA;through this list, I found a lot of things I wish I could have done, many&#xA;others I wish I had done in a better fashion and many still that I have to do.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I was going through this &lt;a href=&#34;http://mitadmissions.org/blogs/entry/50_things&#34;&gt;link&lt;/a&gt;&#xA;today when I could not help but feel an overwhelming sense of sadness and&#xA;incompleteness.&lt;/p&gt;&#xA;&lt;p&gt;I will be graduating in May, 2013 from the Indian Institute of Technology,&#xA;Varanasi. The best 4 years of my life already behind me. As I was going&#xA;through this list, I found a lot of things I wish I could have done, many&#xA;others I wish I had done in a better fashion and many still that I have to do.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

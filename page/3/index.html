@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>The Janus List | Home </title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta property="og:image" content=""/>
+	<link rel="alternate" type="application/rss+xml" href="https://sinhak.dev/index.xml" title="The Janus List" />
+	<meta property="og:url" content="https://sinhak.dev/">
+  <meta property="og:site_name" content="The Janus List">
+  <meta property="og:title" content="The Janus List">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Janus List">
+<script src="https://sinhak.dev/js/feather.min.js"></script>
+	
+	
+        <link href="https://sinhak.dev/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://sinhak.dev/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://sinhak.dev/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css"  disabled />
+	
+
+	
+	
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script>
+	
+
+	
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+			</script>
+	
+
+	
+</head>
+
+	<body>
+		<div class="content">
+			<header>
+	<div class="main">
+		<a href="https://sinhak.dev/">The Janus List</a>
+	</div>
+	<nav>
+		
+		<a href="/posts/">articles</a>
+		
+		<a href="/about/">about</a>
+		
+		| <span id="dark-mode-toggle" onclick="toggleTheme()"></span>
+		<script src="https://sinhak.dev/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+			
+			<main class="list">
+				<div class="site-description"><p>I disclaim thee, o&rsquo; liability</p></div>
+				
+				
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/generating-power-set/">Generating Power Set</a></h1>
+					<time>Jan 5, 2015</time>
+					<br><div class="description">
+	
+	<p>Iterating over all possible subsets of a set is a problem that can arise not
+only in competitive programming but also in day-to-day programming. While the
+total number of possible subsets is quite huge (<em>2^n</em> where <em>n</em> is the
+cardinality of the input set), often we want an algorithm that systematically
+considers all subsets for small values of <em>n</em>.</p>
+<p>A <a href="http://en.wikipedia.org/wiki/Power_set">power set</a> is a set of all subsets
+of a given input set. Often we may want to simply iterate over all members of
+the power set, but sometimes (if we have enough memory) we may need the power
+set itself. In the following post, I have attempted to present some algorithms
+(with C++11 implementations) that solve both kinds of problems (simple
+iteration and complete power set construction).</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/generating-power-set/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/soa-using-http-considered-harmful/">Implementing Service Oriented Architecture using Http is a horrible idea</a></h1>
+					<time>Nov 16, 2014</time>
+					<br><div class="description">
+	
+	<p><a href="http://en.wikipedia.org/wiki/Service-oriented_architecture">Service Oriented Architecture</a>
+is a commonly used design pattern in distributed and enterprise applications.
+It involves the creation and use of independent <em>services</em> that work together
+to produce the desired result. The most important benefits, of course, are
+separation of concerns and the ability to scale each service independent of
+others, leading to a clean, modular design.</p>
+<p>A common problem faced during the design of a SOA system is the choice of
+communication protocol. Ideally we want our services to communicate with each
+other with minimum communication overhead. This involves:</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/soa-using-http-considered-harmful/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/the-toughest-interview-question/">The toughest interview question</a></h1>
+					<time>Jul 29, 2014</time>
+					<br><div class="description">
+	
+	<p>What is the output of the following C code snippet?</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d %d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n<span style="color:#f92672">++</span>, <span style="color:#f92672">++</span>n, n<span style="color:#f92672">++</span> <span style="color:#f92672">+</span> <span style="color:#f92672">++</span>n);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This is a tricky question. Any attempt to answer this question requires either
+a deep understanding of your compiler&rsquo;s parser or a complete ignorance of C.
+Even if you fall under the first category and know the ins and outs of your
+favorite compiler, how do you know which is your <em>interviewer&rsquo;s</em> favorite
+compiler?</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/the-toughest-interview-question/">Read more ⟶</a>
+				</section>
+				
+				
+
+<ul class="pagination">
+	<span class="page-item page-prev">
+	
+    <a href="/page/2/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
+	
+	</span>
+	<span class="page-item page-next">
+	
+    <a href="/page/4/" class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
+	
+	</span>
+</ul>
+
+
+			</main>
+			<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/j4nu5/" rel="me" title="Github"><i data-feather="github"></i></a>
+    <a class="border"></a><a class="soc" href="https://twitter.com/j4nu5/" rel="me" title="Twitter"><i data-feather="twitter"></i></a>
+    <a class="border"></a><a class="soc" href="https://www.linkedin.com/in/sinhakushagra/" rel="me" title="LinkedIn"><i data-feather="linkedin"></i></a>
+    <a class="border"></a></div>
+  <div class="footer-info">
+    2024  © Kushagra Sinha |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+
+<script>
+  feather.replace()
+</script>
+		</div>
+		
+	</body>
+</html>
