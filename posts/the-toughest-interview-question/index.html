@@ -3,16 +3,8 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>The toughest interview question - The Janus List</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="What is the output of the following C code snippet?
-
-
-1
-2
-
-
-int n = 1;
-printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n);
-
-
+1int n = 1;
+2printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n);
 This is a tricky question. Any attempt to answer this question requires either
 a deep understanding of your compiler&rsquo;s parser or a complete ignorance of C.
 Even if you fall under the first category and know the ins and outs of your
@@ -23,7 +15,7 @@ compiler?" />
   <meta property="og:site_name" content="The Janus List">
   <meta property="og:title" content="The toughest interview question">
   <meta property="og:description" content="What is the output of the following C code snippet?
-1 2 int n = 1; printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n); This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler’s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer’s favorite compiler?">
+1int n = 1; 2printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n); This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler’s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer’s favorite compiler?">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -35,7 +27,7 @@ compiler?" />
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="The toughest interview question">
   <meta name="twitter:description" content="What is the output of the following C code snippet?
-1 2 int n = 1; printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n); This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler’s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer’s favorite compiler?">
+1int n = 1; 2printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n); This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler’s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer’s favorite compiler?">
 <script src="https://sinhak.dev/js/feather.min.js"></script>
 	
 	
@@ -119,17 +111,9 @@ compiler?" />
 
 		<section class="body">
 			<p>What is the output of the following C code snippet?</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d %d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n<span style="color:#f92672">++</span>, <span style="color:#f92672">++</span>n, n<span style="color:#f92672">++</span> <span style="color:#f92672">+</span> <span style="color:#f92672">++</span>n);
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This is a tricky question. Any attempt to answer this question requires either
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span><span style="color:#fabd2f">int</span> n <span style="color:#fe8019">=</span> <span style="color:#d3869b">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">2</span><span><span style="color:#fabd2f">printf</span>(<span style="color:#b8bb26">&#34;%d %d %d</span><span style="color:#b8bb26">\n</span><span style="color:#b8bb26">&#34;</span>, n<span style="color:#fe8019">++</span>, <span style="color:#fe8019">++</span>n, n<span style="color:#fe8019">++</span> <span style="color:#fe8019">+</span> <span style="color:#fe8019">++</span>n);
+</span></span></code></pre></div><p>This is a tricky question. Any attempt to answer this question requires either
 a deep understanding of your compiler&rsquo;s parser or a complete ignorance of C.
 Even if you fall under the first category and know the ins and outs of your
 favorite compiler, how do you know which is your <em>interviewer&rsquo;s</em> favorite

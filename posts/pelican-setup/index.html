@@ -3,61 +3,28 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Pelican Setup - The Janus List</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Install Pelican:
-
-
-1
-
-
-sudo -H pip install pelican Markdown typogrify
-
-
+1sudo -H pip install pelican Markdown typogrify
 Install Pelican themes
-
-
-1
-2
-3
-
-
-git clone --recursive https://github.com/getpelican/pelican-themes
-sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex
-sudo chmod 755 /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex
-
-
+1git clone --recursive https://github.com/getpelican/pelican-themes
+2sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex
+3sudo chmod 755 /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex
 Install Pelican plugins
-
-
-1
-
-
-git clone --recursive https://github.com/getpelican/pelican-plugins
-
-
+1git clone --recursive https://github.com/getpelican/pelican-plugins
 Fetch blog sources
-
-
-1
-2
-3
-4
-
-
-git clone git@github.com:j4nu5/j4nu5.github.io.git
-cd j4nu5.github.io.git
-git fetch
-git checkout source
-
-
+1git clone git@github.com:j4nu5/j4nu5.github.io.git
+2cd j4nu5.github.io.git
+3git fetch
+4git checkout source
 Setup for development" />
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content="https://sinhak.dev/posts/pelican-setup/">
   <meta property="og:site_name" content="The Janus List">
   <meta property="og:title" content="Pelican Setup">
   <meta property="og:description" content="Install Pelican:
-1 sudo -H pip install pelican Markdown typogrify Install Pelican themes
-1 2 3 git clone --recursive https://github.com/getpelican/pelican-themes sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex sudo chmod 755 /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex Install Pelican plugins
-1 git clone --recursive https://github.com/getpelican/pelican-plugins Fetch blog sources
-1 2 3 4 git clone git@github.com:j4nu5/j4nu5.github.io.git cd j4nu5.github.io.git git fetch git checkout source Setup for development">
+1sudo -H pip install pelican Markdown typogrify Install Pelican themes
+1git clone --recursive https://github.com/getpelican/pelican-themes 2sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex 3sudo chmod 755 /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex Install Pelican plugins
+1git clone --recursive https://github.com/getpelican/pelican-plugins Fetch blog sources
+1git clone git@github.com:j4nu5/j4nu5.github.io.git 2cd j4nu5.github.io.git 3git fetch 4git checkout source Setup for development">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -69,10 +36,10 @@ Setup for development" />
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Pelican Setup">
   <meta name="twitter:description" content="Install Pelican:
-1 sudo -H pip install pelican Markdown typogrify Install Pelican themes
-1 2 3 git clone --recursive https://github.com/getpelican/pelican-themes sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex sudo chmod 755 /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex Install Pelican plugins
-1 git clone --recursive https://github.com/getpelican/pelican-plugins Fetch blog sources
-1 2 3 4 git clone git@github.com:j4nu5/j4nu5.github.io.git cd j4nu5.github.io.git git fetch git checkout source Setup for development">
+1sudo -H pip install pelican Markdown typogrify Install Pelican themes
+1git clone --recursive https://github.com/getpelican/pelican-themes 2sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex 3sudo chmod 755 /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex Install Pelican plugins
+1git clone --recursive https://github.com/getpelican/pelican-plugins Fetch blog sources
+1git clone git@github.com:j4nu5/j4nu5.github.io.git 2cd j4nu5.github.io.git 3git fetch 4git checkout source Setup for development">
 <script src="https://sinhak.dev/js/feather.min.js"></script>
 	
 	
@@ -156,79 +123,25 @@ Setup for development" />
 
 		<section class="body">
 			<p>Install Pelican:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo -H pip install pelican Markdown typogrify
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Install Pelican themes</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone --recursive https://github.com/getpelican/pelican-themes
-</span></span><span style="display:flex;"><span>sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex
-</span></span><span style="display:flex;"><span>sudo chmod <span style="color:#ae81ff">755</span> /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Install Pelican plugins</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone --recursive https://github.com/getpelican/pelican-plugins
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Fetch blog sources</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone git@github.com:j4nu5/j4nu5.github.io.git
-</span></span><span style="display:flex;"><span>cd j4nu5.github.io.git
-</span></span><span style="display:flex;"><span>git fetch
-</span></span><span style="display:flex;"><span>git checkout source
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Setup for development</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir cache output
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Verify plugins root</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>grep PLUGIN_PATHS pelicanconf.py
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Install Github pages</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo -H pip install ghp-import
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Check out the scripts and the Makefile</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span>sudo -H pip install pelican Markdown typogrify
+</span></span></code></pre></div><p>Install Pelican themes</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span>git clone --recursive https://github.com/getpelican/pelican-themes
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">2</span><span>sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">3</span><span>sudo chmod <span style="color:#d3869b">755</span> /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex
+</span></span></code></pre></div><p>Install Pelican plugins</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span>git clone --recursive https://github.com/getpelican/pelican-plugins
+</span></span></code></pre></div><p>Fetch blog sources</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span>git clone git@github.com:j4nu5/j4nu5.github.io.git
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">2</span><span><span style="color:#fabd2f">cd</span> j4nu5.github.io.git
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">3</span><span>git fetch
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">4</span><span>git checkout <span style="color:#fabd2f">source</span>
+</span></span></code></pre></div><p>Setup for development</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span>mkdir cache output
+</span></span></code></pre></div><p>Verify plugins root</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span>grep PLUGIN_PATHS pelicanconf.py
+</span></span></code></pre></div><p>Install Github pages</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span>sudo -H pip install ghp-import
+</span></span></code></pre></div><p>Check out the scripts and the Makefile</p>
 
 		</section>
 
