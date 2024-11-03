@@ -14,7 +14,7 @@
       <link>https://sinhak.dev/posts/the-reliable-engineer/</link>
       <pubDate>Sat, 10 Oct 2020 19:03:13 +0200</pubDate>
       <guid>https://sinhak.dev/posts/the-reliable-engineer/</guid>
-      <description>&lt;h1 id=&#34;what-is-_reliability_&#34;&gt;What is &lt;em&gt;Reliability&lt;/em&gt;?&lt;/h1&gt;&#xA;&lt;p&gt;One of the lenses through which I view my job is as a &lt;em&gt;service&lt;/em&gt; that I provide&#xA;to my &lt;em&gt;immediate&lt;/em&gt; manager. This is different from any additional obligations&#xA;that I may have to my employer.&lt;br&gt;&#xA;From this lens, I want to provide such a quality of service where my manager is&#xA;able to assign a task to me, and &lt;em&gt;&lt;strong&gt;forget about it&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;&#xA;The extent to which I can meet this bar, is &lt;em&gt;reliability&lt;/em&gt;.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;what-is-_reliability_&#34;&gt;What is &lt;em&gt;Reliability&lt;/em&gt;?&lt;/h2&gt;&#xA;&lt;p&gt;One of the lenses through which I view my job is as a &lt;em&gt;service&lt;/em&gt; that I provide&#xA;to my &lt;em&gt;immediate&lt;/em&gt; manager. This is different from any additional obligations&#xA;that I may have to my employer.&lt;br&gt;&#xA;From this lens, I want to provide such a quality of service where my manager is&#xA;able to assign a task to me, and &lt;em&gt;&lt;strong&gt;forget about it&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;&#xA;The extent to which I can meet this bar, is &lt;em&gt;reliability&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Const References to Temporary Objects</title>
