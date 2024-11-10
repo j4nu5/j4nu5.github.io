@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Const References to Temporary Objects - The Janus List</title><link rel="icon" type="image/png" href=/images/favicon-32x32.png /><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Consider the following code snippet:
- 1#include &lt;iostream&gt;
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Const References to Temporary Objects - The Janus List</title><link rel=icon type=image/png href=/images/favicon-32x32.png><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Consider the following code snippet:
+ 1#include <iostream>
  2
  3int GetInt() {
  4    int x = 1;
@@ -11,243 +8,116 @@
  6}
  7
  8int main() {
- 9    const int&amp; x = GetInt();
-10    std::cout &lt;&lt; x &lt;&lt; std::endl;
+ 9    const int& x = GetInt();
+10    std::cout << x << std::endl;
 11    return 0;
 12}
-In particular, pay attention to line #9. Is it guaranteed to be safe?" />
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content="https://sinhak.dev/posts/const-reference-to-temporary-objects/">
-  <meta property="og:site_name" content="The Janus List">
-  <meta property="og:title" content="Const References to Temporary Objects">
-  <meta property="og:description" content="Consider the following code snippet:
-1#include &lt;iostream&gt; 2 3int GetInt() { 4 int x = 1; 5 return x; 6} 7 8int main() { 9 const int&amp; x = GetInt(); 10 std::cout &lt;&lt; x &lt;&lt; std::endl; 11 return 0; 12} In particular, pay attention to line #9. Is it guaranteed to be safe?">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2018-09-02T18:24:40+02:00">
-    <meta property="article:modified_time" content="2018-09-02T18:24:40+02:00">
-    <meta property="article:tag" content="Programming">
-    <meta property="article:tag" content="Development">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Const References to Temporary Objects">
-  <meta name="twitter:description" content="Consider the following code snippet:
-1#include &lt;iostream&gt; 2 3int GetInt() { 4 int x = 1; 5 return x; 6} 7 8int main() { 9 const int&amp; x = GetInt(); 10 std::cout &lt;&lt; x &lt;&lt; std::endl; 11 return 0; 12} In particular, pay attention to line #9. Is it guaranteed to be safe?">
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://sinhak.dev/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://sinhak.dev/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css"  disabled />
-	
-
-	
-	
-
-	
-	
-
-	
-</head>
-<body>
-        <div class="content"><header>
-	<div class="main">
-		<a href="https://sinhak.dev/">The Janus List</a>
-	</div>
-	<nav>
-		
-		<a href="/posts/">articles</a>
-		
-		<a href="/about/">about</a>
-		
-		| <a id="dark-mode-toggle" onclick="toggleTheme()"></a>
-		<script src="https://sinhak.dev/js/themetoggle.js"></script>
-		
-	</nav>
-</header>
-
-<main>
-	<article>
-		<div class="title">
-			<h1 class="title">Const References to Temporary Objects</h1>
-			<div class="meta">Posted on Sep 2, 2018</div>
-		</div>
-		
-
-		
-
-		<section class="body">
-			<p>Consider the following code snippet:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 1</span><span><span style="color:#8ec07c">#include</span> <span style="color:#8ec07c;font-style:italic">&lt;iostream&gt;</span><span style="color:#8ec07c">
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 2</span><span><span style="color:#8ec07c"></span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 3</span><span><span style="color:#fabd2f">int</span> <span style="color:#fabd2f">GetInt</span>() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 4</span><span>    <span style="color:#fabd2f">int</span> x <span style="color:#fe8019">=</span> <span style="color:#d3869b">1</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 5</span><span>    <span style="color:#fe8019">return</span> x;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 6</span><span>}
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 7</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 8</span><span><span style="color:#fabd2f">int</span> <span style="color:#fabd2f">main</span>() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 9</span><span>    <span style="color:#fe8019">const</span> <span style="color:#fabd2f">int</span><span style="color:#fe8019">&amp;</span> x <span style="color:#fe8019">=</span> GetInt();
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">10</span><span>    std<span style="color:#fe8019">::</span>cout <span style="color:#fe8019">&lt;&lt;</span> x <span style="color:#fe8019">&lt;&lt;</span> std<span style="color:#fe8019">::</span>endl;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">11</span><span>    <span style="color:#fe8019">return</span> <span style="color:#d3869b">0</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">12</span><span>}
-</span></span></code></pre></div><p>In particular, pay attention to line #9. Is it guaranteed to be safe?</p>
-<p>In this case, the answer is yes. The C++ standard <em>guarantees</em> that binding a
+In particular, pay attention to line #9. Is it guaranteed to be safe?"><meta property="og:image" content><meta property="og:url" content="https://sinhak.dev/posts/const-reference-to-temporary-objects/"><meta property="og:site_name" content="The Janus List"><meta property="og:title" content="Const References to Temporary Objects"><meta property="og:description" content="Consider the following code snippet:
+1#include <iostream> 2 3int GetInt() { 4 int x = 1; 5 return x; 6} 7 8int main() { 9 const int& x = GetInt(); 10 std::cout << x << std::endl; 11 return 0; 12} In particular, pay attention to line #9. Is it guaranteed to be safe?"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2018-09-02T18:24:40+02:00"><meta property="article:modified_time" content="2018-09-02T18:24:40+02:00"><meta property="article:tag" content="Programming"><meta property="article:tag" content="Development"><meta name=twitter:card content="summary"><meta name=twitter:title content="Const References to Temporary Objects"><meta name=twitter:description content="Consider the following code snippet:
+1#include <iostream> 2 3int GetInt() { 4 int x = 1; 5 return x; 6} 7 8int main() { 9 const int& x = GetInt(); 10 std::cout << x << std::endl; 11 return 0; 12} In particular, pay attention to line #9. Is it guaranteed to be safe?"><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://sinhak.dev/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://sinhak.dev/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css disabled></head><body><div class=content><header><div class=main><a href=https://sinhak.dev/>The Janus List</a></div><nav><a href=/posts/>articles</a>
+<a href=/about/>about</a>
+| <a id=dark-mode-toggle onclick=toggleTheme()></a><script src=https://sinhak.dev/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>Const References to Temporary Objects</h1><div class=meta>Posted on Sep 2, 2018</div></div><section class=body><p>Consider the following code snippet:</p><div class=highlight><pre tabindex=0 style=color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 1</span><span><span style=color:#8ec07c>#include</span> <span style=color:#8ec07c;font-style:italic>&lt;iostream&gt;</span><span style=color:#8ec07c>
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 2</span><span><span style=color:#8ec07c></span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 3</span><span><span style=color:#fabd2f>int</span> <span style=color:#fabd2f>GetInt</span>() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 4</span><span>    <span style=color:#fabd2f>int</span> x <span style=color:#fe8019>=</span> <span style=color:#d3869b>1</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 5</span><span>    <span style=color:#fe8019>return</span> x;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 6</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 7</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 8</span><span><span style=color:#fabd2f>int</span> <span style=color:#fabd2f>main</span>() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 9</span><span>    <span style=color:#fe8019>const</span> <span style=color:#fabd2f>int</span><span style=color:#fe8019>&amp;</span> x <span style=color:#fe8019>=</span> GetInt();
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">10</span><span>    std<span style=color:#fe8019>::</span>cout <span style=color:#fe8019>&lt;&lt;</span> x <span style=color:#fe8019>&lt;&lt;</span> std<span style=color:#fe8019>::</span>endl;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">11</span><span>    <span style=color:#fe8019>return</span> <span style=color:#d3869b>0</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">12</span><span>}
+</span></span></code></pre></div><p>In particular, pay attention to line #9. Is it guaranteed to be safe?</p><p>In this case, the answer is yes. The C++ standard <em>guarantees</em> that binding a
 temporary to a const reference on the stack, extends the lifetime of the
 temporary to the lifetime of the const reference. This has been covered in
-<a href="https://herbsutter.com/2008/01/01/gotw-88-a-candidate-for-the-most-important-const/">GotW #88</a>.</p>
-<p>But is it <em>always</em> safe to declare local variables as const references, whenever
-you can?</p>
-<p>Well, this is C++, so the answer is: It depends :)</p>
-<p>Consider this code snippet:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 1</span><span><span style="color:#8ec07c">#include</span> <span style="color:#8ec07c;font-style:italic">&lt;iostream&gt;</span><span style="color:#8ec07c">
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 2</span><span><span style="color:#8ec07c">#include</span> <span style="color:#8ec07c;font-style:italic">&lt;string&gt;</span><span style="color:#8ec07c">
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 3</span><span><span style="color:#8ec07c"></span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 4</span><span><span style="color:#fe8019">struct</span> Container {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 5</span><span>    std<span style="color:#fe8019">::</span>string s;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 6</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 7</span><span>    Container() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 8</span><span>        s <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;Init&#34;</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 9</span><span>        std<span style="color:#fe8019">::</span>cout <span style="color:#fe8019">&lt;&lt;</span> <span style="color:#b8bb26">&#34;Constructed&#34;</span> <span style="color:#fe8019">&lt;&lt;</span> std<span style="color:#fe8019">::</span>endl;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">10</span><span>    }
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">11</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">12</span><span>    <span style="color:#fe8019">~</span>Container() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">13</span><span>        s <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;UNSAFE&#34;</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">14</span><span>        std<span style="color:#fe8019">::</span>cout <span style="color:#fe8019">&lt;&lt;</span> <span style="color:#b8bb26">&#34;Destructed&#34;</span> <span style="color:#fe8019">&lt;&lt;</span> std<span style="color:#fe8019">::</span>endl;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">15</span><span>    }
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">16</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">17</span><span>    <span style="color:#fe8019">const</span> std<span style="color:#fe8019">::</span>string<span style="color:#fe8019">&amp;</span> GetS() <span style="color:#fe8019">const</span> {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">18</span><span>        <span style="color:#fe8019">return</span> s;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">19</span><span>    }
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">20</span><span>};
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">21</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">22</span><span><span style="color:#fabd2f">int</span> <span style="color:#fabd2f">main</span>() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">23</span><span>    <span style="color:#fe8019">const</span> std<span style="color:#fe8019">::</span>string<span style="color:#fe8019">&amp;</span> s <span style="color:#fe8019">=</span> Container().GetS();
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">24</span><span>    std<span style="color:#fe8019">::</span>cout <span style="color:#fe8019">&lt;&lt;</span> s <span style="color:#fe8019">&lt;&lt;</span> std<span style="color:#fe8019">::</span>endl;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">25</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">26</span><span>    <span style="color:#fe8019">return</span> <span style="color:#d3869b">0</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">27</span><span>}
+<a href=https://herbsutter.com/2008/01/01/gotw-88-a-candidate-for-the-most-important-const/>GotW #88</a>.</p><p>But is it <em>always</em> safe to declare local variables as const references, whenever
+you can?</p><p>Well, this is C++, so the answer is: It depends :)</p><p>Consider this code snippet:</p><div class=highlight><pre tabindex=0 style=color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 1</span><span><span style=color:#8ec07c>#include</span> <span style=color:#8ec07c;font-style:italic>&lt;iostream&gt;</span><span style=color:#8ec07c>
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 2</span><span><span style=color:#8ec07c>#include</span> <span style=color:#8ec07c;font-style:italic>&lt;string&gt;</span><span style=color:#8ec07c>
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 3</span><span><span style=color:#8ec07c></span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 4</span><span><span style=color:#fe8019>struct</span> Container {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 5</span><span>    std<span style=color:#fe8019>::</span>string s;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 6</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 7</span><span>    Container() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 8</span><span>        s <span style=color:#fe8019>=</span> <span style=color:#b8bb26>&#34;Init&#34;</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 9</span><span>        std<span style=color:#fe8019>::</span>cout <span style=color:#fe8019>&lt;&lt;</span> <span style=color:#b8bb26>&#34;Constructed&#34;</span> <span style=color:#fe8019>&lt;&lt;</span> std<span style=color:#fe8019>::</span>endl;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">10</span><span>    }
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">11</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">12</span><span>    <span style=color:#fe8019>~</span>Container() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">13</span><span>        s <span style=color:#fe8019>=</span> <span style=color:#b8bb26>&#34;UNSAFE&#34;</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">14</span><span>        std<span style=color:#fe8019>::</span>cout <span style=color:#fe8019>&lt;&lt;</span> <span style=color:#b8bb26>&#34;Destructed&#34;</span> <span style=color:#fe8019>&lt;&lt;</span> std<span style=color:#fe8019>::</span>endl;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">15</span><span>    }
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">16</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">17</span><span>    <span style=color:#fe8019>const</span> std<span style=color:#fe8019>::</span>string<span style=color:#fe8019>&amp;</span> GetS() <span style=color:#fe8019>const</span> {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">18</span><span>        <span style=color:#fe8019>return</span> s;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">19</span><span>    }
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">20</span><span>};
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">21</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">22</span><span><span style=color:#fabd2f>int</span> <span style=color:#fabd2f>main</span>() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">23</span><span>    <span style=color:#fe8019>const</span> std<span style=color:#fe8019>::</span>string<span style=color:#fe8019>&amp;</span> s <span style=color:#fe8019>=</span> Container().GetS();
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">24</span><span>    std<span style=color:#fe8019>::</span>cout <span style=color:#fe8019>&lt;&lt;</span> s <span style=color:#fe8019>&lt;&lt;</span> std<span style=color:#fe8019>::</span>endl;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">25</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">26</span><span>    <span style=color:#fe8019>return</span> <span style=color:#d3869b>0</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">27</span><span>}
 </span></span></code></pre></div><p>What is the output? Is line 23 always safe? It creates a temporary |Container()|
 and then calls a member function on that temporary, which in turn returns a
-const reference to a member variable.</p>
-<p>The answer is <em>NO!</em> In fact <a href="https://ideone.com/Tqg6xv">the output</a> is:</p>
-<pre tabindex="0"><code>Constructed
+const reference to a member variable.</p><p>The answer is <em>NO!</em> In fact <a href=https://ideone.com/Tqg6xv>the output</a> is:</p><pre tabindex=0><code>Constructed
 Destructed
 UNSAFE
 </code></pre><p>Turns out that the temporary lifetime extension rule applies only to <em>direct</em>
 references to temporary objects, not to references obtained indirectly via a
-member function. e.g. consider this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 1</span><span><span style="color:#8ec07c">#include</span> <span style="color:#8ec07c;font-style:italic">&lt;iostream&gt;</span><span style="color:#8ec07c">
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 2</span><span><span style="color:#8ec07c">#include</span> <span style="color:#8ec07c;font-style:italic">&lt;string&gt;</span><span style="color:#8ec07c">
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 3</span><span><span style="color:#8ec07c"></span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 4</span><span><span style="color:#fe8019">struct</span> Container {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 5</span><span>    std<span style="color:#fe8019">::</span>string s;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 6</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 7</span><span>    Container() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 8</span><span>        s <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;Init&#34;</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 9</span><span>        std<span style="color:#fe8019">::</span>cout <span style="color:#fe8019">&lt;&lt;</span> <span style="color:#b8bb26">&#34;Constructed&#34;</span> <span style="color:#fe8019">&lt;&lt;</span> std<span style="color:#fe8019">::</span>endl;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">10</span><span>    }
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">11</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">12</span><span>    <span style="color:#fe8019">~</span>Container() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">13</span><span>        s <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;UNSAFE&#34;</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">14</span><span>        std<span style="color:#fe8019">::</span>cout <span style="color:#fe8019">&lt;&lt;</span> <span style="color:#b8bb26">&#34;Destructed&#34;</span> <span style="color:#fe8019">&lt;&lt;</span> std<span style="color:#fe8019">::</span>endl;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">15</span><span>    }
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">16</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">17</span><span>    <span style="color:#fe8019">const</span> std<span style="color:#fe8019">::</span>string<span style="color:#fe8019">&amp;</span> GetS() <span style="color:#fe8019">const</span> {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">18</span><span>        <span style="color:#fe8019">return</span> s;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">19</span><span>    }
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">20</span><span>};
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">21</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">22</span><span><span style="color:#fabd2f">int</span> <span style="color:#fabd2f">main</span>() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">23</span><span>    <span style="color:#fe8019">const</span> std<span style="color:#fe8019">::</span>string<span style="color:#fe8019">&amp;</span> s <span style="color:#fe8019">=</span> Container().s;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">24</span><span>    std<span style="color:#fe8019">::</span>cout <span style="color:#fe8019">&lt;&lt;</span> s <span style="color:#fe8019">&lt;&lt;</span> std<span style="color:#fe8019">::</span>endl;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">25</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">26</span><span>    <span style="color:#fe8019">return</span> <span style="color:#d3869b">0</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">27</span><span>}
+member function. e.g. consider this:</p><div class=highlight><pre tabindex=0 style=color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 1</span><span><span style=color:#8ec07c>#include</span> <span style=color:#8ec07c;font-style:italic>&lt;iostream&gt;</span><span style=color:#8ec07c>
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 2</span><span><span style=color:#8ec07c>#include</span> <span style=color:#8ec07c;font-style:italic>&lt;string&gt;</span><span style=color:#8ec07c>
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 3</span><span><span style=color:#8ec07c></span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 4</span><span><span style=color:#fe8019>struct</span> Container {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 5</span><span>    std<span style=color:#fe8019>::</span>string s;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 6</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 7</span><span>    Container() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 8</span><span>        s <span style=color:#fe8019>=</span> <span style=color:#b8bb26>&#34;Init&#34;</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 9</span><span>        std<span style=color:#fe8019>::</span>cout <span style=color:#fe8019>&lt;&lt;</span> <span style=color:#b8bb26>&#34;Constructed&#34;</span> <span style=color:#fe8019>&lt;&lt;</span> std<span style=color:#fe8019>::</span>endl;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">10</span><span>    }
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">11</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">12</span><span>    <span style=color:#fe8019>~</span>Container() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">13</span><span>        s <span style=color:#fe8019>=</span> <span style=color:#b8bb26>&#34;UNSAFE&#34;</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">14</span><span>        std<span style=color:#fe8019>::</span>cout <span style=color:#fe8019>&lt;&lt;</span> <span style=color:#b8bb26>&#34;Destructed&#34;</span> <span style=color:#fe8019>&lt;&lt;</span> std<span style=color:#fe8019>::</span>endl;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">15</span><span>    }
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">16</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">17</span><span>    <span style=color:#fe8019>const</span> std<span style=color:#fe8019>::</span>string<span style=color:#fe8019>&amp;</span> GetS() <span style=color:#fe8019>const</span> {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">18</span><span>        <span style=color:#fe8019>return</span> s;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">19</span><span>    }
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">20</span><span>};
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">21</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">22</span><span><span style=color:#fabd2f>int</span> <span style=color:#fabd2f>main</span>() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">23</span><span>    <span style=color:#fe8019>const</span> std<span style=color:#fe8019>::</span>string<span style=color:#fe8019>&amp;</span> s <span style=color:#fe8019>=</span> Container().s;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">24</span><span>    std<span style=color:#fe8019>::</span>cout <span style=color:#fe8019>&lt;&lt;</span> s <span style=color:#fe8019>&lt;&lt;</span> std<span style=color:#fe8019>::</span>endl;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">25</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">26</span><span>    <span style=color:#fe8019>return</span> <span style=color:#d3869b>0</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">27</span><span>}
 </span></span></code></pre></div><p>It does a similar thing except line 23 takes a direct reference to the member
-variable. Is this safe?</p>
-<p>In this case, the answer is <em>YES!</em>. <a href="https://ideone.com/2XfAE9">The output</a> is:</p>
-<pre tabindex="0"><code>Constructed
+variable. Is this safe?</p><p>In this case, the answer is <em>YES!</em>. <a href=https://ideone.com/2XfAE9>The output</a> is:</p><pre tabindex=0><code>Constructed
 Init
 Destructed
 </code></pre><p>i.e. the destruction of the temporary |Container()| is held off until
-|const std::string&amp; s| can be safely destructed.</p>
-<p>Note however, that this is limited to <em>const</em> references and not ordinary
-references. This will not compile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 1</span><span><span style="color:#8ec07c">#include</span> <span style="color:#8ec07c;font-style:italic">&lt;iostream&gt;</span><span style="color:#8ec07c">
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 2</span><span><span style="color:#8ec07c"></span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 3</span><span><span style="color:#fabd2f">int</span> <span style="color:#fabd2f">GetInt</span>() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 4</span><span>    <span style="color:#fabd2f">int</span> x <span style="color:#fe8019">=</span> <span style="color:#d3869b">1</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 5</span><span>    <span style="color:#fe8019">return</span> x;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 6</span><span>}
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 7</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 8</span><span><span style="color:#fabd2f">int</span> <span style="color:#fabd2f">main</span>() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 9</span><span>    <span style="color:#fabd2f">int</span><span style="color:#fe8019">&amp;</span> x <span style="color:#fe8019">=</span> GetInt();
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">10</span><span>    std<span style="color:#fe8019">::</span>cout <span style="color:#fe8019">&lt;&lt;</span> x <span style="color:#fe8019">&lt;&lt;</span> std<span style="color:#fe8019">::</span>endl;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">11</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">12</span><span>    <span style="color:#fe8019">return</span> <span style="color:#d3869b">0</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">13</span><span>}
-</span></span></code></pre></div><p>Check line 9. It is an ordinary reference and not a const reference.</p>
-<h2 id="further-reading">Further Reading</h2>
-<p>Check out <a href="https://abseil.io/tips/101">TotW #101</a> and
-<a href="https://abseil.io/tips/107">TotW #107</a>.
-<a href="https://abseil.io/tips/">&ldquo;Tips of the Week (TotW)&rdquo;</a> is a Google-internal
+|const std::string& s| can be safely destructed.</p><p>Note however, that this is limited to <em>const</em> references and not ordinary
+references. This will not compile:</p><div class=highlight><pre tabindex=0 style=color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 1</span><span><span style=color:#8ec07c>#include</span> <span style=color:#8ec07c;font-style:italic>&lt;iostream&gt;</span><span style=color:#8ec07c>
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 2</span><span><span style=color:#8ec07c></span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 3</span><span><span style=color:#fabd2f>int</span> <span style=color:#fabd2f>GetInt</span>() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 4</span><span>    <span style=color:#fabd2f>int</span> x <span style=color:#fe8019>=</span> <span style=color:#d3869b>1</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 5</span><span>    <span style=color:#fe8019>return</span> x;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 6</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 7</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 8</span><span><span style=color:#fabd2f>int</span> <span style=color:#fabd2f>main</span>() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 9</span><span>    <span style=color:#fabd2f>int</span><span style=color:#fe8019>&amp;</span> x <span style=color:#fe8019>=</span> GetInt();
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">10</span><span>    std<span style=color:#fe8019>::</span>cout <span style=color:#fe8019>&lt;&lt;</span> x <span style=color:#fe8019>&lt;&lt;</span> std<span style=color:#fe8019>::</span>endl;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">11</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">12</span><span>    <span style=color:#fe8019>return</span> <span style=color:#d3869b>0</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">13</span><span>}
+</span></span></code></pre></div><p>Check line 9. It is an ordinary reference and not a const reference.</p><h2 id=further-reading>Further Reading</h2><p>Check out <a href=https://abseil.io/tips/101>TotW #101</a> and
+<a href=https://abseil.io/tips/107>TotW #107</a>.
+<a href=https://abseil.io/tips/>&ldquo;Tips of the Week (TotW)&rdquo;</a> is a Google-internal
 publication, which is gradually being released into the public. Do check them
-out.</p>
-
-		</section>
-
-		<div class="post-tags">
-			
-			
-			<nav class="nav tags">
-				<ul class="tags">
-					
-					<li><a href="/tags/programming">programming</a></li>
-					
-					<li><a href="/tags/development">development</a></li>
-					
-				</ul>
-			</nav>
-			
-			
-		</div>
-		<div id="disqus_thread"></div>
-<script type="text/javascript">
-    (function () {
-        
-        
-        if (window.location.hostname == "localhost")
-            return;
-
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        var disqus_shortname = 'the-janus-list';
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-        Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</article>
-</main>
-<footer>
-  <div style="display:flex"><a class="soc" href="https://github.com/j4nu5/" rel="me" title="Github"><i data-feather="github"></i></a>
-    <span class="border"></span><a class="soc" href="https://twitter.com/j4nu5/" rel="me" title="Twitter"><i data-feather="twitter"></i></a>
-    <span class="border"></span><a class="soc" href="https://www.linkedin.com/in/sinhakushagra/" rel="me" title="LinkedIn"><i data-feather="linkedin"></i></a>
-    <span class="border"></span></div>
-  <div class="footer-info">
-    2024  © Kushagra Sinha 
-  </div>
-</footer>
-
-
-<script>
-  feather.replace()
-</script></div>
-    </body>
-</html>
+out.</p></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/programming>programming</a></li><li><a href=/tags/development>development</a></li></ul></nav></div><div id=disqus_thread></div><script type=text/javascript>(function(){if(window.location.hostname=="localhost")return;var t,e=document.createElement("script");e.type="text/javascript",e.async=!0,t="the-janus-list",e.src="//"+t+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)})()</script><noscript>Please enable JavaScript to view the <a href=http://disqus.com/?ref_noscript>comments powered by
+Disqus.</a></noscript><a href=http://disqus.com/ class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></article></main><footer><div style=display:flex><a class=soc href=https://github.com/j4nu5/ rel=me title=Github><i data-feather=github></i></a>
+<span class=border></span><a class=soc href=https://twitter.com/j4nu5/ rel=me title=Twitter><i data-feather=twitter></i></a>
+<span class=border></span><a class=soc href=https://www.linkedin.com/in/sinhakushagra/ rel=me title=LinkedIn><i data-feather=linkedin></i></a>
+<span class=border></span></div><div class=footer-info>2024 © Kushagra Sinha</div></footer><script>feather.replace()</script></div></body></html>

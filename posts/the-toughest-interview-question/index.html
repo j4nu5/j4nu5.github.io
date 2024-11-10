@@ -1,171 +1,45 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>The toughest interview question - The Janus List</title><link rel="icon" type="image/png" href=/images/favicon-32x32.png /><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="What is the output of the following C code snippet?
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>The toughest interview question - The Janus List</title><link rel=icon type=image/png href=/images/favicon-32x32.png><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content='What is the output of the following C code snippet?
 1int n = 1;
-2printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n);
+2printf("%d %d %d\n", n++, ++n, n++ + ++n);
 This is a tricky question. Any attempt to answer this question requires either
 a deep understanding of your compiler&rsquo;s parser or a complete ignorance of C.
 Even if you fall under the first category and know the ins and outs of your
 favorite compiler, how do you know which is your interviewer&rsquo;s favorite
-compiler?" />
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content="https://sinhak.dev/posts/the-toughest-interview-question/">
-  <meta property="og:site_name" content="The Janus List">
-  <meta property="og:title" content="The toughest interview question">
-  <meta property="og:description" content="What is the output of the following C code snippet?
-1int n = 1; 2printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n); This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler’s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer’s favorite compiler?">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2014-07-29T00:00:00+00:00">
-    <meta property="article:modified_time" content="2014-07-29T00:00:00+00:00">
-    <meta property="article:tag" content="Programming">
-    <meta property="article:tag" content="Interviews">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="The toughest interview question">
-  <meta name="twitter:description" content="What is the output of the following C code snippet?
-1int n = 1; 2printf(&#34;%d %d %d\n&#34;, n&#43;&#43;, &#43;&#43;n, n&#43;&#43; &#43; &#43;&#43;n); This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler’s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer’s favorite compiler?">
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://sinhak.dev/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://sinhak.dev/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css"  disabled />
-	
-
-	
-	
-
-	
-	
-
-	
-</head>
-<body>
-        <div class="content"><header>
-	<div class="main">
-		<a href="https://sinhak.dev/">The Janus List</a>
-	</div>
-	<nav>
-		
-		<a href="/posts/">articles</a>
-		
-		<a href="/about/">about</a>
-		
-		| <a id="dark-mode-toggle" onclick="toggleTheme()"></a>
-		<script src="https://sinhak.dev/js/themetoggle.js"></script>
-		
-	</nav>
-</header>
-
-<main>
-	<article>
-		<div class="title">
-			<h1 class="title">The toughest interview question</h1>
-			<div class="meta">Posted on Jul 29, 2014</div>
-		</div>
-		
-
-		
-
-		<section class="body">
-			<p>What is the output of the following C code snippet?</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span><span style="color:#fabd2f">int</span> n <span style="color:#fe8019">=</span> <span style="color:#d3869b">1</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">2</span><span><span style="color:#fabd2f">printf</span>(<span style="color:#b8bb26">&#34;%d %d %d</span><span style="color:#b8bb26">\n</span><span style="color:#b8bb26">&#34;</span>, n<span style="color:#fe8019">++</span>, <span style="color:#fe8019">++</span>n, n<span style="color:#fe8019">++</span> <span style="color:#fe8019">+</span> <span style="color:#fe8019">++</span>n);
+compiler?'><meta property="og:image" content><meta property="og:url" content="https://sinhak.dev/posts/the-toughest-interview-question/"><meta property="og:site_name" content="The Janus List"><meta property="og:title" content="The toughest interview question"><meta property="og:description" content='What is the output of the following C code snippet?
+1int n = 1; 2printf("%d %d %d\n", n++, ++n, n++ + ++n); This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler’s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer’s favorite compiler?'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2014-07-29T00:00:00+00:00"><meta property="article:modified_time" content="2014-07-29T00:00:00+00:00"><meta property="article:tag" content="Programming"><meta property="article:tag" content="Interviews"><meta name=twitter:card content="summary"><meta name=twitter:title content="The toughest interview question"><meta name=twitter:description content='What is the output of the following C code snippet?
+1int n = 1; 2printf("%d %d %d\n", n++, ++n, n++ + ++n); This is a tricky question. Any attempt to answer this question requires either a deep understanding of your compiler’s parser or a complete ignorance of C. Even if you fall under the first category and know the ins and outs of your favorite compiler, how do you know which is your interviewer’s favorite compiler?'><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://sinhak.dev/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://sinhak.dev/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css disabled></head><body><div class=content><header><div class=main><a href=https://sinhak.dev/>The Janus List</a></div><nav><a href=/posts/>articles</a>
+<a href=/about/>about</a>
+| <a id=dark-mode-toggle onclick=toggleTheme()></a><script src=https://sinhak.dev/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>The toughest interview question</h1><div class=meta>Posted on Jul 29, 2014</div></div><section class=body><p>What is the output of the following C code snippet?</p><div class=highlight><pre tabindex=0 style=color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">1</span><span><span style=color:#fabd2f>int</span> n <span style=color:#fe8019>=</span> <span style=color:#d3869b>1</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">2</span><span><span style=color:#fabd2f>printf</span>(<span style=color:#b8bb26>&#34;%d %d %d</span><span style=color:#b8bb26>\n</span><span style=color:#b8bb26>&#34;</span>, n<span style=color:#fe8019>++</span>, <span style=color:#fe8019>++</span>n, n<span style=color:#fe8019>++</span> <span style=color:#fe8019>+</span> <span style=color:#fe8019>++</span>n);
 </span></span></code></pre></div><p>This is a tricky question. Any attempt to answer this question requires either
 a deep understanding of your compiler&rsquo;s parser or a complete ignorance of C.
 Even if you fall under the first category and know the ins and outs of your
 favorite compiler, how do you know which is your <em>interviewer&rsquo;s</em> favorite
-compiler?</p>
-<p>The ANSI C language specification, you see, specifies neither the evaluation
+compiler?</p><p>The ANSI C language specification, you see, specifies neither the evaluation
 order of function arguments nor the exact <em>side effect</em> evaluation time of
 prefix and postfix operators. The answer to the above problem depends on the
-compiler being used.</p>
-<p>Unfortunately, these kinds of puzzles form the bulk of programming interview
+compiler being used.</p><p>Unfortunately, these kinds of puzzles form the bulk of programming interview
 questions for IT companies in India. They are even common in term papers in
-colleges.</p>
-<p>I could never fathom the utility of such questions. The correct answer,
+colleges.</p><p>I could never fathom the utility of such questions. The correct answer,
 <em>Depends on the compiler</em> is <em>never</em> an option for this question. What am I
 supposed to do with this? Should I just evaluate from left to right and
 calculate the side effects ASAP or should I try to second guess my interviewer
 and assume that he/she is terribly confused by the C function call stack
-convention and thinks that the compiler always evaluates from right to left?</p>
-<p>One day I chanced upon a book that actually taught that C compilers evaluate
+convention and thinks that the compiler always evaluates from right to left?</p><p>One day I chanced upon a book that actually taught that C compilers evaluate
 function arguments from right to left. This gem of a book is quite famous in
 India. It is called <em>Let Us C</em>, written by the renowned
-<a href="https://en.wikipedia.org/wiki/Yashavant_Kanetkar">Yashwant Kanetkar</a>, who
-according to his Wikipedia page,</p>
-<blockquote>
-<p>&quot; &hellip; has created, moulded and groomed many IT professionals in the last decade and half.&quot;</p>
-</blockquote>
-<p>How poetic &hellip;</p>
-<p>If there is a single most important factor behind the stagnation of the Indian
+<a href=https://en.wikipedia.org/wiki/Yashavant_Kanetkar>Yashwant Kanetkar</a>, who
+according to his Wikipedia page,</p><blockquote><p>" &mldr; has created, moulded and groomed many IT professionals in the last decade and half."</p></blockquote><p>How poetic &mldr;</p><p>If there is a single most important factor behind the stagnation of the Indian
 IT industry, I think it is this book. Forget about complying to ANSI C
 standards, it professes and quizzes on the areas of C that have deliberately
 been left to the compiler. Professors and interviewers who unfortunately never
 got a chance to study <em>K&amp;R C</em> think of <em>Let Us C</em> as <em>the</em> authority on the C
 programming language. Most of their questions are a straight copy-paste from
-this book.</p>
-<p>This is a sad state of affairs. Mainly because the people who <em>actually</em> know
+this book.</p><p>This is a sad state of affairs. Mainly because the people who <em>actually</em> know
 C are <em>never</em> able to answer this question correctly. If you are one of them,
-Congrats! You are on the right path towards mastering C.</p>
-
-		</section>
-
-		<div class="post-tags">
-			
-			
-			<nav class="nav tags">
-				<ul class="tags">
-					
-					<li><a href="/tags/programming">programming</a></li>
-					
-					<li><a href="/tags/interviews">interviews</a></li>
-					
-				</ul>
-			</nav>
-			
-			
-		</div>
-		<div id="disqus_thread"></div>
-<script type="text/javascript">
-    (function () {
-        
-        
-        if (window.location.hostname == "localhost")
-            return;
-
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        var disqus_shortname = 'the-janus-list';
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-        Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</article>
-</main>
-<footer>
-  <div style="display:flex"><a class="soc" href="https://github.com/j4nu5/" rel="me" title="Github"><i data-feather="github"></i></a>
-    <span class="border"></span><a class="soc" href="https://twitter.com/j4nu5/" rel="me" title="Twitter"><i data-feather="twitter"></i></a>
-    <span class="border"></span><a class="soc" href="https://www.linkedin.com/in/sinhakushagra/" rel="me" title="LinkedIn"><i data-feather="linkedin"></i></a>
-    <span class="border"></span></div>
-  <div class="footer-info">
-    2024  © Kushagra Sinha 
-  </div>
-</footer>
-
-
-<script>
-  feather.replace()
-</script></div>
-    </body>
-</html>
+Congrats! You are on the right path towards mastering C.</p></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/programming>programming</a></li><li><a href=/tags/interviews>interviews</a></li></ul></nav></div><div id=disqus_thread></div><script type=text/javascript>(function(){if(window.location.hostname=="localhost")return;var t,e=document.createElement("script");e.type="text/javascript",e.async=!0,t="the-janus-list",e.src="//"+t+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)})()</script><noscript>Please enable JavaScript to view the <a href=http://disqus.com/?ref_noscript>comments powered by
+Disqus.</a></noscript><a href=http://disqus.com/ class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></article></main><footer><div style=display:flex><a class=soc href=https://github.com/j4nu5/ rel=me title=Github><i data-feather=github></i></a>
+<span class=border></span><a class=soc href=https://twitter.com/j4nu5/ rel=me title=Twitter><i data-feather=twitter></i></a>
+<span class=border></span><a class=soc href=https://www.linkedin.com/in/sinhakushagra/ rel=me title=LinkedIn><i data-feather=linkedin></i></a>
+<span class=border></span></div><div class=footer-info>2024 © Kushagra Sinha</div></footer><script>feather.replace()</script></div></body></html>

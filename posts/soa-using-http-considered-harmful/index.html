@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Implementing Service Oriented Architecture using Http is a horrible idea - The Janus List</title><link rel="icon" type="image/png" href=/images/favicon-32x32.png /><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Service Oriented Architecture
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Implementing Service Oriented Architecture using Http is a horrible idea - The Janus List</title><link rel=icon type=image/png href=/images/favicon-32x32.png><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Service Oriented Architecture
 is a commonly used design pattern in distributed and enterprise applications.
 It involves the creation and use of independent services that work together
 to produce the desired result. The most important benefits, of course, are
@@ -10,99 +7,24 @@ separation of concerns and the ability to scale each service independent of
 others, leading to a clean, modular design.
 A common problem faced during the design of a SOA system is the choice of
 communication protocol. Ideally we want our services to communicate with each
-other with minimum communication overhead. This involves:" />
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content="https://sinhak.dev/posts/soa-using-http-considered-harmful/">
-  <meta property="og:site_name" content="The Janus List">
-  <meta property="og:title" content="Implementing Service Oriented Architecture using Http is a horrible idea">
-  <meta property="og:description" content="Service Oriented Architecture is a commonly used design pattern in distributed and enterprise applications. It involves the creation and use of independent services that work together to produce the desired result. The most important benefits, of course, are separation of concerns and the ability to scale each service independent of others, leading to a clean, modular design.
-A common problem faced during the design of a SOA system is the choice of communication protocol. Ideally we want our services to communicate with each other with minimum communication overhead. This involves:">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2014-11-16T00:00:00+00:00">
-    <meta property="article:modified_time" content="2014-11-16T00:00:00+00:00">
-    <meta property="article:tag" content="Programming">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Implementing Service Oriented Architecture using Http is a horrible idea">
-  <meta name="twitter:description" content="Service Oriented Architecture is a commonly used design pattern in distributed and enterprise applications. It involves the creation and use of independent services that work together to produce the desired result. The most important benefits, of course, are separation of concerns and the ability to scale each service independent of others, leading to a clean, modular design.
-A common problem faced during the design of a SOA system is the choice of communication protocol. Ideally we want our services to communicate with each other with minimum communication overhead. This involves:">
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://sinhak.dev/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://sinhak.dev/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css"  disabled />
-	
-
-	
-	
-
-	
-	
-
-	
-</head>
-<body>
-        <div class="content"><header>
-	<div class="main">
-		<a href="https://sinhak.dev/">The Janus List</a>
-	</div>
-	<nav>
-		
-		<a href="/posts/">articles</a>
-		
-		<a href="/about/">about</a>
-		
-		| <a id="dark-mode-toggle" onclick="toggleTheme()"></a>
-		<script src="https://sinhak.dev/js/themetoggle.js"></script>
-		
-	</nav>
-</header>
-
-<main>
-	<article>
-		<div class="title">
-			<h1 class="title">Implementing Service Oriented Architecture using Http is a horrible idea</h1>
-			<div class="meta">Posted on Nov 16, 2014</div>
-		</div>
-		
-
-		
-
-		<section class="body">
-			<p><a href="http://en.wikipedia.org/wiki/Service-oriented_architecture">Service Oriented Architecture</a>
+other with minimum communication overhead. This involves:"><meta property="og:image" content><meta property="og:url" content="https://sinhak.dev/posts/soa-using-http-considered-harmful/"><meta property="og:site_name" content="The Janus List"><meta property="og:title" content="Implementing Service Oriented Architecture using Http is a horrible idea"><meta property="og:description" content="Service Oriented Architecture is a commonly used design pattern in distributed and enterprise applications. It involves the creation and use of independent services that work together to produce the desired result. The most important benefits, of course, are separation of concerns and the ability to scale each service independent of others, leading to a clean, modular design.
+A common problem faced during the design of a SOA system is the choice of communication protocol. Ideally we want our services to communicate with each other with minimum communication overhead. This involves:"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2014-11-16T00:00:00+00:00"><meta property="article:modified_time" content="2014-11-16T00:00:00+00:00"><meta property="article:tag" content="Programming"><meta name=twitter:card content="summary"><meta name=twitter:title content="Implementing Service Oriented Architecture using Http is a horrible idea"><meta name=twitter:description content="Service Oriented Architecture is a commonly used design pattern in distributed and enterprise applications. It involves the creation and use of independent services that work together to produce the desired result. The most important benefits, of course, are separation of concerns and the ability to scale each service independent of others, leading to a clean, modular design.
+A common problem faced during the design of a SOA system is the choice of communication protocol. Ideally we want our services to communicate with each other with minimum communication overhead. This involves:"><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://sinhak.dev/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://sinhak.dev/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css disabled></head><body><div class=content><header><div class=main><a href=https://sinhak.dev/>The Janus List</a></div><nav><a href=/posts/>articles</a>
+<a href=/about/>about</a>
+| <a id=dark-mode-toggle onclick=toggleTheme()></a><script src=https://sinhak.dev/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>Implementing Service Oriented Architecture using Http is a horrible idea</h1><div class=meta>Posted on Nov 16, 2014</div></div><section class=body><p><a href=http://en.wikipedia.org/wiki/Service-oriented_architecture>Service Oriented Architecture</a>
 is a commonly used design pattern in distributed and enterprise applications.
 It involves the creation and use of independent <em>services</em> that work together
 to produce the desired result. The most important benefits, of course, are
 separation of concerns and the ability to scale each service independent of
-others, leading to a clean, modular design.</p>
-<p>A common problem faced during the design of a SOA system is the choice of
+others, leading to a clean, modular design.</p><p>A common problem faced during the design of a SOA system is the choice of
 communication protocol. Ideally we want our services to communicate with each
-other with minimum communication overhead. This involves:</p>
-<ul>
-<li>Low latency</li>
-<li>High throughput</li>
-</ul>
-<p>Many open source protocols are available for use in SOA. Some of them also
+other with minimum communication overhead. This involves:</p><ul><li>Low latency</li><li>High throughput</li></ul><p>Many open source protocols are available for use in SOA. Some of them also
 provide client/server de-serialization/serialization libraries to make your job
-easier. Examples are:</p>
-<ul>
-<li><a href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a></li>
-<li><a href="https://thrift.apache.org/">Apache Thrift</a></li>
-<li><a href="http://avro.apache.org/">Apache Avro</a></li>
-</ul>
-<p>Some people also like to use SOAP, XML-RPC, JSON-RPC etc. I have attempted to
-cover the (mis)use of HTTP/REST as a SOA protocol in this article.</p>
-<p>Consider 2 clients accessing a web front-end for some data. The web frontend
+easier. Examples are:</p><ul><li><a href=https://developers.google.com/protocol-buffers/>Protocol Buffers</a></li><li><a href=https://thrift.apache.org/>Apache Thrift</a></li><li><a href=http://avro.apache.org/>Apache Avro</a></li></ul><p>Some people also like to use SOAP, XML-RPC, JSON-RPC etc. I have attempted to
+cover the (mis)use of HTTP/REST as a SOA protocol in this article.</p><p>Consider 2 clients accessing a web front-end for some data. The web frontend
 server is responsible for some preprocessing (authentication etc.) and
 post-processing (aggregation etc.) tasks. The heavy lifting is done by our
-backend service.</p>
-<p><img src="soa.png" alt="SOA Illustration"></p>
-<p>Let us say Client1 came first and requested for Data1. The web frontend
+backend service.</p><p><img src=soa.png alt="SOA Illustration"></p><p>Let us say Client1 came first and requested for Data1. The web frontend
 performs some preprocessing on the request and forwards it to our backend
 service over HTTP. Meanwhile Client2 came along and requested for Data2. Now,
 if our backend service has not yet returned with Client1&rsquo;s request, the web
@@ -110,73 +32,20 @@ frontend cannot effectively re-use (multiplex) the TCP connection between
 itself and our backend service since the HTTP protocol requires servers to
 return responses in the same order as requests. Our web frontend will need to
 create a new TCP connection for each concurrent request which is extremely
-wasteful. <a href="http://www.chromium.org/spdy/spdy-protocol/spdy-protocol-draft2">SPDY</a>
+wasteful. <a href=http://www.chromium.org/spdy/spdy-protocol/spdy-protocol-draft2>SPDY</a>
 has tried to address the multiplexing issue but it may be a bit away from
-production grade quality yet.</p>
-<p>Another problem is HTTP/1.1&rsquo;s use of ASCII. Sure it makes things easier to
+production grade quality yet.</p><p>Another problem is HTTP/1.1&rsquo;s use of ASCII. Sure it makes things easier to
 debug but again is wasteful in SOA. Ideally we want a tightly packed binary
-protocol.</p>
-<p>HTTP/1.1&rsquo;s statelessness is another cause of worries. It is simply wasteful
+protocol.</p><p>HTTP/1.1&rsquo;s statelessness is another cause of worries. It is simply wasteful
 to send the same set of headers for similar requests. Again, SPDY and HTTP/2.0
 are trying header compression and may be worth
-<a href="http://chimera.labs.oreilly.com/books/1230000000545/ch12.html#HTTP2_HEADER_COMPRESSION">looking into</a>.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>HTTP/1.1 is an excellent protocol for a traditional client/server model. It is
+<a href=http://chimera.labs.oreilly.com/books/1230000000545/ch12.html#HTTP2_HEADER_COMPRESSION>looking into</a>.</p><h2 id=conclusion>Conclusion</h2><p>HTTP/1.1 is an excellent protocol for a traditional client/server model. It is
 an ASCII protocol, hence it is easy to debug. It is fairly well known, has a
 number of supporting libraries in almost all major languages and provides a
 useful set of primitives and verbs for almost all of your data transfer needs.
 However, please do not use it if you are creating a production grade SOA
-application.</p>
-
-		</section>
-
-		<div class="post-tags">
-			
-			
-			<nav class="nav tags">
-				<ul class="tags">
-					
-					<li><a href="/tags/programming">programming</a></li>
-					
-				</ul>
-			</nav>
-			
-			
-		</div>
-		<div id="disqus_thread"></div>
-<script type="text/javascript">
-    (function () {
-        
-        
-        if (window.location.hostname == "localhost")
-            return;
-
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        var disqus_shortname = 'the-janus-list';
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-        Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</article>
-</main>
-<footer>
-  <div style="display:flex"><a class="soc" href="https://github.com/j4nu5/" rel="me" title="Github"><i data-feather="github"></i></a>
-    <span class="border"></span><a class="soc" href="https://twitter.com/j4nu5/" rel="me" title="Twitter"><i data-feather="twitter"></i></a>
-    <span class="border"></span><a class="soc" href="https://www.linkedin.com/in/sinhakushagra/" rel="me" title="LinkedIn"><i data-feather="linkedin"></i></a>
-    <span class="border"></span></div>
-  <div class="footer-info">
-    2024  © Kushagra Sinha 
-  </div>
-</footer>
-
-
-<script>
-  feather.replace()
-</script></div>
-    </body>
-</html>
+application.</p></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/programming>programming</a></li></ul></nav></div><div id=disqus_thread></div><script type=text/javascript>(function(){if(window.location.hostname=="localhost")return;var t,e=document.createElement("script");e.type="text/javascript",e.async=!0,t="the-janus-list",e.src="//"+t+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)})()</script><noscript>Please enable JavaScript to view the <a href=http://disqus.com/?ref_noscript>comments powered by
+Disqus.</a></noscript><a href=http://disqus.com/ class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></article></main><footer><div style=display:flex><a class=soc href=https://github.com/j4nu5/ rel=me title=Github><i data-feather=github></i></a>
+<span class=border></span><a class=soc href=https://twitter.com/j4nu5/ rel=me title=Twitter><i data-feather=twitter></i></a>
+<span class=border></span><a class=soc href=https://www.linkedin.com/in/sinhakushagra/ rel=me title=LinkedIn><i data-feather=linkedin></i></a>
+<span class=border></span></div><div class=footer-info>2024 © Kushagra Sinha</div></footer><script>feather.replace()</script></div></body></html>

@@ -1,155 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	<meta name="generator" content="Hugo 0.136.5">
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>The Janus List | Home </title><link rel="icon" type="image/png" href=/images/favicon-32x32.png /><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Kushagra Sinha&#39;s Personal Blog - The Janus List" />
-	<meta property="og:image" content=""/>
-	<link rel="alternate" type="application/rss+xml" href="https://sinhak.dev/index.xml" title="The Janus List" />
-	<meta property="og:url" content="https://sinhak.dev/">
-  <meta property="og:site_name" content="The Janus List">
-  <meta property="og:title" content="The Janus List">
-  <meta property="og:description" content="Kushagra Sinha&#39;s Personal Blog - The Janus List">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="The Janus List">
-  <meta name="twitter:description" content="Kushagra Sinha&#39;s Personal Blog - The Janus List">
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://sinhak.dev/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://sinhak.dev/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css"  disabled />
-	
-
-	
-	
-
-	
-	
-
-	
-</head>
-
-	<body>
-		<div class="content">
-			<header>
-	<div class="main">
-		<a href="https://sinhak.dev/">The Janus List</a>
-	</div>
-	<nav>
-		
-		<a href="/posts/">articles</a>
-		
-		<a href="/about/">about</a>
-		
-		| <a id="dark-mode-toggle" onclick="toggleTheme()"></a>
-		<script src="https://sinhak.dev/js/themetoggle.js"></script>
-		
-	</nav>
-</header>
-
-			
-			<main class="list">
-				<div class="site-description"><p>I disclaim thee, o&rsquo; liability</p></div>
-				
-				
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/generating-power-set/">Generating Power Set</a></h1>
-					<time>Jan 5, 2015</time>
-					<br><div class="description">
-	
-	<p>Iterating over all possible subsets of a set is a problem that can arise not
+<!doctype html><html lang=en><head><meta name=generator content="Hugo 0.138.0"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>The Janus List | Home </title><link rel=icon type=image/png href=/images/favicon-32x32.png><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Kushagra Sinha's Personal Blog - The Janus List"><meta property="og:image" content><link rel=alternate type=application/rss+xml href=https://sinhak.dev/index.xml title="The Janus List"><meta property="og:url" content="https://sinhak.dev/"><meta property="og:site_name" content="The Janus List"><meta property="og:title" content="The Janus List"><meta property="og:description" content="Kushagra Sinha's Personal Blog - The Janus List"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="The Janus List"><meta name=twitter:description content="Kushagra Sinha's Personal Blog - The Janus List"><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://sinhak.dev/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://sinhak.dev/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css disabled></head><body><div class=content><header><div class=main><a href=https://sinhak.dev/>The Janus List</a></div><nav><a href=/posts/>articles</a>
+<a href=/about/>about</a>
+| <a id=dark-mode-toggle onclick=toggleTheme()></a><script src=https://sinhak.dev/js/themetoggle.js></script></nav></header><main class=list><div class=site-description><p>I disclaim thee, o&rsquo; liability</p></div><section class=list-item><h1 class=title><a href=/posts/generating-power-set/>Generating Power Set</a></h1><time>Jan 5, 2015</time><br><div class=description><p>Iterating over all possible subsets of a set is a problem that can arise not
 only in competitive programming but also in day-to-day programming. While the
 total number of possible subsets is quite huge (<em>2^n</em> where <em>n</em> is the
 cardinality of the input set), often we want an algorithm that systematically
-considers all subsets for small values of <em>n</em>.</p>
-<p>A <a href="http://en.wikipedia.org/wiki/Power_set">power set</a> is a set of all subsets
+considers all subsets for small values of <em>n</em>.</p><p>A <a href=http://en.wikipedia.org/wiki/Power_set>power set</a> is a set of all subsets
 of a given input set. Often we may want to simply iterate over all members of
 the power set, but sometimes (if we have enough memory) we may need the power
 set itself. In the following post, I have attempted to present some algorithms
 (with C++11 implementations) that solve both kinds of problems (simple
-iteration and complete power set construction).</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/generating-power-set/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/soa-using-http-considered-harmful/">Implementing Service Oriented Architecture using Http is a horrible idea</a></h1>
-					<time>Nov 16, 2014</time>
-					<br><div class="description">
-	
-	<p><a href="http://en.wikipedia.org/wiki/Service-oriented_architecture">Service Oriented Architecture</a>
+iteration and complete power set construction).</p>&mldr;</div><a class=readmore href=/posts/generating-power-set/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/soa-using-http-considered-harmful/>Implementing Service Oriented Architecture using Http is a horrible idea</a></h1><time>Nov 16, 2014</time><br><div class=description><p><a href=http://en.wikipedia.org/wiki/Service-oriented_architecture>Service Oriented Architecture</a>
 is a commonly used design pattern in distributed and enterprise applications.
 It involves the creation and use of independent <em>services</em> that work together
 to produce the desired result. The most important benefits, of course, are
 separation of concerns and the ability to scale each service independent of
-others, leading to a clean, modular design.</p>
-<p>A common problem faced during the design of a SOA system is the choice of
+others, leading to a clean, modular design.</p><p>A common problem faced during the design of a SOA system is the choice of
 communication protocol. Ideally we want our services to communicate with each
-other with minimum communication overhead. This involves:</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/soa-using-http-considered-harmful/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/the-toughest-interview-question/">The toughest interview question</a></h1>
-					<time>Jul 29, 2014</time>
-					<br><div class="description">
-	
-	<p>What is the output of the following C code snippet?</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span><span style="color:#fabd2f">int</span> n <span style="color:#fe8019">=</span> <span style="color:#d3869b">1</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">2</span><span><span style="color:#fabd2f">printf</span>(<span style="color:#b8bb26">&#34;%d %d %d</span><span style="color:#b8bb26">\n</span><span style="color:#b8bb26">&#34;</span>, n<span style="color:#fe8019">++</span>, <span style="color:#fe8019">++</span>n, n<span style="color:#fe8019">++</span> <span style="color:#fe8019">+</span> <span style="color:#fe8019">++</span>n);
+other with minimum communication overhead. This involves:</p>&mldr;</div><a class=readmore href=/posts/soa-using-http-considered-harmful/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/the-toughest-interview-question/>The toughest interview question</a></h1><time>Jul 29, 2014</time><br><div class=description><p>What is the output of the following C code snippet?</p><div class=highlight><pre tabindex=0 style=color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">1</span><span><span style=color:#fabd2f>int</span> n <span style=color:#fe8019>=</span> <span style=color:#d3869b>1</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">2</span><span><span style=color:#fabd2f>printf</span>(<span style=color:#b8bb26>&#34;%d %d %d</span><span style=color:#b8bb26>\n</span><span style=color:#b8bb26>&#34;</span>, n<span style=color:#fe8019>++</span>, <span style=color:#fe8019>++</span>n, n<span style=color:#fe8019>++</span> <span style=color:#fe8019>+</span> <span style=color:#fe8019>++</span>n);
 </span></span></code></pre></div><p>This is a tricky question. Any attempt to answer this question requires either
 a deep understanding of your compiler&rsquo;s parser or a complete ignorance of C.
 Even if you fall under the first category and know the ins and outs of your
 favorite compiler, how do you know which is your <em>interviewer&rsquo;s</em> favorite
-compiler?</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/the-toughest-interview-question/">Read more ⟶</a>
-				</section>
-				
-				
-
-<ul class="pagination">
-	<span class="page-item page-prev">
-	
-    <a href="/page/2/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
-	
-	</span>
-	<span class="page-item page-next">
-	
-    <a href="/page/4/" class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
-	
-	</span>
-</ul>
-
-
-			</main>
-			<footer>
-  <div style="display:flex"><a class="soc" href="https://github.com/j4nu5/" rel="me" title="Github"><i data-feather="github"></i></a>
-    <span class="border"></span><a class="soc" href="https://twitter.com/j4nu5/" rel="me" title="Twitter"><i data-feather="twitter"></i></a>
-    <span class="border"></span><a class="soc" href="https://www.linkedin.com/in/sinhakushagra/" rel="me" title="LinkedIn"><i data-feather="linkedin"></i></a>
-    <span class="border"></span></div>
-  <div class="footer-info">
-    2024  © Kushagra Sinha 
-  </div>
-</footer>
-
-
-<script>
-  feather.replace()
-</script>
-		</div>
-		
-	</body>
-</html>
+compiler?</p>&mldr;</div><a class=readmore href=/posts/the-toughest-interview-question/>Read more ⟶</a></section><ul class=pagination><span class="page-item page-prev"><a href=/page/2/ class=page-link aria-label=Previous><span aria-hidden=true>← Prev</span></a>
+</span><span class="page-item page-next"><a href=/page/4/ class=page-link aria-label=Next><span aria-hidden=true>Next →</span></a></span></ul></main><footer><div style=display:flex><a class=soc href=https://github.com/j4nu5/ rel=me title=Github><i data-feather=github></i></a>
+<span class=border></span><a class=soc href=https://twitter.com/j4nu5/ rel=me title=Twitter><i data-feather=twitter></i></a>
+<span class=border></span><a class=soc href=https://www.linkedin.com/in/sinhakushagra/ rel=me title=LinkedIn><i data-feather=linkedin></i></a>
+<span class=border></span></div><div class=footer-info>2024 © Kushagra Sinha</div></footer><script>feather.replace()</script></div></body></html>

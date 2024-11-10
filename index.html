@@ -1,154 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	<meta name="generator" content="Hugo 0.136.5">
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>The Janus List | Home </title><link rel="icon" type="image/png" href=/images/favicon-32x32.png /><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Kushagra Sinha&#39;s Personal Blog - The Janus List" />
-	<meta property="og:image" content=""/>
-	<link rel="alternate" type="application/rss+xml" href="https://sinhak.dev/index.xml" title="The Janus List" />
-	<meta property="og:url" content="https://sinhak.dev/">
-  <meta property="og:site_name" content="The Janus List">
-  <meta property="og:title" content="The Janus List">
-  <meta property="og:description" content="Kushagra Sinha&#39;s Personal Blog - The Janus List">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="The Janus List">
-  <meta name="twitter:description" content="Kushagra Sinha&#39;s Personal Blog - The Janus List">
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://sinhak.dev/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://sinhak.dev/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css"  disabled />
-	
-
-	
-	
-
-	
-	
-
-	
-</head>
-
-	<body>
-		<div class="content">
-			<header>
-	<div class="main">
-		<a href="https://sinhak.dev/">The Janus List</a>
-	</div>
-	<nav>
-		
-		<a href="/posts/">articles</a>
-		
-		<a href="/about/">about</a>
-		
-		| <a id="dark-mode-toggle" onclick="toggleTheme()"></a>
-		<script src="https://sinhak.dev/js/themetoggle.js"></script>
-		
-	</nav>
-</header>
-
-			
-			<main class="list">
-				<div class="site-description"><p>I disclaim thee, o&rsquo; liability</p></div>
-				
-				
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/the-reliable-engineer/">The Reliable Engineer</a></h1>
-					<time>Oct 10, 2020</time>
-					<br><div class="description">
-	
-	
-	
-</div>
-					<a class="readmore" href="/posts/the-reliable-engineer/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/const-reference-to-temporary-objects/">Const References to Temporary Objects</a></h1>
-					<time>Sep 2, 2018</time>
-					<br><div class="description">
-	
-	<p>Consider the following code snippet:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 1</span><span><span style="color:#8ec07c">#include</span> <span style="color:#8ec07c;font-style:italic">&lt;iostream&gt;</span><span style="color:#8ec07c">
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 2</span><span><span style="color:#8ec07c"></span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 3</span><span><span style="color:#fabd2f">int</span> <span style="color:#fabd2f">GetInt</span>() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 4</span><span>    <span style="color:#fabd2f">int</span> x <span style="color:#fe8019">=</span> <span style="color:#d3869b">1</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 5</span><span>    <span style="color:#fe8019">return</span> x;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 6</span><span>}
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 7</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 8</span><span><span style="color:#fabd2f">int</span> <span style="color:#fabd2f">main</span>() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59"> 9</span><span>    <span style="color:#fe8019">const</span> <span style="color:#fabd2f">int</span><span style="color:#fe8019">&amp;</span> x <span style="color:#fe8019">=</span> GetInt();
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">10</span><span>    std<span style="color:#fe8019">::</span>cout <span style="color:#fe8019">&lt;&lt;</span> x <span style="color:#fe8019">&lt;&lt;</span> std<span style="color:#fe8019">::</span>endl;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">11</span><span>    <span style="color:#fe8019">return</span> <span style="color:#d3869b">0</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">12</span><span>}
-</span></span></code></pre></div><p>In particular, pay attention to line #9. Is it guaranteed to be safe?</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/const-reference-to-temporary-objects/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/pelican-setup/">Pelican Setup</a></h1>
-					<time>Aug 24, 2017</time>
-					<br><div class="description">
-	
-	<p>Install Pelican:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span>sudo -H pip install pelican Markdown typogrify
-</span></span></code></pre></div><p>Install Pelican themes</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span>git clone --recursive https://github.com/getpelican/pelican-themes
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">2</span><span>sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">3</span><span>sudo chmod <span style="color:#d3869b">755</span> /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex
-</span></span></code></pre></div><p>Install Pelican plugins</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span>git clone --recursive https://github.com/getpelican/pelican-plugins
-</span></span></code></pre></div><p>Fetch blog sources</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">1</span><span>git clone git@github.com:j4nu5/j4nu5.github.io.git
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">2</span><span><span style="color:#fabd2f">cd</span> j4nu5.github.io.git
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">3</span><span>git fetch
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59">4</span><span>git checkout <span style="color:#fabd2f">source</span>
-</span></span></code></pre></div><p>Setup for development</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/pelican-setup/">Read more ⟶</a>
-				</section>
-				
-				
-
-<ul class="pagination">
-	<span class="page-item page-prev">
-	
-	</span>
-	<span class="page-item page-next">
-	
-    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
-	
-	</span>
-</ul>
-
-
-			</main>
-			<footer>
-  <div style="display:flex"><a class="soc" href="https://github.com/j4nu5/" rel="me" title="Github"><i data-feather="github"></i></a>
-    <span class="border"></span><a class="soc" href="https://twitter.com/j4nu5/" rel="me" title="Twitter"><i data-feather="twitter"></i></a>
-    <span class="border"></span><a class="soc" href="https://www.linkedin.com/in/sinhakushagra/" rel="me" title="LinkedIn"><i data-feather="linkedin"></i></a>
-    <span class="border"></span></div>
-  <div class="footer-info">
-    2024  © Kushagra Sinha 
-  </div>
-</footer>
-
-
-<script>
-  feather.replace()
-</script>
-		</div>
-		
-	</body>
-</html>
+<!doctype html><html lang=en><head><meta name=generator content="Hugo 0.138.0"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>The Janus List | Home </title><link rel=icon type=image/png href=/images/favicon-32x32.png><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Kushagra Sinha's Personal Blog - The Janus List"><meta property="og:image" content><link rel=alternate type=application/rss+xml href=https://sinhak.dev/index.xml title="The Janus List"><meta property="og:url" content="https://sinhak.dev/"><meta property="og:site_name" content="The Janus List"><meta property="og:title" content="The Janus List"><meta property="og:description" content="Kushagra Sinha's Personal Blog - The Janus List"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="The Janus List"><meta name=twitter:description content="Kushagra Sinha's Personal Blog - The Janus List"><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://sinhak.dev/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://sinhak.dev/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css disabled></head><body><div class=content><header><div class=main><a href=https://sinhak.dev/>The Janus List</a></div><nav><a href=/posts/>articles</a>
+<a href=/about/>about</a>
+| <a id=dark-mode-toggle onclick=toggleTheme()></a><script src=https://sinhak.dev/js/themetoggle.js></script></nav></header><main class=list><div class=site-description><p>I disclaim thee, o&rsquo; liability</p></div><section class=list-item><h1 class=title><a href=/posts/the-reliable-engineer/>The Reliable Engineer</a></h1><time>Oct 10, 2020</time><br><div class=description></div><a class=readmore href=/posts/the-reliable-engineer/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/const-reference-to-temporary-objects/>Const References to Temporary Objects</a></h1><time>Sep 2, 2018</time><br><div class=description><p>Consider the following code snippet:</p><div class=highlight><pre tabindex=0 style=color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 1</span><span><span style=color:#8ec07c>#include</span> <span style=color:#8ec07c;font-style:italic>&lt;iostream&gt;</span><span style=color:#8ec07c>
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 2</span><span><span style=color:#8ec07c></span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 3</span><span><span style=color:#fabd2f>int</span> <span style=color:#fabd2f>GetInt</span>() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 4</span><span>    <span style=color:#fabd2f>int</span> x <span style=color:#fe8019>=</span> <span style=color:#d3869b>1</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 5</span><span>    <span style=color:#fe8019>return</span> x;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 6</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 7</span><span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 8</span><span><span style=color:#fabd2f>int</span> <span style=color:#fabd2f>main</span>() {
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59"> 9</span><span>    <span style=color:#fe8019>const</span> <span style=color:#fabd2f>int</span><span style=color:#fe8019>&amp;</span> x <span style=color:#fe8019>=</span> GetInt();
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">10</span><span>    std<span style=color:#fe8019>::</span>cout <span style=color:#fe8019>&lt;&lt;</span> x <span style=color:#fe8019>&lt;&lt;</span> std<span style=color:#fe8019>::</span>endl;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">11</span><span>    <span style=color:#fe8019>return</span> <span style=color:#d3869b>0</span>;
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">12</span><span>}
+</span></span></code></pre></div><p>In particular, pay attention to line #9. Is it guaranteed to be safe?</p>&mldr;</div><a class=readmore href=/posts/const-reference-to-temporary-objects/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/pelican-setup/>Pelican Setup</a></h1><time>Aug 24, 2017</time><br><div class=description><p>Install Pelican:</p><div class=highlight><pre tabindex=0 style=color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">1</span><span>sudo -H pip install pelican Markdown typogrify
+</span></span></code></pre></div><p>Install Pelican themes</p><div class=highlight><pre tabindex=0 style=color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">1</span><span>git clone --recursive https://github.com/getpelican/pelican-themes
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">2</span><span>sudo /usr/local/bin/pelican-themes --install pelican-themes/Flex
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">3</span><span>sudo chmod <span style=color:#d3869b>755</span> /usr/local/lib/python2.7/dist-packages/pelican/themes/Flex
+</span></span></code></pre></div><p>Install Pelican plugins</p><div class=highlight><pre tabindex=0 style=color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">1</span><span>git clone --recursive https://github.com/getpelican/pelican-plugins
+</span></span></code></pre></div><p>Fetch blog sources</p><div class=highlight><pre tabindex=0 style=color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">1</span><span>git clone git@github.com:j4nu5/j4nu5.github.io.git
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">2</span><span><span style=color:#fabd2f>cd</span> j4nu5.github.io.git
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">3</span><span>git fetch
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#756d59">4</span><span>git checkout <span style=color:#fabd2f>source</span>
+</span></span></code></pre></div><p>Setup for development</p>&mldr;</div><a class=readmore href=/posts/pelican-setup/>Read more ⟶</a></section><ul class=pagination><span class="page-item page-prev"></span><span class="page-item page-next"><a href=/page/2/ class=page-link aria-label=Next><span aria-hidden=true>Next →</span></a></span></ul></main><footer><div style=display:flex><a class=soc href=https://github.com/j4nu5/ rel=me title=Github><i data-feather=github></i></a>
+<span class=border></span><a class=soc href=https://twitter.com/j4nu5/ rel=me title=Twitter><i data-feather=twitter></i></a>
+<span class=border></span><a class=soc href=https://www.linkedin.com/in/sinhakushagra/ rel=me title=LinkedIn><i data-feather=linkedin></i></a>
+<span class=border></span></div><div class=footer-info>2024 © Kushagra Sinha</div></footer><script>feather.replace()</script></div></body></html>
